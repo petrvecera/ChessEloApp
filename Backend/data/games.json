@@ -1,0 +1,652 @@
+[
+	{
+		"timestamp": 1492466400000,
+		"playerWhite": 3,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1200,
+		"playerBlackRating": 1200,
+		"uid": 1
+	},
+	{
+		"timestamp": 1492552800002,
+		"playerWhite": 3,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1180,
+		"playerBlackRating": 1200,
+		"uid": 6
+	},
+	{
+		"timestamp": 1492552800003,
+		"playerWhite": 3,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1161.1500225556908,
+		"playerBlackRating": 1220,
+		"uid": 7
+	},
+	{
+		"timestamp": 1492552800004,
+		"playerWhite": 6,
+		"playerBlack": 2,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1200,
+		"playerBlackRating": 1200,
+		"uid": 8
+	},
+	{
+		"timestamp": 1492552800005,
+		"playerWhite": 3,
+		"playerBlack": 2,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1144.5056686352318,
+		"playerBlackRating": 1220,
+		"uid": 9
+	},
+	{
+		"timestamp": 1492639200000,
+		"playerWhite": 2,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1195.7213251626226,
+		"playerBlackRating": 1236.644353920459,
+		"uid": 10
+	},
+	{
+		"timestamp": 1492639200001,
+		"playerWhite": 4,
+		"playerBlack": 3,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1200,
+		"playerBlackRating": 1168.7843434726092,
+		"uid": 11
+	},
+	{
+		"timestamp": 1492639200002,
+		"playerWhite": 3,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1150.5764415929325,
+		"playerBlackRating": 1218.2079018796767,
+		"uid": 12
+	},
+	{
+		"timestamp": 1492639200003,
+		"playerWhite": 3,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1174.421181843154,
+		"playerBlackRating": 1254.2994689477528,
+		"uid": 13
+	},
+	{
+		"timestamp": 1492639200004,
+		"playerWhite": 4,
+		"playerBlack": 1,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1194.3631616294551,
+		"playerBlackRating": 1269.780644301981,
+		"uid": 14
+	},
+	{
+		"timestamp": 1492725600000,
+		"playerWhite": 4,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1218.637614966183,
+		"playerBlackRating": 1218.8499774443092,
+		"uid": 15
+	},
+	{
+		"timestamp": 1492725600001,
+		"playerWhite": 5,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1238.8377528789204,
+		"playerBlackRating": 1198.6498395315718,
+		"uid": 16
+	},
+	{
+		"timestamp": 1492725600002,
+		"playerWhite": 6,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1180,
+		"playerBlackRating": 1216.534613150627,
+		"uid": 17
+	},
+	{
+		"timestamp": 1492725600003,
+		"playerWhite": 5,
+		"playerBlack": 6,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1234.4392293700405,
+		"playerBlackRating": 1162.0953837805864,
+		"uid": 18
+	},
+	{
+		"timestamp": 1492725600004,
+		"playerWhite": 3,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1158.9400064889257,
+		"playerBlackRating": 1250.3339424156595,
+		"uid": 19
+	},
+	{
+		"timestamp": 1492725600005,
+		"playerWhite": 5,
+		"playerBlack": 3,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1265.1909667616876,
+		"playerBlackRating": 1144.0829821428977,
+		"uid": 20
+	},
+	{
+		"timestamp": 1492725600006,
+		"playerWhite": 4,
+		"playerBlack": 6,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1220.9529792598653,
+		"playerBlackRating": 1146.2006707349674,
+		"uid": 21
+	},
+	{
+		"timestamp": 1492725600007,
+		"playerWhite": 6,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1130.4385676661323,
+		"playerBlackRating": 1236.7150823287004,
+		"uid": 22
+	},
+	{
+		"timestamp": 1492984800000,
+		"playerWhite": 3,
+		"playerBlack": 2,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1130.78523761583,
+		"playerBlackRating": 1178.066210135329,
+		"uid": 23
+	},
+	{
+		"timestamp": 1492984800001,
+		"playerWhite": 2,
+		"playerBlack": 3,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1195.3611764224886,
+		"playerBlackRating": 1113.4902713286704,
+		"uid": 24
+	},
+	{
+		"timestamp": 1492984800002,
+		"playerWhite": 1,
+		"playerBlack": 6,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1245.5061909652532,
+		"playerBlackRating": 1116.3724079320716,
+		"uid": 25
+	},
+	{
+		"timestamp": 1492984800003,
+		"playerWhite": 6,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1103.4815601828423,
+		"playerBlackRating": 1258.3970387144825,
+		"uid": "1493835185088_0"
+	},
+	{
+		"timestamp": 1493071200000,
+		"playerWhite": 4,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1250.781242062761,
+		"playerBlackRating": 1278.4887112887552,
+		"uid": "1493835150254_0"
+	},
+	{
+		"timestamp": 1493071200001,
+		"playerWhite": 5,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1296.8971138124082,
+		"playerBlackRating": 1232.372839539108,
+		"uid": "1493835202537_0"
+	},
+	{
+		"timestamp": 1493071200002,
+		"playerWhite": 4,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1216.0450336724616,
+		"playerBlackRating": 1270.0268663483225,
+		"uid": "1493835221104_0"
+	},
+	{
+		"timestamp": 1493071200003,
+		"playerWhite": 1,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1286.9441882570936,
+		"playerBlackRating": 1199.1277117636905,
+		"uid": "1493835236342_0"
+	},
+	{
+		"timestamp": 1493071200004,
+		"playerWhite": 6,
+		"playerBlack": 5,
+		"result": "draw",
+		"timeout": false,
+		"playerWhiteRating": 1091.8517325490022,
+		"playerBlackRating": 1313.2249196790547,
+		"uid": "1493835257055_0"
+	},
+	{
+		"timestamp": 1493071200005,
+		"playerWhite": 5,
+		"playerBlack": 6,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1301.9656207188875,
+		"playerBlackRating": 1103.1110315091692,
+		"uid": "1493835272557_0"
+	},
+	{
+		"timestamp": 1493157600000,
+		"playerWhite": 2,
+		"playerBlack": 5,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1210.733645112044,
+		"playerBlackRating": 1311.6239670406856,
+		"uid": "1493835487727_0"
+	},
+	{
+		"timestamp": 1493157600001,
+		"playerWhite": 5,
+		"playerBlack": 2,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1285.9741717951174,
+		"playerBlackRating": 1236.3834403576122,
+		"uid": "1493835506339_0"
+	},
+	{
+		"timestamp": 1493157600002,
+		"playerWhite": 1,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1301.9940338976157,
+		"playerBlackRating": 1184.0778661231684,
+		"uid": "1493835524112_0"
+	},
+	{
+		"timestamp": 1493157600003,
+		"playerWhite": 4,
+		"playerBlack": 2,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1170.6165204165616,
+		"playerBlackRating": 1259.218883055311,
+		"uid": "1493835542603_0"
+	},
+	{
+		"timestamp": 1493157600004,
+		"playerWhite": 5,
+		"playerBlack": 7,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1263.1387290974187,
+		"playerBlackRating": 1200,
+		"uid": "1493835580435_0"
+	},
+	{
+		"timestamp": 1493157600005,
+		"playerWhite": 7,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1183.5950685342784,
+		"playerBlackRating": 1279.5436605631403,
+		"uid": "1493835597480_0"
+	},
+	{
+		"timestamp": 1493157600006,
+		"playerWhite": 5,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1294.1566716391262,
+		"playerBlackRating": 1155.6091188250778,
+		"uid": "1493835612728_0"
+	},
+	{
+		"timestamp": 1493157600007,
+		"playerWhite": 2,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1274.2262846467947,
+		"playerBlackRating": 1143.1870722792432,
+		"uid": "1493835691510_0"
+	},
+	{
+		"timestamp": 1493157600008,
+		"playerWhite": 4,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1170.391863705437,
+		"playerBlackRating": 1306.5787181849607,
+		"uid": "1493835740303_0"
+	},
+	{
+		"timestamp": 1493157600009,
+		"playerWhite": 5,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1319.1174468225804,
+		"playerBlackRating": 1157.8531350678172,
+		"uid": "1493835758370_0"
+	},
+	{
+		"timestamp": 1493157600010,
+		"playerWhite": 4,
+		"playerBlack": 5,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1146.5224431310198,
+		"playerBlackRating": 1330.4481387593778,
+		"uid": "1493835769379_0"
+	},
+	{
+		"timestamp": 1493157600011,
+		"playerWhite": 4,
+		"playerBlack": 7,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1136.2205942697701,
+		"playerBlackRating": 1168.9820574582925,
+		"uid": "1493835788521_0"
+	},
+	{
+		"timestamp": 1493157600012,
+		"playerWhite": 7,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1147.1017257661042,
+		"playerBlackRating": 1158.1009259619584,
+		"uid": "1493835856557_0"
+	},
+	{
+		"timestamp": 1493157600013,
+		"playerWhite": 4,
+		"playerBlack": 7,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1177.4679725456804,
+		"playerBlackRating": 1127.7346791823823,
+		"uid": "1493835923394_0"
+	},
+	{
+		"timestamp": 1493157600014,
+		"playerWhite": 7,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1110.5781629902806,
+		"playerBlackRating": 1194.624488737782,
+		"uid": "1493835936899_0"
+	},
+	{
+		"timestamp": 1493244000000,
+		"playerWhite": 4,
+		"playerBlack": 1,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1209.8786072094124,
+		"playerBlackRating": 1315.4553796042226,
+		"uid": "1493836012420_0"
+	},
+	{
+		"timestamp": 1493244000001,
+		"playerWhite": 5,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1340.7499876206275,
+		"playerBlackRating": 1289.558295926304,
+		"uid": "1493836033730_0"
+	},
+	{
+		"timestamp": 1493244000002,
+		"playerWhite": 2,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": true,
+		"playerWhiteRating": 1247.021493220601,
+		"playerBlackRating": 1235.775690887331,
+		"uid": "1493836053257_0"
+	},
+	{
+		"timestamp": 1493244000003,
+		"playerWhite": 4,
+		"playerBlack": 2,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1256.4228253249007,
+		"playerBlackRating": 1226.3743587830313,
+		"uid": "1493836076960_0"
+	},
+	{
+		"timestamp": 1493244000004,
+		"playerWhite": 4,
+		"playerBlack": 3,
+		"result": "black",
+		"timeout": true,
+		"playerWhiteRating": 1234.6973964172803,
+		"playerBlackRating": 1098.1178026391149,
+		"uid": "1493836101427_0"
+	},
+	{
+		"timestamp": 1493244000005,
+		"playerWhite": 3,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1125.598527195468,
+		"playerBlackRating": 1207.2166718609271,
+		"uid": "1493836121897_0"
+	},
+	{
+		"timestamp": 1493330400000,
+		"playerWhite": 2,
+		"playerBlack": 6,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1248.0997876906517,
+		"playerBlackRating": 1093.4526851873711,
+		"uid": "1493836145903_0"
+	},
+	{
+		"timestamp": 1493330400001,
+		"playerWhite": 6,
+		"playerBlack": 2,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1081.8101103472593,
+		"playerBlackRating": 1259.7423625307636,
+		"uid": "1493836168285_0"
+	},
+	{
+		"timestamp": 1493330400002,
+		"playerWhite": 5,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1317.8242981657102,
+		"playerBlackRating": 1312.4839853812214,
+		"uid": "1493836243658_0"
+	},
+	{
+		"timestamp": 1493330400003,
+		"playerWhite": 6,
+		"playerBlack": 8,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1071.2421758828523,
+		"playerBlackRating": 1200,
+		"uid": "1493836268948_0"
+	},
+	{
+		"timestamp": 1493330400004,
+		"playerWhite": 4,
+		"playerBlack": 8,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1222.602913987228,
+		"playerBlackRating": 1212.9097624911476,
+		"uid": "1493836286588_0"
+	},
+	{
+		"timestamp": 1493330400005,
+		"playerWhite": 1,
+		"playerBlack": 5,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1332.7913742892401,
+		"playerBlackRating": 1297.5169092576914,
+		"uid": "1493836300820_0"
+	},
+	{
+		"timestamp": 1493676000000,
+		"playerWhite": 6,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1058.3324133917047,
+		"playerBlackRating": 1350.7677611826161,
+		"uid": "1493836383140_0"
+	},
+	{
+		"timestamp": 1493762400000,
+		"playerWhite": 4,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1242.045076059451,
+		"playerBlackRating": 1357.0336283177671,
+		"uid": "1493836404710_0"
+	},
+	{
+		"timestamp": 1493762400001,
+		"playerWhite": 1,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1370.6459003092089,
+		"playerBlackRating": 1228.4328040680093,
+		"uid": "1493836422392_0"
+	},
+	{
+		"timestamp": 1493762400002,
+		"playerWhite": 4,
+		"playerBlack": 1,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1216.1907442954157,
+		"playerBlackRating": 1382.8879600818025,
+		"uid": "1493836448597_0"
+	},
+	{
+		"timestamp": 1493762400003,
+		"playerWhite": 1,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1393.9664012855528,
+		"playerBlackRating": 1205.1123030916654,
+		"uid": "1493836471386_0"
+	},
+	{
+		"timestamp": 1493762400004,
+		"playerWhite": 6,
+		"playerBlack": 9,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1052.0665462565537,
+		"playerBlackRating": 1200,
+		"uid": "1493836483143_0"
+	},
+	{
+		"timestamp": 1493762400005,
+		"playerWhite": 4,
+		"playerBlack": 2,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1195.0259508648826,
+		"playerBlackRating": 1270.3102969951706,
+		"uid": "1493836494775_0"
+	},
+	{
+		"timestamp": 1493762400006,
+		"playerWhite": 2,
+		"playerBlack": 4,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1246.043158143172,
+		"playerBlackRating": 1219.2930897168812,
+		"uid": "1493836505974_0"
+	},
+	{
+		"timestamp": 1493762400007,
+		"playerWhite": 4,
+		"playerBlack": 6,
+		"result": "white",
+		"timeout": false,
+		"playerWhiteRating": 1200.8299119244102,
+		"playerBlackRating": 1080.1024301621696,
+		"uid": "1493836516718_0"
+	},
+	{
+		"timestamp": 1493762400008,
+		"playerWhite": 6,
+		"playerBlack": 4,
+		"result": "black",
+		"timeout": false,
+		"playerWhiteRating": 1066.785234775274,
+		"playerBlackRating": 1214.147107311306,
+		"uid": "1493836527032_0"
+	}
+]

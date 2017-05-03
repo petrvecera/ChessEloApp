@@ -1,0 +1,110 @@
+[
+	{
+		"uid": 1,
+		"name": "Šaňo",
+		"games": 19,
+		"rating": 1404.0527535123356,
+		"winsWhite": 6,
+		"winsBlack": 11,
+		"losesWhite": 0,
+		"losesBlack": 2,
+		"drawWhite": 0,
+		"drawBlack": 0
+	},
+	{
+		"uid": 2,
+		"name": "Dušan",
+		"games": 15,
+		"rating": 1264.506335935643,
+		"winsWhite": 4,
+		"winsBlack": 6,
+		"losesWhite": 3,
+		"losesBlack": 2,
+		"drawWhite": 0,
+		"drawBlack": 0
+	},
+	{
+		"uid": 3,
+		"name": "Peťo",
+		"games": 13,
+		"rating": 1110.2122850691671,
+		"winsWhite": 2,
+		"winsBlack": 1,
+		"losesWhite": 7,
+		"losesBlack": 3,
+		"drawWhite": 0,
+		"drawBlack": 0
+	},
+	{
+		"uid": 4,
+		"name": "Pavel",
+		"games": 36,
+		"rating": 1226.138832699248,
+		"winsWhite": 9,
+		"winsBlack": 8,
+		"losesWhite": 10,
+		"losesBlack": 9,
+		"drawWhite": 0,
+		"drawBlack": 0
+	},
+	{
+		"uid": 5,
+		"name": "Miro",
+		"games": 22,
+		"rating": 1279.5405223643154,
+		"winsWhite": 7,
+		"winsBlack": 8,
+		"losesWhite": 4,
+		"losesBlack": 2,
+		"drawWhite": 0,
+		"drawBlack": 1
+	},
+	{
+		"uid": 6,
+		"name": "Honza",
+		"games": 16,
+		"rating": 1054.7935093873318,
+		"winsWhite": 1,
+		"winsBlack": 0,
+		"losesWhite": 8,
+		"losesBlack": 6,
+		"drawWhite": 1,
+		"drawBlack": 0
+	},
+	{
+		"uid": 7,
+		"name": "Michal",
+		"games": 6,
+		"rating": 1095.3240445186502,
+		"winsWhite": 0,
+		"winsBlack": 0,
+		"losesWhite": 3,
+		"losesBlack": 3,
+		"drawWhite": 0,
+		"drawBlack": 0
+	},
+	{
+		"uid": 8,
+		"name": "Michal G.",
+		"games": 2,
+		"rating": 1193.4676004189246,
+		"winsWhite": 0,
+		"winsBlack": 1,
+		"losesWhite": 0,
+		"losesBlack": 1,
+		"drawWhite": 0,
+		"drawBlack": 0
+	},
+	{
+		"uid": 9,
+		"name": "Viktor",
+		"games": 1,
+		"rating": 1171.964116094384,
+		"winsWhite": 0,
+		"winsBlack": 0,
+		"losesWhite": 0,
+		"losesBlack": 1,
+		"drawWhite": 0,
+		"drawBlack": 0
+	}
+]
