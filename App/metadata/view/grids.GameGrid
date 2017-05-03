@@ -1,0 +1,415 @@
+{
+    "type": "Ext.grid.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "grids.gamegrid",
+        "designer|userClassName": "grids.GameGrid",
+        "height": "100%",
+        "maxWidth": 1000,
+        "name": "grids.GameGrid",
+        "selectable": [
+            "{",
+            "mode: 'single',",
+            "checkbox: true",
+            "}"
+        ],
+        "store": "GameRawData",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "name": "string",
+        "store": "store",
+        "width": "auto",
+        "maxWidth": "auto",
+        "selectable": "object"
+    },
+    "name": "MyGrid",
+    "designerId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede",
+    "viewControllerInstanceId": "871f527f-c451-407f-880c-f2439e68c45a",
+    "viewModelInstanceId": "fca3da24-0771-404e-8d73-1ec6f64395a0",
+    "cn": [
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "width": 50
+            },
+            "configAlternates": {
+                "docked": "string",
+                "width": "auto"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "a14d0ae9-5c9d-47a4-a971-ccbdc0104223"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "timestamp",
+                "docked": null,
+                "text": "Timestamp"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string",
+                "align": "string"
+            },
+            "name": "MyColumn3",
+            "designerId": "f324dd0b-4eb4-4738-bffb-277aee2105ad",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return Ext.Date.format(new Date(value), 'd.m.Y');"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "c55ea593-daa0-4458-b613-1949533564ca"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "playerWhiteRating",
+                "docked": null,
+                "format": "0",
+                "text": "Player White Rating",
+                "width": 158
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "format": "string",
+                "align": "string"
+            },
+            "name": "MyNumberColumn10",
+            "designerId": "cec48a92-c76d-4e51-b106-bf13225d6a2a"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "playerWhite",
+                "docked": null,
+                "text": "Player White"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string",
+                "align": "string"
+            },
+            "name": "MyColumn1",
+            "designerId": "a5500614-d4d0-4883-ad58-5524dde5a130",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "let store = Ext.getStore('PlayerData');",
+                            "let recordPos = store.find('uid', value);",
+                            "let rc = store.getAt(recordPos);",
+                            "if (rc){",
+                            "    return rc.get('name');",
+                            "}",
+                            "else{",
+                            "    console.error(\"Did not found \", value);",
+                            "    return \"Error\";",
+                            "}",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "93e60d91-9a21-4ecb-9d09-7e2940fa8fb9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "playerBlack",
+                "docked": null,
+                "text": "Player Black"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string",
+                "align": "string"
+            },
+            "name": "MyColumn5",
+            "designerId": "433aef72-9560-49c1-a7fd-4b236ad23e2e",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "let store = Ext.getStore('PlayerData');",
+                            "let recordPos = store.find('uid', value);",
+                            "let rc = store.getAt(recordPos);",
+                            "if (rc){",
+                            "    return rc.get('name');",
+                            "}",
+                            "else{",
+                            "    console.error(\"Did not found \", value);",
+                            "    return \"Error\";",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "446893e6-5819-4003-ad79-77a7d5bcb17b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "playerBlackRating",
+                "docked": null,
+                "format": "0",
+                "text": "Player Black Rating",
+                "width": 145
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "format": "string",
+                "align": "string"
+            },
+            "name": "MyNumberColumn12",
+            "designerId": "9331eda4-be76-4c19-bb86-961f4d1fba83"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "result",
+                "docked": null,
+                "text": "Won"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "align": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "de9f5a32-0bb3-490e-a5a2-0af7bb8f5292",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return value; //TODO change to the name of the player"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "c44eff1c-7b5e-4f8f-b1fa-19505d1d20f8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "timeout",
+                "docked": null,
+                "text": "Timeout"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "align": "string"
+            },
+            "name": "MyColumn6",
+            "designerId": "258bb24c-ae41-48ef-9d54-a104f1d51710",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "if (value === false){",
+                            "    return \"No\";",
+                            "}else{",
+                            "    return \"Yes\";",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "7dbe61f8-918d-4616-9d62-863e84266cf4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.plugin.RowOperations",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyRowOperations",
+            "designerId": "7e5eee3a-f1a8-408d-a24d-e18d6472aebe"
+        },
+        {
+            "type": "Ext.grid.plugin.CellEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyCellEditing",
+            "designerId": "c97d18b8-1a39-45c2-9e3f-3bf9e9a3bb2d"
+        }
+    ]
+}

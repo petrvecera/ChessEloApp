@@ -1,0 +1,70 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreLoadController",
+        "id": "storeLoadController"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "id": "string"
+    },
+    "name": "MyController",
+    "designerId": "edb8115d-75a0-47da-87ed-ff0fc1fa7d3e",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reloadAllStores",
+                "implHandler": [
+                    "Ext.getStore(\"GameRawData\").load();",
+                    "Ext.getStore(\"PlayerData\").load();",
+                    "Ext.getStore(\"PlayerData\").load();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "reloadAllStores",
+            "designerId": "2cf2f0e4-1177-45cd-acc4-16bd064115a3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "TODO: Figure out the best way to use global variables"
+                ],
+                "fn": "getServiceUrl",
+                "implHandler": [
+                    "",
+                    "let isTesting = false,",
+                    "    serviceUrl = isTesting ? '' : '192.168.88.176:8181';",
+                    "",
+                    "return serviceUrl;"
+                ]
+            },
+            "configAlternates": {
+                "designer|commentHeader": "comment",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getServiceUrl",
+            "designerId": "4d5c8b05-5f44-4ec8-804c-22f643ffca9e"
+        }
+    ]
+}

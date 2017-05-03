@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|commentHeader": [
+            "This model is created dynamically in the chart event function"
+        ],
+        "designer|userClassName": "ChartsData"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "designer|commentHeader": "comment"
+    },
+    "name": "MyModel",
+    "designerId": "06f564c6-82b8-47c3-b142-a8e171f2b0e6"
+}

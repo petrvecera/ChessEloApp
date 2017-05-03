@@ -1,0 +1,91 @@
+{
+    "name": "ProfiqChessApp",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.0.176",
+            "frameworkVersion": "6.5.1.576"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:52226/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Desktop (Auto Expand)",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            },
+            "viewportOrientation": "portrait"
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.0",
+    "xdsBuild": 127,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "modern65",
+    "viewOrderMap": {
+        "view": [
+            "2e7df700-2eb9-4d81-9313-52cf2d3f428b",
+            "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede",
+            "fca3da24-0771-404e-8d73-1ec6f64395a0",
+            "871f527f-c451-407f-880c-f2439e68c45a",
+            "20cd0446-3935-47fe-b19c-dcdcd45c24db",
+            "0831b947-3495-4a75-8cc3-c9dee1f8f625",
+            "68339302-3d89-4726-a226-12abb89e51d4",
+            "95bcabb6-63de-4acc-a390-b1861fcc5c0c",
+            "cb60b4ba-2dad-4f5e-84d2-e72359d1b71b",
+            "434a6218-dd52-4b0b-a9f2-8f6e99fd820e",
+            "182f6fb5-2748-4328-b241-bcf4e025d36b",
+            "03444f56-7d92-4251-8091-c037b1f68cc2",
+            "200e01c6-ae87-46af-ad9f-66b69512ef9e",
+            "7827932d-2760-4de2-85c3-462b983627fb",
+            "592da7a4-ce08-4f2a-b4bd-9d0837db1c0c",
+            "f75878bb-ea0f-4487-9d39-c21d3eb0e276",
+            "26c658a2-5ebd-4612-89a4-89fe957baf45",
+            "be848fa1-8782-405c-8d04-b1b847393d8b",
+            "23e7e4da-c797-4f1a-84cf-320f8c9504eb",
+            "fe4d9ffb-03b2-4807-a770-20b61ea8d543",
+            "04acbce3-27d8-49ec-93d5-c3daf501bde9",
+            "f013a06f-88fb-41b1-9e54-5e67009eb345",
+            "2a7ed042-a9f8-4774-a2ec-fe2e4b38f38a",
+            "2bc8c22a-f4c1-4f76-b7a4-01ca94b23b84"
+        ],
+        "store": [
+            "5e1dbe0c-ad95-44ba-802c-267575d98dc0",
+            "04bd77ec-b3e7-4205-9228-a4eb646455b5",
+            "576bbeb2-ea6f-4940-a374-064cc7992449",
+            "c98fb906-5912-438c-840c-c73b497cb23b"
+        ],
+        "controller": [
+            "edb8115d-75a0-47da-87ed-ff0fc1fa7d3e"
+        ],
+        "model": [
+            "a2e3473c-6f12-4e1a-925e-9eda90ecf526",
+            "e5faeed9-e604-4b65-b627-77c475a2d52f",
+            "06f564c6-82b8-47c3-b142-a8e171f2b0e6"
+        ],
+        "resource": [
+            "60e0b4be-d522-4731-95c5-0c12aa062531",
+            "8be0cabb-c569-427d-880e-fe6fe67e4e86",
+            "fa3692f7-5458-47a6-b65d-b5f71303de75",
+            "4a2cc71d-5524-4330-86fa-b4ea539c68c5"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

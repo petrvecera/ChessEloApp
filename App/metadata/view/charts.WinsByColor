@@ -1,0 +1,102 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|commentHeader": [
+            "This chart has dynamic store // it's not shown inside SA"
+        ],
+        "designer|userAlias": "charts.winsbycolor",
+        "designer|userClassName": "charts.WinsByColor"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "designer|commentHeader": "comment"
+    },
+    "name": "MyPanel",
+    "designerId": "f013a06f-88fb-41b1-9e54-5e67009eb345",
+    "viewControllerInstanceId": "be848fa1-8782-405c-8d04-b1b847393d8b",
+    "viewModelInstanceId": "26c658a2-5ebd-4612-89a4-89fe957baf45",
+    "cn": [
+        {
+            "type": "Ext.chart.PolarChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "colors": [
+                    "[ \"#bfd3f2\", \"#061b3d\"]"
+                ],
+                "height": "100%",
+                "store": "WinsByColor",
+                "width": "100%"
+            },
+            "configAlternates": {
+                "colors": "array",
+                "height": "auto",
+                "store": "store",
+                "width": "auto"
+            },
+            "name": "MyPieChart1",
+            "designerId": "06063e97-f056-4027-a63c-6118e2ba2d8b",
+            "isBuiltIn": true,
+            "iconCls": "icon-pie-chart",
+            "autoName": "MyPieChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.series.Pie",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "angleField": "wins",
+                        "label": [
+                            "{'field':'wins','display':'rotate','font':'24px Arial', 'color': 'white', 'font-weight': 'bold'}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "angleField": "datafield",
+                        "label": "object"
+                    },
+                    "name": "MyPieSeries",
+                    "designerId": "9a0dfeaa-39e6-4885-bb68-fbc7300812d5"
+                },
+                {
+                    "type": "Ext.chart.interactions.Rotate",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyRotateInteraction",
+                    "designerId": "a29c88ac-a55d-40ab-bee5-d13bdc4545d8"
+                },
+                {
+                    "type": "Ext.chart.legend.Legend",
+                    "reference": {
+                        "name": "legend",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "left"
+                    },
+                    "configAlternates": {
+                        "docked": "string"
+                    },
+                    "name": "MyLegend2",
+                    "designerId": "29ae618e-31e9-4451-b871-08620236d028"
+                }
+            ]
+        }
+    ]
+}

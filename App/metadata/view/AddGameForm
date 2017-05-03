@@ -1,0 +1,462 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|commentHeader": [
+            "Added Ext.Toast to the requires because we are using it in the viewcontroller"
+        ],
+        "designer|userAlias": "addgameform",
+        "designer|userClassName": "AddGameForm",
+        "maxWidth": 600,
+        "requires": [
+            "Ext.Toast"
+        ],
+        "title": "Add new match"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "maxWidth": "auto",
+        "title": "string",
+        "designer|commentHeader": "comment",
+        "requires": "typedarray"
+    },
+    "name": "MyFormPanel",
+    "designerId": "95bcabb6-63de-4acc-a390-b1861fcc5c0c",
+    "viewControllerInstanceId": "434a6218-dd52-4b0b-a9f2-8f6e99fd820e",
+    "viewModelInstanceId": "cb60b4ba-2dad-4f5e-84d2-e72359d1b71b",
+    "cn": [
+        {
+            "type": "Ext.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "timestampPicker",
+                "label": "Date of match",
+                "margin": 10,
+                "name": "timestamp",
+                "value": [
+                    "new Date()"
+                ]
+            },
+            "configAlternates": {
+                "value": "object",
+                "label": "string",
+                "margin": "auto",
+                "name": "string",
+                "id": "string"
+            },
+            "name": "MyDate1",
+            "designerId": "a6363010-9216-45cf-9159-e697512515a7",
+            "cn": [
+                {
+                    "type": "Ext.picker.Date",
+                    "reference": {
+                        "name": "picker",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "My Panel"
+                    },
+                    "configAlternates": {
+                        "title": "string"
+                    },
+                    "name": "MyDatePicker",
+                    "designerId": "2dd11274-f4d8-4121-92e3-64b5c6b0727d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "players_fieldset",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "layout": "string",
+                "id": "string"
+            },
+            "name": "MyFieldSet",
+            "designerId": "9821951b-1876-47c4-93f3-69c8dd1e4171",
+            "cn": [
+                {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "White Player",
+                        "displayField": "name",
+                        "editable": false,
+                        "itemId": "mycombobox",
+                        "label": "White Player",
+                        "layout|flex": 1,
+                        "margin": "0 10 0 0",
+                        "modelValidation": true,
+                        "name": "playerWhite",
+                        "queryMode": "local",
+                        "store": "PlayerData",
+                        "valueField": "uid"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "displayField": "auto",
+                        "label": "string",
+                        "layout|flex": "number",
+                        "margin": "auto",
+                        "store": "store",
+                        "valueField": "auto",
+                        "forceSelection": "boolean",
+                        "name": "string",
+                        "modelValidation": "boolean",
+                        "allowBlank": "boolean",
+                        "editable": "boolean",
+                        "queryMode": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "cf93d380-1b42-4d97-ab83-4e49588f7495",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMycomboboxChange",
+                                "implHandler": [
+                                    "this.comboChange();"
+                                ],
+                                "name": "change"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMycomboboxChange",
+                            "designerId": "72f0292e-e341-4d31-ae52-c1546da0284b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Black Player",
+                        "displayField": "name",
+                        "editable": false,
+                        "itemId": "mycombobox1",
+                        "label": "Black Player",
+                        "layout|flex": 1,
+                        "margin": "0 0 0 10",
+                        "modelValidation": true,
+                        "name": "playerBlack",
+                        "queryMode": "local",
+                        "store": "PlayerData",
+                        "valueField": "uid"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "displayField": "auto",
+                        "label": "string",
+                        "layout|flex": "number",
+                        "margin": "auto",
+                        "store": "store",
+                        "valueField": "auto",
+                        "forceSelection": "boolean",
+                        "name": "string",
+                        "modelValidation": "boolean",
+                        "allowBlank": "boolean",
+                        "editable": "boolean",
+                        "queryMode": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "d7f21ab4-b826-4cbe-8f57-a0b9c37f4e87",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMycombobox1Change",
+                                "implHandler": [
+                                    "this.comboChange();"
+                                ],
+                                "name": "change"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMycombobox1Change",
+                            "designerId": "85b15b97-8621-4fa8-973b-811563e3a0ab"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "layout": "string"
+            },
+            "name": "MyFieldSet1",
+            "designerId": "c6eb63f7-fc66-4a4f-a7ce-3590b684a5c0",
+            "cn": [
+                {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Won",
+                        "displayField": "text",
+                        "editable": false,
+                        "id": "wonCombo",
+                        "label": "Won",
+                        "layout|flex": 1,
+                        "margin": "0 10 0 0",
+                        "name": "result",
+                        "options": [
+                            "[",
+                            "    {text: 'White',  value: 'white'},",
+                            "    {text: 'Black', value: 'black'},",
+                            "    {text: 'Draw',  value: 'draw'}",
+                            "]"
+                        ],
+                        "value": [
+                            "white"
+                        ],
+                        "valueField": "value"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "displayField": "auto",
+                        "label": "string",
+                        "layout|flex": "number",
+                        "margin": "auto",
+                        "options": "array",
+                        "value": "object",
+                        "valueField": "auto",
+                        "name": "string",
+                        "editable": "boolean",
+                        "id": "string"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "0f375def-321a-4753-8fd5-069fda543dd6"
+                },
+                {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "editable": false,
+                        "label": "Run out of time",
+                        "labelMinWidth": 120,
+                        "layout|flex": 1,
+                        "margin": "0 0 0 10",
+                        "name": "timeout",
+                        "options": [
+                            "[{",
+                            "        text: 'No',",
+                            "    value: false",
+                            "},{",
+                            "    text: 'Yes',",
+                            "    value: true",
+                            "}",
+                            "",
+                            "]"
+                        ],
+                        "value": [
+                            "false"
+                        ],
+                        "valueField": "value"
+                    },
+                    "configAlternates": {
+                        "label": "string",
+                        "labelMinWidth": "auto",
+                        "layout|flex": "number",
+                        "margin": "auto",
+                        "name": "string",
+                        "options": "array",
+                        "value": "object",
+                        "valueField": "auto",
+                        "editable": "boolean"
+                    },
+                    "name": "MyComboBox3",
+                    "designerId": "246391f3-1c6e-4ffd-a22d-dd8ec9b955ad"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "confirm",
+                "margin": "0 100 0 100",
+                "text": "Add Match",
+                "ui": "confirm"
+            },
+            "configAlternates": {
+                "text": "string",
+                "designer|uiInterfaceName": "string",
+                "margin": "auto",
+                "ui": "string"
+            },
+            "name": "MyButton2",
+            "designerId": "cd33dce4-6244-4244-adf5-3078e19f63a2",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonAddMatchTap",
+                        "implHandler": [
+                            "let form = button.getParent();",
+                            "if (form.isValid()){",
+                            "",
+                            "    let store = Ext.getStore(\"GameRawData\"),",
+                            "        values = form.getValues ();",
+                            "",
+                            "",
+                            "    // Because we are allowing adding games to the history / future we need to correctly select the timestamp for the new record",
+                            "    // We get only a date and look into the old records and finds the empty timestamp slot",
+                            "",
+                            "    // Get the actual timestamp",
+                            "    let selectedDate = Ext.Date.format(new Date(values.timestamp), 'Y,m,d'),",
+                            "        nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time",
+                            "",
+                            "    // Search the games for new timestamp",
+                            "    while(this.isInGames(nwTimestamp, store)){",
+                            "        nwTimestamp++;",
+                            "    }",
+                            "",
+                            "    values.timestamp = nwTimestamp;",
+                            "    //console.log(\"New TimeStamp is:\" + values.timestamp);",
+                            "",
+                            "    let newRecord = store.add(values);",
+                            "",
+                            "    form.reset();",
+                            "",
+                            "    store.sync({",
+                            "        callback: function (records, operation, success) {",
+                            "            Enif.app.getController('storeLoadController').reloadAllStores();",
+                            "        },",
+                            "        success: function (batch, options) {",
+                            "            Ext.toast('Record sucesfully aded', 3000);",
+                            "        },",
+                            "        failure: function (batch, options) {",
+                            "            Ext.toast('Error while adding the record', 3000);",
+                            "        }",
+                            "    });",
+                            "",
+                            "",
+                            "}else{",
+                            "   Ext.Msg.alert('Error', 'The form is invalid!', Ext.emptyFn);",
+                            "}"
+                        ],
+                        "name": "tap",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onButtonAddMatchTap",
+                    "designerId": "a9a860b0-d131-4596-8d4c-01653721b837"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "comboChange",
+                "implHandler": [
+                    "let whiteName = Ext.first('combobox[name=playerWhite]').getSelection();",
+                    "let blackName = Ext.first('combobox[name=playerBlack]').getSelection();",
+                    "",
+                    "whiteName = whiteName ? whiteName.get('name') : \"\";",
+                    "blackName = blackName ? blackName.get('name') : \"\";",
+                    "",
+                    "",
+                    "",
+                    "Ext.first('#wonCombo').setOptions([",
+                    "    {",
+                    "        text: whiteName + \" (White)\",",
+                    "        value: 'white'",
+                    "    },",
+                    "    {",
+                    "        text: blackName + \" (Black)\",",
+                    "        value: 'black'",
+                    "    },",
+                    "    {",
+                    "        text: \"Draw\",",
+                    "        value: 'draw'",
+                    "    }",
+                    "]);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "comboChange",
+            "designerId": "74ad054d-a942-4acf-bb56-8ab34ad224ce"
+        }
+    ]
+}

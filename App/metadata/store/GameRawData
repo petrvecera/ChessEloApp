@@ -1,0 +1,118 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|commentHeader": [
+            "This are the data about the actual games played"
+        ],
+        "designer|userClassName": "GameRawData",
+        "model": "GamesData",
+        "storeId": "GameRawData"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "storeId": "string",
+        "model": "model",
+        "designer|commentHeader": "comment"
+    },
+    "name": "MyJsonStore",
+    "designerId": "5e1dbe0c-ad95-44ba-802c-267575d98dc0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "actionMethods": [
+                    "{\"create\":\"PUT\",\"read\":\"GET\",\"update\":\"POST\",\"destroy\":\"DELETE\"}"
+                ],
+                "url": "http://192.168.88.176:8181/games"
+            },
+            "configAlternates": {
+                "url": "string",
+                "actionMethods": "object"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "77e10822-7417-407f-84a9-5668913744ea",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader",
+                    "designerId": "1df69473-d751-4ac3-9efd-6d409b6f8f48"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonWriter",
+                    "designerId": "58ce96ec-ca5d-4abb-aa5e-6c4a7d7e28e3"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "Reaload the chart"
+                ],
+                "fn": "onGameDataChange",
+                "implHandler": [
+                    "Ext.getStore('EloRatinChart').load();"
+                ],
+                "name": "datachanged"
+            },
+            "configAlternates": {
+                "designer|commentHeader": "comment",
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onGameDataChange",
+            "designerId": "bf9e4034-7da0-454f-b82f-af43e788fc60"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreRemove",
+                "implHandler": [
+                    "store.sync();"
+                ],
+                "name": "remove"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onJsonstoreRemove",
+            "designerId": "bad3e925-3a7d-4f9b-bbeb-08378c65b2eb"
+        }
+    ]
+}

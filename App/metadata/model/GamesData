@@ -1,0 +1,204 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GamesData",
+        "idProperty": "uid"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "idProperty": "string",
+        "identifier": "string"
+    },
+    "name": "MyModel",
+    "designerId": "a2e3473c-6f12-4e1a-925e-9eda90ecf526",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "timestamp"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger5",
+            "designerId": "9a320f44-d056-47b9-953d-2922f08408a7"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "playerWhite"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger8",
+            "designerId": "dc77f4a8-0d2e-4c2f-ad4f-be509cc53d7b"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "playerWhiteRating"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber1",
+            "designerId": "9d0684bd-af02-4436-8c71-4a1c748e18a1"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "playerBlack"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger9",
+            "designerId": "1908cc4e-fac3-4249-9e15-ec039680bd06"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "playerBlackRating"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber2",
+            "designerId": "662981aa-34c9-4772-9452-9e949a9b5465"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "result"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString",
+            "designerId": "8a81d8e8-829d-4b7f-9968-f1aec9cd5ce9"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "timeout"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean",
+            "designerId": "96906a75-83c2-4bdd-be40-65692d50df6c"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "persist": false
+            },
+            "configAlternates": {
+                "name": "string",
+                "persist": "boolean"
+            },
+            "name": "field",
+            "designerId": "e2c943c2-2d01-4339-b4b0-98106b6ee843"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "uid"
+            },
+            "configAlternates": {
+                "name": "string",
+                "persist": "boolean"
+            },
+            "name": "field1",
+            "designerId": "a0ffba73-aee9-4116-96b4-3b0218decdff"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validators",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Player White",
+                "field": "playerWhite"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "field": "string"
+            },
+            "name": "MyPresenceValidation",
+            "designerId": "28ceeb78-db2c-4b8b-871d-ce802a518481"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validators",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Player Black",
+                "field": "playerBlack"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "field": "string"
+            },
+            "name": "MyPresenceValidation1",
+            "designerId": "3b7c7975-60a9-4378-9057-7a44e0eb613f"
+        }
+    ]
+}

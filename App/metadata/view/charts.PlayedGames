@@ -1,0 +1,126 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "charts.playedgames",
+        "designer|userClassName": "charts.PlayedGames",
+        "title": "Number of games",
+        "titleAlign": "center"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "titleAlign": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "7827932d-2760-4de2-85c3-462b983627fb",
+    "viewControllerInstanceId": "f75878bb-ea0f-4487-9d39-c21d3eb0e276",
+    "viewModelInstanceId": "592da7a4-ce08-4f2a-b4bd-9d0837db1c0c",
+    "cn": [
+        {
+            "type": "Ext.chart.PolarChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "colors": [
+                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                ],
+                "height": "100%",
+                "store": "PlayerData"
+            },
+            "configAlternates": {
+                "colors": "array",
+                "height": "auto",
+                "store": "store"
+            },
+            "name": "MyPieChart",
+            "designerId": "2523200e-34f7-42d0-8a00-fce7503a7978",
+            "isBuiltIn": true,
+            "iconCls": "icon-pie-chart",
+            "autoName": "MyPieChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.series.Pie",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "angleField": "games",
+                        "donut": 30,
+                        "highlightCfg": [
+                            "{ \"margin\":20 }"
+                        ],
+                        "label": [
+                            "{'field':'name','display':'rotate','font':'14px Arial'}"
+                        ],
+                        "style": [
+                            "{                stroke: 'white',",
+                            "                miterLimit: 10,",
+                            "                lineCap: 'miter',",
+                            "                lineWidth: 2}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "angleField": "datafield",
+                        "label": "object",
+                        "donut": "number",
+                        "highlightCfg": "object",
+                        "style": "object"
+                    },
+                    "name": "MyPieSeries1",
+                    "designerId": "b24a9298-48e6-4946-a50e-491dd6369547"
+                },
+                {
+                    "type": "Ext.chart.interactions.Rotate",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyRotateInteraction1",
+                    "designerId": "b5460f7d-de90-419f-9f26-09d350e9f9d6"
+                },
+                {
+                    "type": "Ext.chart.legend.Legend",
+                    "reference": {
+                        "name": "legend",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "axisLock": false,
+                        "docked": "left",
+                        "layout": "center"
+                    },
+                    "configAlternates": {
+                        "axisLock": "boolean",
+                        "docked": "string",
+                        "layout": "string"
+                    },
+                    "name": "MyLegend1",
+                    "designerId": "7402b130-7ce0-4a59-b5da-9c6285668d70"
+                },
+                {
+                    "type": "Ext.chart.interactions.ItemHighlight",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyItemHighlightInteraction",
+                    "designerId": "c8d87333-c316-41a6-903b-4201b48b2baf"
+                }
+            ]
+        }
+    ]
+}

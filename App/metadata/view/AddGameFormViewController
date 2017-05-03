@@ -1,0 +1,45 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "addgameform",
+        "designer|userClassName": "AddGameFormViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "434a6218-dd52-4b0b-a9f2-8f6e99fd820e",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "timeStamp",
+                    "store"
+                ],
+                "fn": "isInGames",
+                "implHandler": [
+                    "return store.getData().items.some(item => {return item.get('timestamp') === timeStamp; });",
+                    "    "
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "isInGames",
+            "designerId": "c66849be-d77b-4c17-8609-b4c7e6c3c0d8"
+        }
+    ]
+}

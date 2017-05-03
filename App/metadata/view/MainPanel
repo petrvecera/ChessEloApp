@@ -1,0 +1,362 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainpanel",
+        "designer|userClassName": "MainPanel",
+        "id": "mainTabPanel",
+        "maxWidth": "100%",
+        "tabBarPosition": "left"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "maxWidth": "auto",
+        "tabBarPosition": "string",
+        "id": "string",
+        "activeItem": "number"
+    },
+    "name": "MyTabPanel",
+    "designerId": "20cd0446-3935-47fe-b19c-dcdcd45c24db",
+    "viewControllerInstanceId": "68339302-3d89-4726-a226-12abb89e51d4",
+    "viewModelInstanceId": "0831b947-3495-4a75-8cc3-c9dee1f8f625",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "main_toolbar"
+                ],
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "cls": "typedarray"
+            },
+            "name": "MyToolbar",
+            "designerId": "5417fd3d-0e17-46c5-bcd7-3838233f0711",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "main_text"
+                        ],
+                        "html": "Chess ELO App by",
+                        "margin": "0 0 0 80"
+                    },
+                    "configAlternates": {
+                        "html": "string",
+                        "cls": "typedarray",
+                        "style": "string",
+                        "margin": "auto"
+                    },
+                    "name": "MyLabel",
+                    "designerId": "eabb163b-b46a-4698-a67c-7c33b2147eb2"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 40,
+                        "margin": "0 0 0 -10",
+                        "src": "https://www.profiq.com/wp-content/themes/profiq/images/logo.png",
+                        "width": 180
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "src": "uri",
+                        "style": "string",
+                        "width": "auto",
+                        "margin": "auto"
+                    },
+                    "name": "MyImg",
+                    "designerId": "102bbbd3-b26e-4b66-ab55-0a10ff1702ea"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "round",
+                        "height": 35,
+                        "margin": "0 0 0 50",
+                        "text": "Add New Game",
+                        "tooltip": "Add new game dilaog",
+                        "ui": "round",
+                        "width": 125
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "designer|uiInterfaceName": "string",
+                        "height": "auto",
+                        "margin": "auto",
+                        "ui": "string",
+                        "width": "auto",
+                        "tooltip": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "64bc71e6-fbe1-44b2-ab86-8e3f4cc12b6c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddGameTap",
+                                "implHandler": [
+                                    "//Ext.create('Enif.view.AddNewGame').show();",
+                                    "var dialog = Ext.create({",
+                                    "     xtype: 'dialog',",
+                                    "",
+                                    "    items: [",
+                                    "        {xtype: 'addgameform'}",
+                                    "    ],",
+                                    "",
+                                    "",
+                                    "     buttons: {",
+                                    "         close: function() {  // standard button (see below)",
+                                    "             dialog.destroy();",
+                                    "",
+                                    "         }",
+                                    "     }",
+                                    " });",
+                                    "",
+                                    " dialog.show();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onAddGameTap",
+                            "designerId": "49593370-b19d-4fd4-97cb-88de7d0a414d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "round",
+                        "height": 35,
+                        "iconCls": "x-fa fa-refresh",
+                        "margin": "0 0 0 10",
+                        "tooltip": "Refresh the data",
+                        "ui": "round"
+                    },
+                    "configAlternates": {
+                        "designer|uiInterfaceName": "string",
+                        "height": "auto",
+                        "iconCls": "string",
+                        "margin": "auto",
+                        "ui": "string",
+                        "tooltip": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "50de5cd1-560a-4759-9b51-f1fa7ea0e0d5",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshButtonTap",
+                                "implHandler": [
+                                    "Enif.app.getController('storeLoadController').reloadAllStores();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshButtonTap",
+                            "designerId": "f99862bb-0a46-4eab-8391-226cc9b31607"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "layout": "vbox",
+                "maxWidth": 1000,
+                "title": "Players",
+                "width": 1200
+            },
+            "configAlternates": {
+                "height": "auto",
+                "layout": "string",
+                "maxWidth": "auto",
+                "title": "string",
+                "width": "auto"
+            },
+            "name": "MyContainer",
+            "designerId": "e6219dd0-1099-4984-931f-2324ffdd1cbe",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Players",
+                        "minHeight": 380,
+                        "title": "Players"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "title": "string",
+                        "minHeight": "auto"
+                    },
+                    "name": "grids.playergrids",
+                    "designerId": "0945d88b-34f7-4a53-b418-789f7cf527f9",
+                    "masterInstanceId": "2e7df700-2eb9-4d81-9313-52cf2d3f428b"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Player page charts",
+                        "layout": "hbox",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "layout|flex": "number",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "e90047b3-f65a-4019-af80-8a993b5cb5ab",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "charts.playedgames",
+                            "designerId": "d5eb3424-fa60-4ca3-b062-94639a7437c3",
+                            "masterInstanceId": "7827932d-2760-4de2-85c3-462b983627fb"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "title": "Wins by color",
+                                "titleAlign": "center"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "title": "string",
+                                "titleAlign": "string"
+                            },
+                            "name": "charts.winsbycolor",
+                            "designerId": "97f5e92f-0e2f-4933-822c-78b6ae50a94c",
+                            "masterInstanceId": "f013a06f-88fb-41b1-9e54-5e67009eb345"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Games"
+            },
+            "configAlternates": {
+                "title": "string"
+            },
+            "name": "grids.gamegrid",
+            "designerId": "0fea38ab-d387-4672-885b-435554ea8443",
+            "masterInstanceId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Elo Rating Chart"
+            },
+            "configAlternates": {
+                "title": "string"
+            },
+            "name": "charts.elorating",
+            "designerId": "e67a0562-6fdb-47d3-9a33-4766b4eb5b14",
+            "masterInstanceId": "182f6fb5-2748-4328-b241-bcf4e025d36b"
+        }
+    ]
+}

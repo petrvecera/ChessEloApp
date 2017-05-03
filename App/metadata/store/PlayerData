@@ -1,0 +1,111 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "PlayerData",
+        "model": "PlayerData",
+        "storeId": "PlayerData"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "storeId": "string",
+        "model": "model"
+    },
+    "name": "GameRawData1",
+    "designerId": "576bbeb2-ea6f-4940-a374-064cc7992449",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "actionMethods": [
+                    "{\"create\":\"PUT\",\"read\":\"GET\",\"update\":\"POST\",\"destroy\":\"DELETE\"}"
+                ],
+                "url": "http://192.168.88.176:8181/players"
+            },
+            "configAlternates": {
+                "url": "string",
+                "actionMethods": "object"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "aee3b1f3-10aa-4c7b-a442-c6da1c8b1e45",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader",
+                    "designerId": "364f0a55-f050-437b-85bb-f0cb76157fae"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonWriter",
+                    "designerId": "6426872d-b236-46b3-844d-f90fcf0f55a3"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreDataChange",
+                "implHandler": [
+                    "",
+                    "// Player data changed, recalculate values for Wins Store",
+                    "",
+                    "",
+                    "let playerData = store.getData(),",
+                    "    winsStore = Ext.getStore('WinsByColor'),",
+                    "    winsWhite = 0,",
+                    "    winsBlack = 0;",
+                    "",
+                    "if (!playerData) return;",
+                    "",
+                    "for(let i =0; i < playerData.getCount(); i++){",
+                    "    winsWhite += playerData.getAt(i).get('winsWhite');",
+                    "    winsBlack += playerData.getAt(i).get('winsBlack');",
+                    "}",
+                    "",
+                    "winsStore.setData([{",
+                    "    color: 'White',",
+                    "    wins: winsWhite",
+                    "},{",
+                    "    color: 'Black',",
+                    "    wins: winsBlack",
+                    "}]);",
+                    ""
+                ],
+                "name": "datachanged"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onJsonstoreDataChange",
+            "designerId": "ec450c34-3d52-4b07-a5b2-c35a9041558b"
+        }
+    ]
+}

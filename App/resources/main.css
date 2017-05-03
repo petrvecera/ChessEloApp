@@ -1,0 +1,13 @@
+.main_toolbar {
+    background-color: rgb(2, 78, 109);
+}
+
+.main_text {    
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.custom_line {    
+    border-right: 3px solid rgb(233,233,233);
+}

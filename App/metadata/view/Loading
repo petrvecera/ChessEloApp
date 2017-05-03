@@ -1,0 +1,30 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "loading",
+        "designer|userClassName": "Loading",
+        "height": "100%",
+        "html": "<div class=\"spinner\">   <div class=\"rect1\"></div>   <div class=\"rect2\"></div>   <div class=\"rect3\"></div>   <div class=\"rect4\"></div>   <div class=\"rect5\"></div> </div>",
+        "id": "loading",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "html": "string",
+        "height": "auto",
+        "id": "string",
+        "width": "auto",
+        "designer|initialView": "boolean"
+    },
+    "name": "Loading1",
+    "designerId": "23e7e4da-c797-4f1a-84cf-320f8c9504eb",
+    "viewControllerInstanceId": "7574ecd9-3b93-48cc-965d-c28a99dffeeb",
+    "viewModelInstanceId": "cfdfdb5b-30c9-40e0-a862-c8020b2e6760"
+}

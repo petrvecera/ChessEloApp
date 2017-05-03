@@ -1,0 +1,261 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|commentHeader": [
+            "Series for this chart are generated in the ViewController dynamicall",
+            "Don't forget to add series to the requires (needed for the production build)",
+            "FYI: The data are dynamic - not shown inside SA canvas"
+        ],
+        "designer|userAlias": "charts.elorating",
+        "designer|userClassName": "charts.EloRating",
+        "requires": [
+            "Ext.chart.series.Line"
+        ]
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "designer|commentHeader": "comment",
+        "requires": "typedarray"
+    },
+    "name": "MyContainer",
+    "designerId": "182f6fb5-2748-4328-b241-bcf4e025d36b",
+    "viewControllerInstanceId": "200e01c6-ae87-46af-ad9f-66b69512ef9e",
+    "viewModelInstanceId": "03444f56-7d92-4251-8091-c037b1f68cc2",
+    "cn": [
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "colors": [
+                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                ],
+                "height": "90%",
+                "innerPadding": [
+                    "{\"top\":10,\"left\":10,\"right\":10,\"bottom\":10}"
+                ],
+                "itemId": "mylinechart",
+                "margin": 25,
+                "padding": 20,
+                "store": "EloRatinChart",
+                "width": "90%"
+            },
+            "configAlternates": {
+                "colors": "array",
+                "height": "auto",
+                "margin": "auto",
+                "store": "store",
+                "width": "auto",
+                "itemId": "string",
+                "padding": "auto",
+                "innerPadding": "object"
+            },
+            "name": "MyLineChart",
+            "designerId": "7e277f95-ade1-4d10-9e78-d280d95f668d",
+            "isBuiltIn": true,
+            "iconCls": "icon-line-chart",
+            "autoName": "MyLineChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "timestamp"
+                        ],
+                        "title": "Dates"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "title": "string"
+                    },
+                    "name": "MyCategoryAxis",
+                    "designerId": "e7984f0b-cd06-4540-90f8-7cb7a3fe64d9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "axis",
+                                    "label",
+                                    "layoutContext",
+                                    "lastLabel"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "return Ext.Date.format(new Date(label), 'd.m.y');"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "renderer",
+                            "designerId": "bbd8638b-4511-4d6b-b2ef-b00d77d501f9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Elo Rating Left",
+                        "fields": [
+                            "player0Rating",
+                            "player1Rating",
+                            "player2Rating",
+                            "player3Rating",
+                            "player4Rating",
+                            "player5Rating",
+                            "player6Rating",
+                            "player7Rating",
+                            "player8Rating"
+                        ],
+                        "grid": [
+                            "{",
+                            "    odd: {",
+                            "        line: '#e8e8e8'",
+                            "    }",
+                            "}"
+                        ],
+                        "margin": 10,
+                        "position": "right",
+                        "title": "Elo rating"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "grid": "object",
+                        "margin": "number",
+                        "position": "string",
+                        "title": "string",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyNumericAxis",
+                    "designerId": "6c9cbf91-e9bb-4521-8498-aa7b6ace8d6b"
+                },
+                {
+                    "type": "Ext.chart.legend.Legend",
+                    "reference": {
+                        "name": "legend",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "bottom"
+                    },
+                    "configAlternates": {
+                        "docked": "string"
+                    },
+                    "name": "MyLegend",
+                    "designerId": "cbbbea1e-3ef8-47d8-9b8a-fd80f5907d28"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMylinechartInitialize",
+                        "implHandler": [
+                            "let playerData = Ext.getStore(\"PlayerData\").getData();",
+                            "    noPlayers = playerData.length;",
+                            "",
+                            "for(let i= 0; i< noPlayers; i++){",
+                            "    let cl = this.getColor(i);",
+                            "    component.addSeries({",
+                            "        type: 'line',",
+                            "        colors: [",
+                            "            cl",
+                            "        ],",
+                            "        smooth: true,",
+                            "        style: {",
+                            "            stroke: cl,",
+                            "            lineWidth: 3",
+                            "        },",
+                            "        marker: {",
+                            "            type: 'circle',",
+                            "            radius: 1",
+                            "        },",
+                            "        xField: 'timestamp',",
+                            "        yField: 'player'+ i +'Rating',",
+                            "        title: playerData.getAt(i).get('name'),",
+                            "        tooltip: {",
+                            "          trackMouse: true,",
+                            "          width: 100,",
+                            "          height: 28,",
+                            "          renderer: function (toolTip, record, ctx) {",
+                            "              toolTip.setHtml(record.get('player' + ctx.field.replace(/[^0-9]/g,'') + 'Name') + ': ' + Math.round(record.get(ctx.field)));",
+                            "          }",
+                            "        }",
+                            "    });",
+                            "}",
+                            "",
+                            ""
+                        ],
+                        "name": "initialize",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onMylinechartInitialize",
+                    "designerId": "eff70d50-ebdd-4b59-b277-fbc3ea7d1e9e"
+                },
+                {
+                    "type": "Ext.chart.interactions.CrossZoom",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyCrossZoomInteraction",
+                    "designerId": "9281a691-792f-456c-9d7d-e3ce68826390"
+                },
+                {
+                    "type": "Ext.chart.interactions.ItemInfo",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "enabled": false
+                    },
+                    "configAlternates": {
+                        "enabled": "boolean"
+                    },
+                    "name": "MyItemInfoInteraction",
+                    "designerId": "5ccc7003-c55d-4f7d-ade2-cde73a5789bf"
+                }
+            ]
+        }
+    ]
+}

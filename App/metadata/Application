@@ -1,0 +1,85 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "StoreLoadController"
+        ],
+        "models": [
+            "PlayerData",
+            "ChartsData"
+        ],
+        "name": "Enif",
+        "requires": [
+            "Enif.controller.StoreLoadController"
+        ],
+        "stores": [
+            "GameRawData",
+            "PlayerData",
+            "EloRatinChart",
+            "WinsByColor"
+        ],
+        "views": [
+            "grids.PlayerGrids",
+            "grids.GameGrid",
+            "MainPanel",
+            "AddGameForm",
+            "charts.EloRating",
+            "charts.PlayedGames",
+            "charts.WinsByColor",
+            "Loading"
+        ]
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray",
+        "controllers": "typedarray",
+        "requires": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "We need data from Person store for calculation in the views, load store before loading views and other stores"
+                ],
+                "fn": "launch",
+                "implHandler": [
+                    "",
+                    "",
+                    "Ext.getStore('PlayerData').load({",
+                    "    callback: function (records, operation, success) {",
+                    "        if(success){",
+                    "            Ext.first('#loading').destroy();",
+                    "            Ext.create('Enif.view.MainPanel', {fullscreen: true});",
+                    "        } else {",
+                    "            console.error('Error loading the application');",
+                    "            Ext.toast('Error loading the application', 55000);",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|commentHeader": "comment",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "865d9b34-daaf-4229-9ac3-3fc7ca1c5383"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|commentHeader": [
+            "We don't know how many players we have -> we need to create models dynamically for the store"
+        ],
+        "designer|userClassName": "EloRatinChart",
+        "model": "ChartsData",
+        "storeId": "EloRatinChart"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "storeId": "string",
+        "model": "model",
+        "designer|commentHeader": "comment"
+    },
+    "name": "GameRawData1",
+    "designerId": "04bd77ec-b3e7-4205-9228-a4eb646455b5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "actionMethods": [
+                    "{\"create\":\"PUT\",\"read\":\"GET\",\"update\":\"POST\",\"destroy\":\"DELETE\"}"
+                ],
+                "url": "http://192.168.88.176:8181/chartGames"
+            },
+            "configAlternates": {
+                "url": "string",
+                "actionMethods": "object"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "673b3657-6d6e-4da3-b145-51b29ecc7fd1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader",
+                    "designerId": "9672817e-810f-4ed3-8c5a-d4b91d4dfc14"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonWriter",
+                    "designerId": "4d2d2ba8-2127-4e26-aa01-fa23a983d771"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "let noPlayers = Ext.getStore(\"PlayerData\").getData().length;",
+                    "let customFields = [{",
+                    "\tname: 'timestamp',",
+                    "\ttype: 'int'",
+                    "}];",
+                    "",
+                    "for(let i= 0; i< noPlayers; i++){",
+                    "\tcustomFields.push({",
+                    "\t\tname: 'player' + i + 'Name',",
+                    "\t\ttype: 'string'",
+                    " \t}, {",
+                    "        name: 'player' + i + 'Rating',",
+                    "        type: 'int'",
+                    "    });",
+                    "}",
+                    "",
+                    "store.getModel().addFields(customFields);"
+                ],
+                "name": "beforeload"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onJsonstoreBeforeLoad",
+            "designerId": "d9523ac8-f15b-4065-81f3-720575a44224"
+        }
+    ]
+}

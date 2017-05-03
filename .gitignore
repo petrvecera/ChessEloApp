@@ -3,6 +3,22 @@ logs
 *.log
 npm-debug.log*
 
+# ExtJS 
+App/ext/*
+App/build/*
+App/.arch-internal-preview.css
+App/dist
+App/cache
+App/.DS_Store
+App/.idea/
+App/bootstrap.json
+App/bootstrap.jsonp
+App/sass/example/bootstrap.json
+App/sass/example/bootstrap.jsonp
+App/sass/example/bootstrap.js
+App/.architect
+
+
 # Runtime data
 pids
 *.pid
