@@ -19,6 +19,8 @@ App/sass/example/bootstrap.js
 App/.architect
 
 
+Backend/node_modules/*
+
 # Runtime data
 pids
 *.pid
