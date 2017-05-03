@@ -88,6 +88,7 @@ Ext.define('Enif.view.MainPanel', {
         {
             xtype: 'container',
             title: 'Players',
+            iconCls: 'x-fa fa-users',
             height: '100%',
             width: 1200,
             maxWidth: 1000,
@@ -119,11 +120,13 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'grids.gamegrid',
-            title: 'Games'
+            title: 'Games',
+            iconCls: 'x-fa fa-trophy'
         },
         {
             xtype: 'charts.elorating',
-            title: 'Elo Rating Chart'
+            title: 'Elo Rating Chart',
+            iconCls: 'x-fa fa-line-chart'
         }
     ]
 

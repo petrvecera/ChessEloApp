@@ -15,5 +15,19 @@
 
 Ext.define('Enif.view.grids.GameGridViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.grids.gamegrid'
+    alias: 'controller.grids.gamegrid',
+
+    getUserName: function(value) {
+        let store = Ext.getStore('PlayerData'),
+            recordPos = store.find('uid', value),
+            rc = store.getAt(recordPos);
+
+        if(rc){
+            return rc.get('name');
+        } else {
+            console.error("Did not found ", value);
+            return "Error";
+        }
+    }
+
 });

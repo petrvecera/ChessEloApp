@@ -11,3 +11,13 @@
 .custom_line {    
     border-right: 3px solid rgb(233,233,233);
 }
+
+.black_cell {
+    background-color: rgb(65, 76, 81);
+    font-weight: bold;
+    color: white;
+}
+
+.white_cell {
+    font-weight: bold;
+}

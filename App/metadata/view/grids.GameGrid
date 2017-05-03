@@ -172,16 +172,9 @@
                         ],
                         "fn": "renderer",
                         "implHandler": [
-                            "let store = Ext.getStore('PlayerData');",
-                            "let recordPos = store.find('uid', value);",
-                            "let rc = store.getAt(recordPos);",
-                            "if (rc){",
-                            "    return rc.get('name');",
-                            "}",
-                            "else{",
-                            "    console.error(\"Did not found \", value);",
-                            "    return \"Error\";",
-                            "}",
+                            "",
+                            "cell.setCls('white_cell');",
+                            "return this.up('grid').getController().getUserName(value);",
                             ""
                         ]
                     },
@@ -235,16 +228,8 @@
                         ],
                         "fn": "renderer",
                         "implHandler": [
-                            "let store = Ext.getStore('PlayerData');",
-                            "let recordPos = store.find('uid', value);",
-                            "let rc = store.getAt(recordPos);",
-                            "if (rc){",
-                            "    return rc.get('name');",
-                            "}",
-                            "else{",
-                            "    console.error(\"Did not found \", value);",
-                            "    return \"Error\";",
-                            "}"
+                            "cell.setCls('black_cell');",
+                            "return this.up('grid').getController().getUserName(value);"
                         ]
                     },
                     "configAlternates": {
@@ -322,7 +307,19 @@
                         ],
                         "fn": "renderer",
                         "implHandler": [
-                            "return value; //TODO change to the name of the player"
+                            "let name = value;",
+                            "",
+                            "if(value == \"white\"){",
+                            "    name = this.up('grid').getController().getUserName(record.getData().playerWhite);",
+                            "    cell.setCls('white_cell');",
+                            "}else if (value == \"black\") {",
+                            "    name = this.up('grid').getController().getUserName(record.getData().playerBlack);",
+                            "    cell.setCls('black_cell');",
+                            "}else if (value == 'draw'){",
+                            "    name = \"draw\";",
+                            "}",
+                            "",
+                            "return name;"
                         ]
                     },
                     "configAlternates": {

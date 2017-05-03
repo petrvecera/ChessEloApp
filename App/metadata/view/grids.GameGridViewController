@@ -13,5 +13,40 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "871f527f-c451-407f-880c-f2439e68c45a"
+    "designerId": "871f527f-c451-407f-880c-f2439e68c45a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "getUserName",
+                "implHandler": [
+                    "let store = Ext.getStore('PlayerData'),",
+                    "    recordPos = store.find('uid', value),",
+                    "    rc = store.getAt(recordPos);",
+                    "",
+                    "if(rc){",
+                    "    return rc.get('name');",
+                    "} else {",
+                    "    console.error(\"Did not found \", value);",
+                    "    return \"Error\";",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getUserName",
+            "designerId": "8d6e2462-9a5a-4434-8fdc-fb61afa2e386"
+        }
+    ]
 }

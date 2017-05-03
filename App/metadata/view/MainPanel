@@ -226,6 +226,7 @@
             "codeClass": null,
             "userConfig": {
                 "height": "100%",
+                "iconCls": "x-fa fa-users",
                 "layout": "vbox",
                 "maxWidth": 1000,
                 "title": "Players",
@@ -236,10 +237,18 @@
                 "layout": "string",
                 "maxWidth": "auto",
                 "title": "string",
-                "width": "auto"
+                "width": "auto",
+                "iconCls": "string"
             },
             "name": "MyContainer",
             "designerId": "e6219dd0-1099-4984-931f-2324ffdd1cbe",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "iconCls",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "linkedinstance",
@@ -332,13 +341,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "iconCls": "x-fa fa-trophy",
                 "title": "Games"
             },
             "configAlternates": {
-                "title": "string"
+                "title": "string",
+                "iconCls": "string"
             },
             "name": "grids.gamegrid",
             "designerId": "0fea38ab-d387-4672-885b-435554ea8443",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "iconCls",
+                    "type": "string"
+                }
+            ],
             "masterInstanceId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede"
         },
         {
@@ -349,13 +367,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "iconCls": "x-fa fa-line-chart",
                 "title": "Elo Rating Chart"
             },
             "configAlternates": {
-                "title": "string"
+                "title": "string",
+                "iconCls": "string"
             },
             "name": "charts.elorating",
             "designerId": "e67a0562-6fdb-47d3-9a33-4766b4eb5b14",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "iconCls",
+                    "type": "string"
+                }
+            ],
             "masterInstanceId": "182f6fb5-2748-4328-b241-bcf4e025d36b"
         }
     ]

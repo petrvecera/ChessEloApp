@@ -18,12 +18,16 @@ Ext.define('Enif.view.grids.GameGrid', {
     alias: 'widget.grids.gamegrid',
 
     requires: [
+        'Enif.store.GameRawData',
+        'Enif.view.grids.GameGridViewController',
         'Enif.view.grids.GameGridViewModel',
+        'Ext.grid.column.Number',
         'Ext.grid.column.RowNumberer',
-        'Ext.grid.plugin.RowOperations',
-        'Ext.grid.plugin.CellEditing'
+        'Ext.grid.plugin.CellEditing',
+        'Ext.grid.plugin.RowOperations'
     ],
 
+    controller: 'grids.gamegrid',
     viewModel: {
         type: 'grids.gamegrid'
     },
@@ -62,16 +66,9 @@ Ext.define('Enif.view.grids.GameGrid', {
         {
             xtype: 'gridcolumn',
             renderer: function(value, record, dataIndex, cell, column) {
-                let store = Ext.getStore('PlayerData');
-                let recordPos = store.find('uid', value);
-                let rc = store.getAt(recordPos);
-                if (rc){
-                    return rc.get('name');
-                }
-                else{
-                    console.error("Did not found ", value);
-                    return "Error";
-                }
+
+                cell.setCls('white_cell');
+                return this.up('grid').getController().getUserName(value);
 
             },
             align: 'center',
@@ -81,16 +78,8 @@ Ext.define('Enif.view.grids.GameGrid', {
         {
             xtype: 'gridcolumn',
             renderer: function(value, record, dataIndex, cell, column) {
-                let store = Ext.getStore('PlayerData');
-                let recordPos = store.find('uid', value);
-                let rc = store.getAt(recordPos);
-                if (rc){
-                    return rc.get('name');
-                }
-                else{
-                    console.error("Did not found ", value);
-                    return "Error";
-                }
+                cell.setCls('black_cell');
+                return this.up('grid').getController().getUserName(value);
             },
             align: 'center',
             dataIndex: 'playerBlack',
@@ -107,7 +96,19 @@ Ext.define('Enif.view.grids.GameGrid', {
         {
             xtype: 'gridcolumn',
             renderer: function(value, record, dataIndex, cell, column) {
-                return value; //TODO change to the name of the player
+                let name = value;
+
+                if(value == "white"){
+                    name = this.up('grid').getController().getUserName(record.getData().playerWhite);
+                    cell.setCls('white_cell');
+                }else if (value == "black") {
+                    name = this.up('grid').getController().getUserName(record.getData().playerBlack);
+                    cell.setCls('black_cell');
+                }else if (value == 'draw'){
+                    name = "draw";
+                }
+
+                return name;
             },
             align: 'center',
             dataIndex: 'result',
