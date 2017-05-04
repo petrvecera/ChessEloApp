@@ -9,13 +9,14 @@
         "designer|commentHeader": [
             "Added Ext.Toast to the requires because we are using it in the viewcontroller"
         ],
-        "designer|userAlias": "addgameform",
-        "designer|userClassName": "AddGameForm",
+        "designer|userAlias": "forms.addgameform",
+        "designer|userClassName": "forms.AddGameForm",
         "maxWidth": 600,
         "requires": [
             "Ext.Toast"
         ],
-        "title": "Add new match"
+        "title": "Add new match",
+        "titleAlign": "center"
     },
     "configAlternates": {
         "designer|userAlias": "string",
@@ -23,7 +24,8 @@
         "maxWidth": "auto",
         "title": "string",
         "designer|commentHeader": "comment",
-        "requires": "typedarray"
+        "requires": "typedarray",
+        "titleAlign": "string"
     },
     "name": "MyFormPanel",
     "designerId": "95bcabb6-63de-4acc-a390-b1861fcc5c0c",
@@ -337,7 +339,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|uiInterfaceName": "confirm",
-                "margin": "0 100 0 100",
+                "margin": "0 100 20 100",
+                "padding": "",
                 "text": "Add Match",
                 "ui": "confirm"
             },
@@ -345,7 +348,8 @@
                 "text": "string",
                 "designer|uiInterfaceName": "string",
                 "margin": "auto",
-                "ui": "string"
+                "ui": "string",
+                "padding": "auto"
             },
             "name": "MyButton2",
             "designerId": "cd33dce4-6244-4244-adf5-3078e19f63a2",

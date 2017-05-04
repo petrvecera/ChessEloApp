@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewModel",
+    "type": "Ext.app.ViewController",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "addgameform",
-        "designer|userClassName": "AddGameFormViewModel"
+        "designer|userAlias": "forms.addgamedialog",
+        "designer|userClassName": "forms.AddGameDialogViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "cb60b4ba-2dad-4f5e-84d2-e72359d1b71b"
+    "designerId": "57cfbda9-45da-4f54-91c8-9dd329b80697"
 }

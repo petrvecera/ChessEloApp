@@ -18,13 +18,11 @@ Ext.define('Enif.view.grids.GameGrid', {
     alias: 'widget.grids.gamegrid',
 
     requires: [
-        'Enif.store.GameRawData',
-        'Enif.view.grids.GameGridViewController',
         'Enif.view.grids.GameGridViewModel',
-        'Ext.grid.column.Number',
+        'Enif.view.grids.GameGridViewController',
         'Ext.grid.column.RowNumberer',
-        'Ext.grid.plugin.CellEditing',
-        'Ext.grid.plugin.RowOperations'
+        'Ext.grid.plugin.RowOperations',
+        'Ext.grid.plugin.CellEditing'
     ],
 
     controller: 'grids.gamegrid',
