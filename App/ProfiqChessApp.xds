@@ -24,7 +24,7 @@
         "genTimestamps": false,
         "cacheBust": false,
         "buildShouldOverwriteIndex": true,
-        "generateArchitectVersion": true,
+        "generateArchitectVersion": false,
         "installStatus": "Not Installed",
         "lastBuildSelection": {
             "value": "webBuild",
