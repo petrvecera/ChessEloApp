@@ -21,7 +21,7 @@ Ext.define('Enif.view.MainPanelViewController', {
     alias: 'controller.mainpanel',
 
     requires: [
-        'Ext.route.Route'
+        'Enif.view.forms.AddGameDialog'
     ],
 
     routes: {
@@ -51,23 +51,6 @@ Ext.define('Enif.view.MainPanelViewController', {
 
     onAddGameTap: function(button, e, eOpts) {
         Ext.create('Enif.view.forms.AddGameDialog').show();
-        // var dialog = Ext.create({
-        //     xtype: 'dialog',
-
-        //     items: [
-        //         {xtype: 'addgameform'}
-        //     ],
-
-
-        //     buttons: {
-        //         close: function() {  // standard button (see below)
-        //             dialog.destroy();
-
-        //         }
-        //     }
-        //  });
-
-        //  dialog.show();
     },
 
     onRefreshButtonTap: function(button, e, eOpts) {

@@ -131,24 +131,7 @@
                             "userConfig": {
                                 "fn": "onAddGameTap",
                                 "implHandler": [
-                                    "Ext.create('Enif.view.forms.AddGameDialog').show();",
-                                    "// var dialog = Ext.create({",
-                                    "//     xtype: 'dialog',",
-                                    "",
-                                    "//     items: [",
-                                    "//         {xtype: 'addgameform'}",
-                                    "//     ],",
-                                    "",
-                                    "",
-                                    "//     buttons: {",
-                                    "//         close: function() {  // standard button (see below)",
-                                    "//             dialog.destroy();",
-                                    "",
-                                    "//         }",
-                                    "//     }",
-                                    "//  });",
-                                    "",
-                                    "//  dialog.show();"
+                                    "Ext.create('Enif.view.forms.AddGameDialog').show();"
                                 ],
                                 "name": "tap",
                                 "scope": "me"
