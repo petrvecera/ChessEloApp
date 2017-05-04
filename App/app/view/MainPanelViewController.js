@@ -21,7 +21,8 @@ Ext.define('Enif.view.MainPanelViewController', {
     alias: 'controller.mainpanel',
 
     requires: [
-        'Ext.route.Route'
+        'Ext.route.Route',
+        'Enif.view.forms.AddGameDialog'
     ],
 
     routes: {
