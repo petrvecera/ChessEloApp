@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.1.576"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:53692/",
+        "urlPrefix": "http://localhost:60760/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -62,7 +62,10 @@
             "04acbce3-27d8-49ec-93d5-c3daf501bde9",
             "f013a06f-88fb-41b1-9e54-5e67009eb345",
             "2a7ed042-a9f8-4774-a2ec-fe2e4b38f38a",
-            "2bc8c22a-f4c1-4f76-b7a4-01ca94b23b84"
+            "2bc8c22a-f4c1-4f76-b7a4-01ca94b23b84",
+            "19e403b2-96af-45b1-a181-cb7ea4171355",
+            "18b9f3ed-dddf-467e-8b53-9e0d902af9be",
+            "57cfbda9-45da-4f54-91c8-9dd329b80697"
         ],
         "store": [
             "5e1dbe0c-ad95-44ba-802c-267575d98dc0",

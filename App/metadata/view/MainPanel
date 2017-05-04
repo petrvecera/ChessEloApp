@@ -19,7 +19,8 @@
         "maxWidth": "auto",
         "tabBarPosition": "string",
         "id": "string",
-        "activeItem": "number"
+        "activeItem": "number",
+        "reference": "string"
     },
     "name": "MyTabPanel",
     "designerId": "20cd0446-3935-47fe-b19c-dcdcd45c24db",
@@ -130,24 +131,24 @@
                             "userConfig": {
                                 "fn": "onAddGameTap",
                                 "implHandler": [
-                                    "//Ext.create('Enif.view.AddNewGame').show();",
-                                    "var dialog = Ext.create({",
-                                    "     xtype: 'dialog',",
+                                    "Ext.create('Enif.view.forms.AddGameDialog').show();",
+                                    "// var dialog = Ext.create({",
+                                    "//     xtype: 'dialog',",
                                     "",
-                                    "    items: [",
-                                    "        {xtype: 'addgameform'}",
-                                    "    ],",
+                                    "//     items: [",
+                                    "//         {xtype: 'addgameform'}",
+                                    "//     ],",
                                     "",
                                     "",
-                                    "     buttons: {",
-                                    "         close: function() {  // standard button (see below)",
-                                    "             dialog.destroy();",
+                                    "//     buttons: {",
+                                    "//         close: function() {  // standard button (see below)",
+                                    "//             dialog.destroy();",
                                     "",
-                                    "         }",
-                                    "     }",
-                                    " });",
+                                    "//         }",
+                                    "//     }",
+                                    "//  });",
                                     "",
-                                    " dialog.show();"
+                                    "//  dialog.show();"
                                 ],
                                 "name": "tap",
                                 "scope": "me"
@@ -171,6 +172,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "Refresh button",
                         "designer|uiInterfaceName": "round",
                         "height": 35,
                         "iconCls": "x-fa fa-refresh",
@@ -184,7 +186,8 @@
                         "iconCls": "string",
                         "margin": "auto",
                         "ui": "string",
-                        "tooltip": "string"
+                        "tooltip": "string",
+                        "designer|displayName": "string"
                     },
                     "name": "MyButton1",
                     "designerId": "50de5cd1-560a-4759-9b51-f1fa7ea0e0d5",
@@ -229,6 +232,7 @@
                 "iconCls": "x-fa fa-users",
                 "layout": "vbox",
                 "maxWidth": 1000,
+                "routeValue": "players",
                 "title": "Players",
                 "width": 1200
             },
@@ -238,7 +242,8 @@
                 "maxWidth": "auto",
                 "title": "string",
                 "width": "auto",
-                "iconCls": "string"
+                "iconCls": "string",
+                "routeValue": "string"
             },
             "name": "MyContainer",
             "designerId": "e6219dd0-1099-4984-931f-2324ffdd1cbe",
@@ -246,6 +251,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "iconCls",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
                     "type": "string"
                 }
             ],
@@ -342,11 +352,13 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "x-fa fa-trophy",
+                "routeValue": "games",
                 "title": "Games"
             },
             "configAlternates": {
                 "title": "string",
-                "iconCls": "string"
+                "iconCls": "string",
+                "routeValue": "string"
             },
             "name": "grids.gamegrid",
             "designerId": "0fea38ab-d387-4672-885b-435554ea8443",
@@ -354,6 +366,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "iconCls",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
                     "type": "string"
                 }
             ],
@@ -368,11 +385,13 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "x-fa fa-line-chart",
+                "routeValue": "eloChart",
                 "title": "Elo Rating Chart"
             },
             "configAlternates": {
                 "title": "string",
-                "iconCls": "string"
+                "iconCls": "string",
+                "routeValue": "string"
             },
             "name": "charts.elorating",
             "designerId": "e67a0562-6fdb-47d3-9a33-4766b4eb5b14",
@@ -381,9 +400,38 @@
                     "group": "(Custom Properties)",
                     "name": "iconCls",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
+                    "type": "string"
                 }
             ],
             "masterInstanceId": "182f6fb5-2748-4328-b241-bcf4e025d36b"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabChange",
+                "implHandler": [
+                    "this.redirectTo(value.routeValue);"
+                ],
+                "name": "activeItemchange",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTabChange",
+            "designerId": "e6e0a454-51b2-4610-9ea5-00a5bae3514f"
         }
     ]
 }

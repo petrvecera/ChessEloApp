@@ -6,12 +6,111 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|commentHeader": [
+            "TODO: The routes are not working when accesing the page - possible bug in ExtJS?"
+        ],
         "designer|userAlias": "mainpanel",
         "designer|userClassName": "MainPanelViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "designer|commentHeader": "comment"
     },
-    "designerId": "68339302-3d89-4726-a226-12abb89e51d4"
+    "designerId": "68339302-3d89-4726-a226-12abb89e51d4",
+    "cn": [
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showPlayers",
+                "implHandler": [
+                    "this.changeTab(0);"
+                ],
+                "url": "players"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showPlayers",
+            "designerId": "cffdb2f2-1acc-4d10-b961-75e4d6bfdf8c"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showGames",
+                "implHandler": [
+                    "this.changeTab(1);"
+                ],
+                "url": "games"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "url": "string",
+                "implHandler": "code"
+            },
+            "name": "showGames",
+            "designerId": "629e2aa7-9a19-4a4c-8e03-ef57525d9f11"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showEloChart",
+                "implHandler": [
+                    "this.changeTab(2);"
+                ],
+                "url": "eloChart"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "url": "string",
+                "implHandler": "code"
+            },
+            "name": "showEloChart",
+            "designerId": "8c2f7c49-7a53-4b8f-ba7e-d479d84e988e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "index"
+                ],
+                "fn": "changeTab",
+                "implHandler": [
+                    "let view = this.getView();",
+                    "if(view.getActiveItem() != index){",
+                    "    view.setActiveItem(index);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "changeTab",
+            "designerId": "f1f47f24-7359-466c-ba76-a749ea74e64e"
+        }
+    ]
 }

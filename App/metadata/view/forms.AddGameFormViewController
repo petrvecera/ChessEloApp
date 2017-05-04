@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "addgameform",
-        "designer|userClassName": "AddGameFormViewController"
+        "designer|userAlias": "forms.addgameform",
+        "designer|userClassName": "forms.AddGameFormViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",

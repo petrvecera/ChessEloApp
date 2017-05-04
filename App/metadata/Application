@@ -31,7 +31,8 @@
             "charts.EloRating",
             "charts.PlayedGames",
             "charts.WinsByColor",
-            "Loading"
+            "Loading",
+            "forms.AddGameDialog"
         ]
     },
     "configAlternates": {

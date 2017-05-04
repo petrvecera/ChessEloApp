@@ -87,8 +87,9 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'container',
-            title: 'Players',
             iconCls: 'x-fa fa-users',
+            routeValue: 'players',
+            title: 'Players',
             height: '100%',
             width: 1200,
             maxWidth: 1000,
@@ -120,14 +121,19 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'grids.gamegrid',
-            title: 'Games',
-            iconCls: 'x-fa fa-trophy'
+            iconCls: 'x-fa fa-trophy',
+            routeValue: 'games',
+            title: 'Games'
         },
         {
             xtype: 'charts.elorating',
-            title: 'Elo Rating Chart',
-            iconCls: 'x-fa fa-line-chart'
+            iconCls: 'x-fa fa-line-chart',
+            routeValue: 'eloChart',
+            title: 'Elo Rating Chart'
         }
-    ]
+    ],
+    listeners: {
+        activeItemchange: 'onTabChange'
+    }
 
 });
