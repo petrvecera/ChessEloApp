@@ -211,9 +211,10 @@ function recalculateAllState() {
 
 
 function logAccess(route, req) {
+    let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress ||req.connection.socket.remoteAddress;
     const dt = new Date(),
         dts = `${String(dt.getFullYear()).padStart(4, '0')}-${String(dt.getMonth()+1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')} ${String(dt.getHours()).padStart(2, '0')}:${String(dt.getMinutes()).padStart(2, '0')}:${String(dt.getSeconds()).padStart(2, '0')}.${String(dt.getMilliseconds()).padStart(3, '0')}`,
-        message = `[${dts}] ${req.method} ${route}\n${JSON.stringify(req.body, null, '  ')}\n`;
+        message = `[${dts}] ${req.method} ${route}\n[ip: ${ip}]\n${JSON.stringify(req.body, null, '  ')}\n`;
     
     fs.appendFileSync('data/logs/access.log', message);
 }
