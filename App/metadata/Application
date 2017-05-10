@@ -27,12 +27,12 @@
             "grids.PlayerGrids",
             "grids.GameGrid",
             "MainPanel",
-            "AddGameForm",
             "charts.EloRating",
             "charts.PlayedGames",
             "charts.WinsByColor",
             "Loading",
-            "forms.AddGameDialog"
+            "forms.AddGameDialog",
+            "forms.AddGameForm"
         ]
     },
     "configAlternates": {

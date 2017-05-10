@@ -22,12 +22,12 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
 
     },
 
-    onButtonAddMatchTap: function(button, e, eOpts) {
-        let form = button.getParent();
+    addNewGame: function() {
+        let form = this.getView();
         if (form.isValid()){
 
             let store = Ext.getStore("GameRawData"),
-            values = form.getValues ();
+                values = form.getValues ();
 
 
             // Because we are allowing adding games to the history / future we need to correctly select the timestamp for the new record
@@ -35,7 +35,7 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
 
             // Get the actual timestamp
             let selectedDate = Ext.Date.format(new Date(values.timestamp), 'Y,m,d'),
-            nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time
+                nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time
 
             // Search the games for new timestamp
             while(this.isInGames(nwTimestamp, store)){
@@ -63,7 +63,7 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
 
 
         }else{
-            Ext.Msg.alert('Error', 'The form is invalid!', Ext.emptyFn);
+           Ext.Msg.alert('Error', 'The form is invalid!', Ext.emptyFn);
         }
     }
 

@@ -59,7 +59,7 @@ Ext.define('Enif.view.MainPanelViewController', {
     },
 
     onTabChange: function(sender, value, oldValue, eOpts) {
-        this.redirectTo(value.routeValue);
+        //this.redirectTo(value.routeValue);
     }
 
 });

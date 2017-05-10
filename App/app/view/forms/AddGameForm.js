@@ -27,7 +27,6 @@ Ext.define('Enif.view.forms.AddGameForm', {
         'Ext.picker.Date',
         'Ext.form.FieldSet',
         'Ext.field.ComboBox',
-        'Ext.Button',
         'Ext.Toast'
     ],
 
@@ -35,8 +34,9 @@ Ext.define('Enif.view.forms.AddGameForm', {
     viewModel: {
         type: 'forms.addgameform'
     },
+    itemId: 'addForm',
     maxWidth: 600,
-    title: 'Add new match',
+    header: false,
     titleAlign: 'center',
     defaultListenerScope: true,
 
@@ -146,19 +146,6 @@ Ext.define('Enif.view.forms.AddGameForm', {
                     valueField: 'value'
                 }
             ]
-        },
-        {
-            xtype: 'button',
-            ui: 'confirm',
-            margin: '0 100 20 100',
-            padding: '',
-            text: 'Add Match',
-            listeners: {
-                tap: {
-                    fn: 'onButtonAddMatchTap',
-                    scope: 'controller'
-                }
-            }
         }
     ],
 

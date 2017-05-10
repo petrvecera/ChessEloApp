@@ -20,21 +20,47 @@ Ext.define('Enif.view.forms.AddGameDialog', {
     requires: [
         'Enif.view.forms.AddGameDialogViewModel',
         'Enif.view.forms.AddGameForm',
-        'Ext.form.Panel'
+        'Ext.form.Panel',
+        'Ext.Tool'
     ],
 
     viewModel: {
         type: 'forms.addgamedialog'
     },
+    buttonAlign: 'right',
     buttons: {
-        close: function() {  
-            this.up('dialog').destroy();
+        ok: {
+            text: 'Add new game',
+            ui: 'confirm',
+            handler: function(){
+                    // There should be probably better getter
+                    Ext.first('#addForm').getController().addNewGame();        
+                }
+        },
+        close: {
+            text: 'Cancel',
+            ui: 'cancel',
+            handler: function() {
+                    this.up('dialog').destroy();
+                }
         }
     },
+    title: 'Add new match',
+    titleAlign: 'center',
+    dismissAction: 'close',
 
     items: [
         {
             xtype: 'forms.addgameform'
+        }
+    ],
+    tools: [
+        {
+            xtype: 'tool',
+            handler: function(owner, tool, event) {
+                this.up('dialog').destroy();
+            },
+            type: 'close'
         }
     ]
 

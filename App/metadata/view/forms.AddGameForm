@@ -11,21 +11,24 @@
         ],
         "designer|userAlias": "forms.addgameform",
         "designer|userClassName": "forms.AddGameForm",
+        "header": false,
+        "itemId": "addForm",
         "maxWidth": 600,
         "requires": [
             "Ext.Toast"
         ],
-        "title": "Add new match",
         "titleAlign": "center"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string",
         "maxWidth": "auto",
-        "title": "string",
+        "title": "object",
         "designer|commentHeader": "comment",
         "requires": "typedarray",
-        "titleAlign": "string"
+        "titleAlign": "string",
+        "header": "boolean",
+        "itemId": "string"
     },
     "name": "MyFormPanel",
     "designerId": "95bcabb6-63de-4acc-a390-b1861fcc5c0c",
@@ -327,97 +330,6 @@
                     },
                     "name": "MyComboBox3",
                     "designerId": "246391f3-1c6e-4ffd-a22d-dd8ec9b955ad"
-                }
-            ]
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|uiInterfaceName": "confirm",
-                "margin": "0 100 20 100",
-                "padding": "",
-                "text": "Add Match",
-                "ui": "confirm"
-            },
-            "configAlternates": {
-                "text": "string",
-                "designer|uiInterfaceName": "string",
-                "margin": "auto",
-                "ui": "string",
-                "padding": "auto"
-            },
-            "name": "MyButton2",
-            "designerId": "cd33dce4-6244-4244-adf5-3078e19f63a2",
-            "cn": [
-                {
-                    "type": "viewcontrollereventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onButtonAddMatchTap",
-                        "implHandler": [
-                            "let form = button.getParent();",
-                            "if (form.isValid()){",
-                            "",
-                            "    let store = Ext.getStore(\"GameRawData\"),",
-                            "        values = form.getValues ();",
-                            "",
-                            "",
-                            "    // Because we are allowing adding games to the history / future we need to correctly select the timestamp for the new record",
-                            "    // We get only a date and look into the old records and finds the empty timestamp slot",
-                            "",
-                            "    // Get the actual timestamp",
-                            "    let selectedDate = Ext.Date.format(new Date(values.timestamp), 'Y,m,d'),",
-                            "        nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time",
-                            "",
-                            "    // Search the games for new timestamp",
-                            "    while(this.isInGames(nwTimestamp, store)){",
-                            "        nwTimestamp++;",
-                            "    }",
-                            "",
-                            "    values.timestamp = nwTimestamp;",
-                            "    //console.log(\"New TimeStamp is:\" + values.timestamp);",
-                            "",
-                            "    let newRecord = store.add(values);",
-                            "",
-                            "    form.reset();",
-                            "",
-                            "    store.sync({",
-                            "        callback: function (records, operation, success) {",
-                            "            Enif.app.getController('storeLoadController').reloadAllStores();",
-                            "        },",
-                            "        success: function (batch, options) {",
-                            "            Ext.toast('Record sucesfully aded', 3000);",
-                            "        },",
-                            "        failure: function (batch, options) {",
-                            "            Ext.toast('Error while adding the record', 3000);",
-                            "        }",
-                            "    });",
-                            "",
-                            "",
-                            "}else{",
-                            "   Ext.Msg.alert('Error', 'The form is invalid!', Ext.emptyFn);",
-                            "}"
-                        ],
-                        "name": "tap",
-                        "scope": "me"
-                    },
-                    "configAlternates": {
-                        "fn": "string",
-                        "implHandler": "code",
-                        "name": "string",
-                        "scope": "string"
-                    },
-                    "name": "onButtonAddMatchTap",
-                    "designerId": "a9a860b0-d131-4596-8d4c-01653721b837"
                 }
             ]
         },

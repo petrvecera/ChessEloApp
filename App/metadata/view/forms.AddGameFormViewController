@@ -40,6 +40,67 @@
             },
             "name": "isInGames",
             "designerId": "c66849be-d77b-4c17-8609-b4c7e6c3c0d8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addNewGame",
+                "implHandler": [
+                    "let form = this.getView();",
+                    "if (form.isValid()){",
+                    "",
+                    "    let store = Ext.getStore(\"GameRawData\"),",
+                    "        values = form.getValues ();",
+                    "",
+                    "",
+                    "    // Because we are allowing adding games to the history / future we need to correctly select the timestamp for the new record",
+                    "    // We get only a date and look into the old records and finds the empty timestamp slot",
+                    "",
+                    "    // Get the actual timestamp",
+                    "    let selectedDate = Ext.Date.format(new Date(values.timestamp), 'Y,m,d'),",
+                    "        nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time",
+                    "",
+                    "    // Search the games for new timestamp",
+                    "    while(this.isInGames(nwTimestamp, store)){",
+                    "        nwTimestamp++;",
+                    "    }",
+                    "",
+                    "    values.timestamp = nwTimestamp;",
+                    "    //console.log(\"New TimeStamp is:\" + values.timestamp);",
+                    "",
+                    "    let newRecord = store.add(values);",
+                    "",
+                    "    form.reset();",
+                    "",
+                    "    store.sync({",
+                    "        callback: function (records, operation, success) {",
+                    "            Enif.app.getController('storeLoadController').reloadAllStores();",
+                    "        },",
+                    "        success: function (batch, options) {",
+                    "            Ext.toast('Record sucesfully aded', 3000);",
+                    "        },",
+                    "        failure: function (batch, options) {",
+                    "            Ext.toast('Error while adding the record', 3000);",
+                    "        }",
+                    "    });",
+                    "",
+                    "",
+                    "}else{",
+                    "   Ext.Msg.alert('Error', 'The form is invalid!', Ext.emptyFn);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "addNewGame",
+            "designerId": "ca8a707d-c662-4780-a320-aab709457227"
         }
     ]
 }

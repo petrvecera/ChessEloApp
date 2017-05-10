@@ -120,10 +120,20 @@ Ext.define('Enif.view.MainPanel', {
             ]
         },
         {
-            xtype: 'grids.gamegrid',
-            iconCls: 'x-fa fa-trophy',
+            xtype: 'container',
+            title: 'Games',
             routeValue: 'games',
-            title: 'Games'
+            iconCls: 'x-fa fa-trophy',
+            cls: 'grid_background_image',
+            items: [
+                {
+                    xtype: 'grids.gamegrid',
+                    iconCls: 'x-fa fa-trophy',
+                    routeValue: 'games',
+                    style: 'opacity: 0.95',
+                    title: 'Games'
+                }
+            ]
         },
         {
             xtype: 'charts.elorating',
