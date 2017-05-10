@@ -10,6 +10,7 @@
         "designer|userClassName": "grids.GameGrid",
         "height": "100%",
         "maxWidth": 1000,
+        "minWidth": 900,
         "name": "grids.GameGrid",
         "selectable": [
             "{",
@@ -28,7 +29,8 @@
         "store": "store",
         "width": "auto",
         "maxWidth": "auto",
-        "selectable": "object"
+        "selectable": "object",
+        "minWidth": "auto"
     },
     "name": "MyGrid",
     "designerId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede",

@@ -38,12 +38,12 @@ Ext.application({
         'grids.PlayerGrids',
         'grids.GameGrid',
         'MainPanel',
-        'forms.AddGameForm',
         'charts.EloRating',
         'charts.PlayedGames',
         'charts.WinsByColor',
         'Loading',
-        'forms.AddGameDialog'
+        'forms.AddGameDialog',
+        'forms.AddGameForm'
     ],
     controllers: [
         'StoreLoadController'

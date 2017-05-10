@@ -6,20 +6,44 @@
     },
     "codeClass": null,
     "userConfig": {
+        "buttonAlign": "right",
         "buttons": [
             "{",
-            "    close: function() {  ",
-            "        this.up('dialog').destroy();",
+            "    ok: {",
+            "        text: 'Add new game',",
+            "        ui: 'confirm',",
+            "        handler: function(){",
+            "            // There should be probably better getter",
+            "            Ext.first('#addForm').getController().addNewGame();        ",
+            "        }",
+            "    },",
+            "    ",
+            "    close: {",
+            "        text: 'Cancel',",
+            "        ui: 'cancel',",
+            "        handler: function() {",
+            "            this.up('dialog').destroy();",
+            "        }",
             "    }",
+            "    ",
             "}"
         ],
         "designer|userAlias": "forms.addgamedialog",
-        "designer|userClassName": "forms.AddGameDialog"
+        "designer|userClassName": "forms.AddGameDialog",
+        "dismissAction": [
+            "close"
+        ],
+        "title": "Add new match",
+        "titleAlign": "center"
     },
     "configAlternates": {
         "buttons": "object",
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "buttonAlign": "string",
+        "dismissAction": "typedarray",
+        "title": "string",
+        "titleAlign": "string"
     },
     "name": "MyDialog",
     "designerId": "19e403b2-96af-45b1-a181-cb7ea4171355",
@@ -33,9 +57,53 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "forms.AddGameForm",
+            "name": "forms.addgameform",
             "designerId": "f6b409bd-9567-4f5d-917d-dea9a0f0f3ff",
             "masterInstanceId": "95bcabb6-63de-4acc-a390-b1861fcc5c0c"
+        },
+        {
+            "type": "Ext.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "type": "close"
+            },
+            "configAlternates": {
+                "type": "string"
+            },
+            "name": "MyTool",
+            "designerId": "ae4de2c0-1763-43bc-9bbf-f0b021b403e2",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "owner",
+                            "tool",
+                            "event"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "this.up('dialog').destroy();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "45a4f5d7-3740-4087-8239-e7e82a95938b"
+                }
+            ]
         }
     ]
 }

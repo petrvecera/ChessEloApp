@@ -327,37 +327,78 @@
             ]
         },
         {
-            "type": "linkedinstance",
+            "type": "Ext.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "cls": [
+                    "grid_background_image"
+                ],
                 "iconCls": "x-fa fa-trophy",
                 "routeValue": "games",
                 "title": "Games"
             },
             "configAlternates": {
+                "cls": "typedarray",
                 "title": "string",
                 "iconCls": "string",
                 "routeValue": "string"
             },
-            "name": "grids.gamegrid",
-            "designerId": "0fea38ab-d387-4672-885b-435554ea8443",
+            "name": "MyContainer3",
+            "designerId": "1a13b839-a2ec-4706-af60-33fc05b970af",
             "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "iconCls",
-                    "type": "string"
-                },
                 {
                     "group": "(Custom Properties)",
                     "name": "routeValue",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "iconCls",
+                    "type": "string"
                 }
             ],
-            "masterInstanceId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede"
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-trophy",
+                        "routeValue": "games",
+                        "style": "opacity: 0.95",
+                        "title": "Games"
+                    },
+                    "configAlternates": {
+                        "title": "string",
+                        "iconCls": "string",
+                        "routeValue": "string",
+                        "cls": "typedarray",
+                        "style": "string"
+                    },
+                    "name": "grids.gamegrid",
+                    "designerId": "0fea38ab-d387-4672-885b-435554ea8443",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "iconCls",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "routeValue",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede"
+                }
+            ]
         },
         {
             "type": "linkedinstance",
@@ -402,7 +443,7 @@
             "userConfig": {
                 "fn": "onTabChange",
                 "implHandler": [
-                    "this.redirectTo(value.routeValue);"
+                    "//this.redirectTo(value.routeValue);"
                 ],
                 "name": "activeItemchange",
                 "scope": "me"
