@@ -3,11 +3,11 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "6.5.0.176",
+            "cmdVersion": "6.5.0.180",
             "frameworkVersion": "6.5.1.576"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:51855/",
+        "urlPrefix": "http://localhost:62668/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -33,7 +33,7 @@
         }
     },
     "xdsVersion": "4.2.0",
-    "xdsBuild": 130,
+    "xdsBuild": 131,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",
