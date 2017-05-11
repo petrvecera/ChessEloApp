@@ -22,7 +22,10 @@ Ext.define('Enif.view.grids.GameGrid', {
         'Enif.view.grids.GameGridViewController',
         'Ext.grid.column.RowNumberer',
         'Ext.grid.plugin.RowOperations',
-        'Ext.grid.plugin.CellEditing'
+        'Ext.grid.plugin.CellEditing',
+        'Ext.Toolbar',
+        'Ext.field.ComboBox',
+        'Ext.Button'
     ],
 
     controller: 'grids.gamegrid',
@@ -39,6 +42,7 @@ Ext.define('Enif.view.grids.GameGrid', {
         checkbox: true
     },
     store: 'GameRawData',
+    striped: false,
 
     columns: [
         {
@@ -133,6 +137,64 @@ Ext.define('Enif.view.grids.GameGrid', {
         },
         {
             type: 'gridcellediting'
+        }
+    ],
+    items: [
+        {
+            xtype: 'toolbar',
+            docked: 'top',
+            items: [
+                {
+                    xtype: 'combobox',
+                    name: 'playerFilter',
+                    label: 'Filter by player',
+                    editable: false,
+                    displayField: 'name',
+                    store: 'PlayerData',
+                    valueField: 'uid',
+                    queryMode: 'local',
+                    listeners: {
+                        change: 'onFilterPlayerChange'
+                    }
+                },
+                {
+                    xtype: 'combobox',
+                    name: 'resultFilter',
+                    width: 136,
+                    margin: '0 10 0 5',
+                    label: 'result',
+                    labelWidth: 50,
+                    value: 'none',
+                    editable: false,
+                    options: [
+                        {
+                            text: 'Either',
+                            value: 'none'
+                        },
+                        {
+                            text: 'Won',
+                            value: 'won'
+                        },
+                        {
+                            text: 'Lost',
+                            value: 'lost'
+                        }
+                    ],
+                    queryMode: 'local',
+                    listeners: {
+                        change: 'onFilterResultChange'
+                    }
+                },
+                {
+                    xtype: 'button',
+                    tooltip: 'Clear the filters',
+                    iconCls: 'x-fa fa-close',
+                    text: 'Clear',
+                    listeners: {
+                        tap: 'onClearFilterTap'
+                    }
+                }
+            ]
         }
     ]
 

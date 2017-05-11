@@ -19,6 +19,7 @@
             "}"
         ],
         "store": "GameRawData",
+        "striped": false,
         "width": "100%"
     },
     "configAlternates": {
@@ -30,7 +31,8 @@
         "width": "auto",
         "maxWidth": "auto",
         "selectable": "object",
-        "minWidth": "auto"
+        "minWidth": "auto",
+        "striped": "boolean"
     },
     "name": "MyGrid",
     "designerId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede",
@@ -409,6 +411,221 @@
             "codeClass": null,
             "name": "MyCellEditing",
             "designerId": "c97d18b8-1a39-45c2-9e3f-3bf9e9a3bb2d"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "f7ae1fb0-5a83-41b6-b887-76f1a24e3869",
+            "cn": [
+                {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Filter player",
+                        "displayField": "name",
+                        "editable": false,
+                        "label": "Filter by player",
+                        "name": "playerFilter",
+                        "queryMode": "local",
+                        "store": "PlayerData",
+                        "valueField": "uid"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "displayField": "auto",
+                        "editable": "boolean",
+                        "label": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "auto"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "eca856fa-e168-43ce-ac01-ed7dc6617e26",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFilterPlayerChange",
+                                "implHandler": [
+                                    "let selectedPlayer = this.getView().query('combobox[name=playerFilter]')[0].getValue(),",
+                                    "    selectedResult = this.getView().query('combobox[name=resultFilter]')[0].getValue();",
+                                    "",
+                                    "this.filterStore(selectedPlayer, selectedResult);"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onFilterPlayerChange",
+                            "designerId": "ed2e0e56-2104-4854-b6cb-19099d4af4d3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Filter Result",
+                        "editable": false,
+                        "label": "result",
+                        "labelWidth": 50,
+                        "margin": "0 10 0 5",
+                        "name": "resultFilter",
+                        "options": [
+                            " [",
+                            " {",
+                            "     text: 'Either',",
+                            "     value: 'none'",
+                            " },",
+                            " {",
+                            "     text: 'Won',",
+                            "     value: 'won'",
+                            " },",
+                            " {",
+                            "     text: 'Lost',",
+                            "     value: 'lost'",
+                            " }",
+                            "]"
+                        ],
+                        "queryMode": "local",
+                        "value": [
+                            "",
+                            "'none'"
+                        ],
+                        "width": 136
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "displayField": "auto",
+                        "editable": "boolean",
+                        "label": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "auto",
+                        "labelWidth": "auto",
+                        "margin": "auto",
+                        "name": "string",
+                        "options": "array",
+                        "value": "object",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "0159282d-1560-44dd-8402-cd03b0118dc2",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFilterResultChange",
+                                "implHandler": [
+                                    "let selectedPlayer = this.getView().query('combobox[name=playerFilter]')[0].getValue(),",
+                                    "    selectedResult = this.getView().query('combobox[name=resultFilter]')[0].getValue();",
+                                    "",
+                                    "this.filterStore(selectedPlayer, selectedResult);"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onFilterResultChange",
+                            "designerId": "067c8824-966c-428d-8f4a-ddc78a7122a4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-close",
+                        "text": "Clear",
+                        "tooltip": "Clear the filters"
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "text": "string",
+                        "tooltip": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "2a9727f3-9526-47a3-ae46-2da86b5752e6",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onClearFilterTap",
+                                "implHandler": [
+                                    "let selectedPlayerCombo = this.getView().query('combobox[name=playerFilter]')[0], // we can't wipe the player combo",
+                                    "    selectedResultCombo = this.getView().query('combobox[name=resultFilter]')[0];",
+                                    "",
+                                    "// selectedPlayerCombo.clearValue();",
+                                    "// Error: Clear is not a function - http://docs.sencha.com/extjs/6.5.0/modern/Ext.field.ComboBox.html#method-clearValue",
+                                    "console.log('Can\\'t clear the playerFilter combo - the store filter itself is removed...');",
+                                    "selectedResultCombo.setValue('none');",
+                                    "this.getView().getStore().clearFilter();",
+                                    ""
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onClearFilterTap",
+                            "designerId": "9bc6a591-60b2-4cde-86f3-0f9460359650"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

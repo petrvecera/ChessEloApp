@@ -121,9 +121,9 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'container',
-            title: 'Games',
             routeValue: 'games',
             iconCls: 'x-fa fa-trophy',
+            title: 'Games',
             cls: 'grid_background_image',
             items: [
                 {

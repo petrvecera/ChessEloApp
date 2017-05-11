@@ -47,6 +47,77 @@
             },
             "name": "getUserName",
             "designerId": "8d6e2462-9a5a-4434-8fdc-fb61afa2e386"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "Result option: won, lost, none"
+                ],
+                "designer|params": [
+                    "player",
+                    "filterResult"
+                ],
+                "fn": "filterStore",
+                "implHandler": [
+                    "let gridStore = this.getView().getStore(),",
+                    "    selectedPlayer = player,",
+                    "    selectedResult = filterResult;",
+                    "",
+                    "",
+                    "// clear any filtering on the Store",
+                    "gridStore.clearFilter();",
+                    "",
+                    "gridStore.filterBy(function(rec) {",
+                    "",
+                    "    let playerWhite = rec.get('playerWhite'),",
+                    "        playerBlack = rec.get('playerBlack'),",
+                    "        result = rec.get('result');",
+                    "",
+                    "",
+                    "    if(playerWhite === selectedPlayer || playerBlack === selectedPlayer) {",
+                    "",
+                    "        if(selectedResult == 'none'){",
+                    "            return true;",
+                    "        }",
+                    "",
+                    "        if( playerWhite === selectedPlayer && result == 'white' && selectedResult == 'won') {",
+                    "            return true;",
+                    "        }",
+                    "",
+                    "        if ( playerBlack ===  selectedPlayer && result == 'black' && selectedResult == 'won') {",
+                    "            return true;",
+                    "        }",
+                    "",
+                    "        if( playerWhite === selectedPlayer && result == 'black' && selectedResult == 'lost') {",
+                    "            return true;",
+                    "        }",
+                    "",
+                    "        if ( playerBlack ===  selectedPlayer && result == 'white' && selectedResult == 'lost') {",
+                    "            return true;",
+                    "        }",
+                    "",
+                    "        return false;",
+                    "    } else {",
+                    "        return false;",
+                    "    }",
+                    "",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|commentHeader": "comment",
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "filterStore",
+            "designerId": "b6d46753-9659-44e0-882c-f4cff3eb135c"
         }
     ]
 }
