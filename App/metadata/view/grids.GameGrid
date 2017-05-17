@@ -624,6 +624,262 @@
                             "designerId": "9bc6a591-60b2-4cde-86f3-0f9460359650"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer",
+                    "designerId": "2a42a994-e082-470e-a4f7-d9b5685b6169"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-unlock-alt",
+                        "reference": "unlockButton",
+                        "text": "Unlock"
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "reference": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "e98bea8f-9925-4b19-a1cb-dfc45a17ca50",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUnlockButtonTap",
+                                "implHandler": [
+                                    "let mvUpBtn = this.lookupReference('moveUp'),",
+                                    "    mvDownBtn = this.lookupReference('moveDown'),",
+                                    "    saveBtn = this.lookupReference('moveSave'),",
+                                    "    unlockButton = this.lookupReference('unlockButton'); // using reference instead of passed argument, so we can call this function elsewhere (\"hacks\")",
+                                    "",
+                                    "if(mvUpBtn.isDisabled()){",
+                                    "    mvUpBtn.enable();",
+                                    "    mvDownBtn.enable();",
+                                    "    saveBtn.enable();",
+                                    "    unlockButton.setText('Lock');",
+                                    "    unlockButton.setIconCls('x-fa fa-lock');",
+                                    "",
+                                    "}else{",
+                                    "    mvUpBtn.disable();",
+                                    "    mvDownBtn.disable();",
+                                    "    saveBtn.disable();",
+                                    "    unlockButton.setText('Unlock');",
+                                    "    unlockButton.setIconCls('x-fa fa-unlock-alt');",
+                                    "}"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onUnlockButtonTap",
+                            "designerId": "341d85b4-f1d1-4962-8a81-959beed9d0e4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.SegmentedButton",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowToggle": false
+                    },
+                    "configAlternates": {
+                        "allowToggle": "boolean"
+                    },
+                    "name": "MySegmentedButton",
+                    "designerId": "bc618ca8-9666-4683-85ff-987f753812b9",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "iconCls": "x-fa fa-arrow-up",
+                                "reference": "moveUp",
+                                "text": "Move UP",
+                                "tooltip": "Move Selected Record Up"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "iconCls": "string",
+                                "reference": "string",
+                                "text": "string",
+                                "tooltip": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "7ef12c05-81ba-408e-a342-8f4148a7e3af",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMoveUpButtonTap",
+                                        "implHandler": [
+                                            "this.moveRecords('up');"
+                                        ],
+                                        "name": "tap",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onMoveUpButtonTap",
+                                    "designerId": "74893098-9cfd-493e-947d-6a498c18ff38"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "iconCls": "x-fa fa-arrow-down",
+                                "reference": "moveDown",
+                                "text": "Move DOWN",
+                                "tooltip": "Move selected record down"
+                            },
+                            "configAlternates": {
+                                "disabled": "boolean",
+                                "iconCls": "string",
+                                "reference": "string",
+                                "text": "string",
+                                "tooltip": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "e26c288c-848d-452c-87fd-01ce43d7d5db",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMoveDownButtonTap",
+                                        "implHandler": [
+                                            "this.moveRecords('down');"
+                                        ],
+                                        "name": "tap",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onMoveDownButtonTap",
+                                    "designerId": "4b267a53-58b5-431d-9177-45b4cf88fa26"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "iconCls": "x-fa fa-check",
+                        "reference": "moveSave",
+                        "text": "Save",
+                        "tooltip": "Save move changes"
+                    },
+                    "configAlternates": {
+                        "disabled": "boolean",
+                        "iconCls": "string",
+                        "reference": "string",
+                        "text": "string",
+                        "tooltip": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "7f1dcf61-db9d-47b4-88f4-4ed4143c5434",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveMoveButtonTap",
+                                "implHandler": [
+                                    "this.onUnlockButtonTap();",
+                                    "",
+                                    "//TODO: Fix back-end , this crashesh the node",
+                                    "console.log('backend not working -- disabled');",
+                                    "// this.getView().getStore().sync({",
+                                    "//     callback: function (records, operation, success) {",
+                                    "//         Enif.app.getController('storeLoadController').reloadAllStores();",
+                                    "//     },",
+                                    "//     success: function (batch, options) {",
+                                    "//         Ext.toast('Record sucesffully moved', 3000);",
+                                    "//     },",
+                                    "//     failure: function (batch, options) {",
+                                    "//         Ext.toast('Error while editing the rows', 3000);",
+                                    "//     }",
+                                    "// });"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onSaveMoveButtonTap",
+                            "designerId": "f067bdda-51b6-403c-b4b4-f26123720f1c"
+                        }
+                    ]
                 }
             ]
         }
