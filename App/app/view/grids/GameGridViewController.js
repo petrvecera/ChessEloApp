@@ -77,14 +77,51 @@ Ext.define('Enif.view.grids.GameGridViewController', {
         });
     },
 
-    onFilterPlayerChange: function(selectfield, newValue, oldValue, eOpts) {
+    /* This function can move the record in the grid up and down by swapping their timestamp */
+    moveRecords: function(move) {
+        let grid = this.getView();
+            selections = grid.getSelections();
+
+        if(!selections) return;
+
+        let selected = selections[0], // we have single selection enabled
+            store = grid.getStore(),
+            recordPosition = store.indexOf(selected);
+            newPosition = null;
+
+        if (move === 'up'){
+            newPosition = recordPosition - 1;
+        }else if (move === 'down'){
+            newPosition = recordPosition + 1;
+        }
+
+        if (!newPosition || newPosition < 0 || newPosition > store.getData().getCount() - 1){
+            Ext.toast('You can\'t move the record outside of the grid silly', 3000);
+            return;
+        }
+
+
+        let swapRecord = store.getAt(newPosition),
+            timestamp = swapRecord.get('timestamp');
+
+        swapRecord.set('timestamp', selected.get('timestamp'));
+        selected.set('timestamp', timestamp);
+
+        grid.select(newPosition);
+
+        grid.refresh();
+        Ext.toast('Record moved', 1000);
+
+    },
+
+    onFilterPlayerChange: function(combobox, newValue, oldValue, eOpts) {
         let selectedPlayer = this.getView().query('combobox[name=playerFilter]')[0].getValue(),
         selectedResult = this.getView().query('combobox[name=resultFilter]')[0].getValue();
 
         this.filterStore(selectedPlayer, selectedResult);
     },
 
-    onFilterResultChange: function(selectfield, newValue, oldValue, eOpts) {
+    onFilterResultChange: function(combobox, newValue, oldValue, eOpts) {
         let selectedPlayer = this.getView().query('combobox[name=playerFilter]')[0].getValue(),
         selectedResult = this.getView().query('combobox[name=resultFilter]')[0].getValue();
 
@@ -101,6 +138,54 @@ Ext.define('Enif.view.grids.GameGridViewController', {
         selectedResultCombo.setValue('none');
         this.getView().getStore().clearFilter();
 
+    },
+
+    onUnlockButtonTap: function(button, e, eOpts) {
+        let mvUpBtn = this.lookupReference('moveUp'),
+        mvDownBtn = this.lookupReference('moveDown'),
+        saveBtn = this.lookupReference('moveSave'),
+        unlockButton = this.lookupReference('unlockButton'); // using reference instead of passed argument, so we can call this function elsewhere ("hacks")
+
+        if(mvUpBtn.isDisabled()){
+            mvUpBtn.enable();
+            mvDownBtn.enable();
+            saveBtn.enable();
+            unlockButton.setText('Lock');
+            unlockButton.setIconCls('x-fa fa-lock');
+
+        }else{
+            mvUpBtn.disable();
+            mvDownBtn.disable();
+            saveBtn.disable();
+            unlockButton.setText('Unlock');
+            unlockButton.setIconCls('x-fa fa-unlock-alt');
+        }
+    },
+
+    onMoveUpButtonTap: function(button, e, eOpts) {
+        this.moveRecords('up');
+    },
+
+    onMoveDownButtonTap: function(button, e, eOpts) {
+        this.moveRecords('down');
+    },
+
+    onSaveMoveButtonTap: function(button, e, eOpts) {
+        this.onUnlockButtonTap();
+
+        //TODO: Fix back-end , this crashesh the node
+        console.log('backend not working -- disabled');
+        // this.getView().getStore().sync({
+        //     callback: function (records, operation, success) {
+        //         Enif.app.getController('storeLoadController').reloadAllStores();
+        //     },
+        //     success: function (batch, options) {
+        //         Ext.toast('Record sucesffully moved', 3000);
+        //     },
+        //     failure: function (batch, options) {
+        //         Ext.toast('Error while editing the rows', 3000);
+        //     }
+        // });
     }
 
 });

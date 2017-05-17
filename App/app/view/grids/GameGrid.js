@@ -18,14 +18,19 @@ Ext.define('Enif.view.grids.GameGrid', {
     alias: 'widget.grids.gamegrid',
 
     requires: [
-        'Enif.view.grids.GameGridViewModel',
+        'Enif.store.GameRawData',
+        'Enif.store.PlayerData',
         'Enif.view.grids.GameGridViewController',
-        'Ext.grid.column.RowNumberer',
-        'Ext.grid.plugin.RowOperations',
-        'Ext.grid.plugin.CellEditing',
+        'Enif.view.grids.GameGridViewModel',
+        'Ext.Button',
+        'Ext.SegmentedButton',
+        'Ext.Spacer',
         'Ext.Toolbar',
         'Ext.field.ComboBox',
-        'Ext.Button'
+        'Ext.grid.column.Number',
+        'Ext.grid.column.RowNumberer',
+        'Ext.grid.plugin.CellEditing',
+        'Ext.grid.plugin.RowOperations'
     ],
 
     controller: 'grids.gamegrid',
@@ -192,6 +197,57 @@ Ext.define('Enif.view.grids.GameGrid', {
                     text: 'Clear',
                     listeners: {
                         tap: 'onClearFilterTap'
+                    }
+                },
+                {
+                    xtype: 'spacer'
+                },
+                {
+                    xtype: 'button',
+                    reference: 'unlockButton',
+                    iconCls: 'x-fa fa-unlock-alt',
+                    text: 'Unlock',
+                    listeners: {
+                        tap: 'onUnlockButtonTap'
+                    }
+                },
+                {
+                    xtype: 'segmentedbutton',
+                    allowToggle: false,
+                    items: [
+                        {
+                            xtype: 'button',
+                            reference: 'moveUp',
+                            disabled: true,
+                            tooltip: 'Move Selected Record Up',
+                            iconCls: 'x-fa fa-arrow-up',
+                            text: 'Move UP',
+                            listeners: {
+                                tap: 'onMoveUpButtonTap'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            reference: 'moveDown',
+                            disabled: true,
+                            tooltip: 'Move selected record down',
+                            iconCls: 'x-fa fa-arrow-down',
+                            text: 'Move DOWN',
+                            listeners: {
+                                tap: 'onMoveDownButtonTap'
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'button',
+                    reference: 'moveSave',
+                    disabled: true,
+                    tooltip: 'Save move changes',
+                    iconCls: 'x-fa fa-check',
+                    text: 'Save',
+                    listeners: {
+                        tap: 'onSaveMoveButtonTap'
                     }
                 }
             ]
