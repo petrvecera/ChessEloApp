@@ -149,11 +149,11 @@ Ext.define('Enif.view.forms.AddGameForm', {
         }
     ],
 
-    onMycomboboxChange: function(selectfield, newValue, oldValue, eOpts) {
+    onMycomboboxChange: function(combobox, newValue, oldValue, eOpts) {
         this.comboChange();
     },
 
-    onMycombobox1Change: function(selectfield, newValue, oldValue, eOpts) {
+    onMycombobox1Change: function(combobox, newValue, oldValue, eOpts) {
         this.comboChange();
     },
 
