@@ -1,0 +1,189 @@
+{
+    "type": "Ext.pivot.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pivot.roundrobingrid",
+        "designer|userClassName": "pivot.RoundRobinGrid",
+        "height": "100%",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyGrid",
+    "designerId": "f8a3bb96-87fd-4171-bec6-85c63d827aec",
+    "viewControllerInstanceId": "f09556a4-68aa-4386-bc81-2dc733204ad4",
+    "viewModelInstanceId": "81b63d99-b8c3-41b1-8db3-0dfd384f54a3",
+    "cn": [
+        {
+            "type": "Ext.pivot.matrix.Local",
+            "reference": {
+                "name": "matrix",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "store": "PlayerData"
+            },
+            "configAlternates": {
+                "store": "store"
+            },
+            "name": "MyLocalMatrix",
+            "designerId": "71d28ab3-c0e7-43f3-bc88-0999a5315b1d",
+            "cn": [
+                {
+                    "type": "Ext.pivot.dimension.legacy.LeftAxisItem",
+                    "reference": {
+                        "name": "leftAxis",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "sortIndex": "uid"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "sortIndex": "datafield",
+                        "direction": "string",
+                        "renderer": "function"
+                    },
+                    "name": "MyLeftaxisItem",
+                    "designerId": "8756a3dd-5fd0-4de6-aa8b-84de49853997"
+                },
+                {
+                    "type": "Ext.pivot.dimension.legacy.TopAxisItem",
+                    "reference": {
+                        "name": "topAxis",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "sortIndex": "uid",
+                        "sortable": false
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "sortIndex": "datafield",
+                        "sortable": "boolean"
+                    },
+                    "name": "MyTopaxisItem",
+                    "designerId": "88339168-59e4-45f0-bfd3-727502744e2d"
+                },
+                {
+                    "type": "Ext.pivot.dimension.legacy.AggregateItem",
+                    "reference": {
+                        "name": "aggregate",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "games"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "renderer": "function",
+                        "labelRenderer": "function"
+                    },
+                    "name": "MyAggregateItem",
+                    "designerId": "d59c16a9-39e3-48be-a658-90f30aab61d9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "record",
+                                    "dataIndex",
+                                    "cell",
+                                    "column"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "let cellColumn = parseInt(dataIndex.replace(/\\D/g,''));",
+                                    "let playersStore = Ext.getStore('PlayerData');",
+                                    "",
+                                    "if (cellColumn > playersStore.count() || record.data.isRowGrandTotal) { //aggregate cells",
+                                    "    cell.setBodyStyle({",
+                                    "        background: '#025b80'",
+                                    "    });",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "let cellRow = playersStore.find('name', record.data[\"ext-153\"])+1;",
+                                    "",
+                                    "if (cellColumn === cellRow) {",
+                                    "    cell.setBodyStyle({",
+                                    "        background: '#025b80'",
+                                    "    });",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "let wins = 0,",
+                                    "    draws = 0,",
+                                    "    loses = 0;",
+                                    "",
+                                    "let games = Ext.getStore('GameRawData');",
+                                    "",
+                                    "games.clearFilter();",
+                                    "games.filterBy(function(rec) {",
+                                    "    if ((rec.get('playerWhite') === cellRow &&",
+                                    "        rec.get('playerBlack') === cellColumn &&",
+                                    "        rec.get('result') === 'white') ||",
+                                    "       (rec.get('playerBlack') === cellRow &&",
+                                    "        rec.get('playerWhite') === cellColumn &&",
+                                    "        rec.get('result') === 'black')) {",
+                                    "        wins++;",
+                                    "        return true;",
+                                    "    } else if((rec.get('playerWhite') === cellRow &&",
+                                    "        rec.get('playerBlack') === cellColumn &&",
+                                    "        rec.get('result') === 'black') ||",
+                                    "       (rec.get('playerBlack') === cellRow &&",
+                                    "        rec.get('playerWhite') === cellColumn &&",
+                                    "        rec.get('result') === 'white')) {",
+                                    "        loses++;",
+                                    "        return true;",
+                                    "    } else if((rec.get('playerWhite') === cellRow &&",
+                                    "        rec.get('playerBlack') === cellColumn &&",
+                                    "        rec.get('result') === 'draw') ||",
+                                    "       (rec.get('playerBlack') === cellRow &&",
+                                    "        rec.get('playerWhite') === cellColumn &&",
+                                    "        rec.get('result') === 'draw')) {",
+                                    "        draws++;",
+                                    "        return true;",
+                                    "    }",
+                                    "    return false;",
+                                    "});",
+                                    "",
+                                    "return wins + \" : \" + draws + \" : \" + loses + ' (' + games.getCount() + ')';",
+                                    ""
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "renderer",
+                            "designerId": "508f0bc8-2778-4012-9745-d326e57fedb4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

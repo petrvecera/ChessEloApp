@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="Enif" default=".help">
 
+    <!-- Find and load Sencha Cmd ant tasks -->
     <script language="javascript">
         <![CDATA[
             var dir = project.getProperty("basedir"),
                 cmdDir = project.getProperty("cmd.dir"),
                 cmdLoaded = project.getReference("senchaloader");
-            
+
             if (!cmdLoaded) {
                 function echo(message, file) {
                     var e = project.createTask("echo");
@@ -18,7 +19,7 @@
                 };
 
                 if (!cmdDir) {
-                    
+
                     function exec(args) {
                         var process = java.lang.Runtime.getRuntime().exec(args),
                             input = new java.io.BufferedReader(new java.io.InputStreamReader(process.getInputStream())),
@@ -39,7 +40,7 @@
                         process.waitFor();
                         return !!cmdDir;
                     }
-                    
+
                     if (!exec(["sencha", "which"])) {
                         var tmpFile = "tmp.sh";
                         echo("source ~/.bash_profile; sencha " + whichArgs.join(" "), tmpFile);
@@ -53,7 +54,7 @@
                 var importDir = project.getProperty("build-impl.dir") || 
                                 (cmdDir + "/ant/build/app/build-impl.xml");
                 var importTask = project.createTask("import");
-                
+
                 importTask.setOwningTarget(self.getOwningTarget());
                 importTask.setLocation(self.getLocation());
                 importTask.setFile(importDir);
@@ -82,7 +83,7 @@
 
             <target name="-before-init"/>
             <target name="-after-init"/>
-        
+
         The "page" target performs the call to Sencha Cmd to build the 'all-classes.js' file.
 
             <target name="-before-page"/>

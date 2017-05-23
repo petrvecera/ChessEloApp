@@ -35,7 +35,7 @@
                 "actionMethods": [
                     "{\"create\":\"PUT\",\"read\":\"GET\",\"update\":\"POST\",\"destroy\":\"DELETE\"}"
                 ],
-                "url": "http://192.168.88.176:8181/chartGames"
+                "url": "http://localhost:8181/chartGames"
             },
             "configAlternates": {
                 "url": "string",

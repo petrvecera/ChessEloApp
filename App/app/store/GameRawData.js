@@ -35,7 +35,7 @@ Ext.define('Enif.store.GameRawData', {
             model: 'Enif.model.GamesData',
             proxy: {
                 type: 'ajax',
-                url: 'http://192.168.88.176:8181/games',
+                url: 'http://localhost:8181/games',
                 actionMethods: {
                     create: 'PUT',
                     read: 'GET',

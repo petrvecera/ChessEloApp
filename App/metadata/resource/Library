@@ -9,7 +9,10 @@
         "basePath": "ext/build/",
         "designer|userClassName": "Library",
         "libraryRequires": [
-            "sencha-charts"
+            "sencha-charts",
+            "pivot",
+            "d3",
+            "pivot-d3"
         ],
         "theme": "CustomTrtTheme"
     },
