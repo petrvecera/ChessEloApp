@@ -32,7 +32,7 @@ Ext.define('Enif.store.PlayerData', {
             model: 'Enif.model.PlayerData',
             proxy: {
                 type: 'ajax',
-                url: 'http://localhost:8181/players',
+                url: 'http://chess.pagep.net:8181/players',
                 actionMethods: {
                     create: 'PUT',
                     read: 'GET',

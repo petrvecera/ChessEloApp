@@ -35,7 +35,7 @@ Ext.define('Enif.store.EloRatinChart', {
             model: 'Enif.model.ChartsData',
             proxy: {
                 type: 'ajax',
-                url: 'http://localhost:8181/chartGames',
+                url: 'http://chess.pagep.net:8181/chartGames',
                 actionMethods: {
                     create: 'PUT',
                     read: 'GET',

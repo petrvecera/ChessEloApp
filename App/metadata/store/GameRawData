@@ -35,7 +35,7 @@
                 "actionMethods": [
                     "{\"create\":\"PUT\",\"read\":\"GET\",\"update\":\"POST\",\"destroy\":\"DELETE\"}"
                 ],
-                "url": "http://localhost:8181/games"
+                "url": "http://chess.pagep.net:8181/games"
             },
             "configAlternates": {
                 "url": "string",
