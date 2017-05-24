@@ -112,5 +112,4 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
             sortable: false
         }
     }
-
 });

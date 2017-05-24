@@ -46,8 +46,8 @@ if (!String.prototype.padStart) {
 }
 
 class Store {
-    constructor (fileName) {
-        this._fileName = fileName;
+    constructor (options) {
+        this._options = Object.assign({ generateId: true }, options);
         this._data = [];
         this._IDENTITY = 'uid';
     }
@@ -64,16 +64,22 @@ class Store {
         }
     }
 
-    add(items, genNewId = true) {
+    injectId(item, itemIndex, identity, data) {
+        item[identity] = `${new Date().getTime()}_${itemIndex}`;
+    }
+
+    add(items) {
         const me = this;
 
         [].concat(items).forEach((item, itemIndex) => {
             const index = me._data.findIndex(r => r[this._IDENTITY] === item[this._IDENTITY]);
             if (index >= 0) throw Error(`Item with ${this._IDENTITY} '${item[this._IDENTITY]}' is already added`);
 
-            // generate new id
-            if (genNewId) {
-                item[this._IDENTITY] = `${new Date().getTime()}_${itemIndex}`;
+            if (this._options.generateId) {
+                this.injectId(item, itemIndex, this._IDENTITY, this._data);
+            }
+            if (this._options.onWillAdd) {
+                this._options.onWillAdd(item, itemIndex, this._IDENTITY, this._data);
             }
         });
 
@@ -104,16 +110,14 @@ class Store {
     	this._data.sort((a, b) => selector(a) - selector(b));
     }
 
-    load() {
-        this._data = JSON.parse(fs.readFileSync(this._fileName));
+    load(fileName) {
+        this._data = JSON.parse(fs.readFileSync(fileName || this._options.fileName));
     }
 
     save(fileName) {
         const content = JSON.stringify(this._data, null, '\t');
 
-        if (!fileName) fileName = this._fileName;
-
-        fs.writeFileSync(fileName, content);
+        fs.writeFileSync(fileName || this._options.fileName, content);
     }
 }
 
@@ -184,7 +188,7 @@ function recalculateAllState() {
             chartGame[`player${i}Rating`] = player.rating;
         });
 
-        chartGames.add(chartGame, false);
+        chartGames.add(chartGame);
 
         // chart data days
         const dt = new Date(game.timestamp);
@@ -204,7 +208,7 @@ function recalculateAllState() {
         if (item) {
             chartDays.update(chartDay);
         } else {
-            chartDays.add(chartDay, false);
+            chartDays.add(chartDay);
         }
     });
 }
@@ -238,11 +242,22 @@ function validateNewGamedata(body) {
 	if (!(body.result !== undefined && (body.result === 'black' || body.result === 'white' || body.result === 'draw'))) throw Error("game.result must be one of the values: ['white', 'black', 'draw']");
 }
 
+// make a game time unique during the day
+function onAddGame(item, itemIndex, identity, data) {
+    const name = 'timestamp',
+        value = item[name];
 
-const players = new Store('data/players.json');
-const games = new Store('data/games.json');
-const chartGames = new Store('data/chartGames.json'); // not saved, only in the memory
-const chartDays = new Store('data/chartDays.json'); // not saved, only in the memory
+    while (data.indexOf(value) !== -1) value++;
+    
+    item[name] = value;
+}
+
+// persisted:
+const players = new Store({ fileName: 'data/players.json' });
+const games = new Store({ fileName: 'data/games.json', onWillAdd: onAddGame });
+// not persisted: just in the memory
+const chartGames = new Store({ fileName: 'data/chartGames.json', generateId: false });
+const chartDays = new Store({ fileName: 'data/chartDays.json',  generateId: false});
 
 players.load();
 games.load();
