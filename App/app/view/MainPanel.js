@@ -145,8 +145,8 @@ Ext.define('Enif.view.MainPanel', {
         {
             xtype: 'container',
             routeValue: 'roundrobin',
-            title: 'Round Robin',
             iconCls: 'x-fa fa-th',
+            title: 'Round Robin',
             items: [
                 {
                     xtype: 'pivot.roundrobingrid'

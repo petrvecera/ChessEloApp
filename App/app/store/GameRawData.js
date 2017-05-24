@@ -55,6 +55,9 @@ Ext.define('Enif.store.GameRawData', {
                 },
                 remove: {
                     fn: me.onJsonstoreRemove
+                },
+                load: {
+                    fn: me.onJsonstoreLoad
                 }
             }
         }, cfg)]);
@@ -67,6 +70,11 @@ Ext.define('Enif.store.GameRawData', {
 
     onJsonstoreRemove: function(store, records, index, isMove, eOpts) {
         store.sync();
+    },
+
+    onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
+        // sort the store after load
+        store.sort('timestamp', 'DESC');
     }
 
 });

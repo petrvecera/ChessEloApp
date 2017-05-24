@@ -113,6 +113,29 @@
             },
             "name": "onJsonstoreRemove",
             "designerId": "bad3e925-3a7d-4f9b-bbeb-08378c65b2eb"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "// sort the store after load",
+                    "store.sort('timestamp', 'DESC');"
+                ],
+                "name": "load"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onJsonstoreLoad",
+            "designerId": "c35ed3ee-6224-4c22-804e-e6ddf86f8cd2"
         }
     ]
 }

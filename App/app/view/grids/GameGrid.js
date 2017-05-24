@@ -18,19 +18,16 @@ Ext.define('Enif.view.grids.GameGrid', {
     alias: 'widget.grids.gamegrid',
 
     requires: [
-        'Enif.store.GameRawData',
-        'Enif.store.PlayerData',
-        'Enif.view.grids.GameGridViewController',
         'Enif.view.grids.GameGridViewModel',
-        'Ext.Button',
-        'Ext.SegmentedButton',
-        'Ext.Spacer',
+        'Enif.view.grids.GameGridViewController',
+        'Ext.grid.column.RowNumberer',
+        'Ext.grid.plugin.RowOperations',
+        'Ext.grid.plugin.CellEditing',
         'Ext.Toolbar',
         'Ext.field.ComboBox',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.RowNumberer',
-        'Ext.grid.plugin.CellEditing',
-        'Ext.grid.plugin.RowOperations'
+        'Ext.Button',
+        'Ext.Spacer',
+        'Ext.SegmentedButton'
     ],
 
     controller: 'grids.gamegrid',
@@ -62,6 +59,14 @@ Ext.define('Enif.view.grids.GameGrid', {
             align: 'center',
             dataIndex: 'timestamp',
             text: 'Timestamp'
+        },
+        {
+            xtype: 'gridcolumn',
+            hidden: true,
+            width: 160,
+            align: 'center',
+            dataIndex: 'timestamp',
+            text: 'Time-ID'
         },
         {
             xtype: 'numbercolumn',

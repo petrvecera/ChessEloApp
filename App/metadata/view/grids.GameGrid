@@ -111,6 +111,33 @@
             ]
         },
         {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "timestamp",
+                "docked": null,
+                "hidden": true,
+                "text": "Time-ID",
+                "width": 160
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string",
+                "align": "string",
+                "hidden": "boolean",
+                "width": "auto"
+            },
+            "name": "MyColumn",
+            "designerId": "ffdca21e-949c-480d-93c7-ae9bbedda6ac"
+        },
+        {
             "type": "Ext.grid.column.Number",
             "reference": {
                 "name": "columns",
