@@ -31,7 +31,7 @@
                 "actionMethods": [
                     "{\"create\":\"PUT\",\"read\":\"GET\",\"update\":\"POST\",\"destroy\":\"DELETE\"}"
                 ],
-                "url": "http://192.168.88.176:8181/players"
+                "url": "http://chess.pagep.net:8181/players"
             },
             "configAlternates": {
                 "url": "string",

@@ -77,14 +77,14 @@ Ext.define('Enif.view.grids.GameGridViewController', {
         });
     },
 
-    onFilterPlayerChange: function(selectfield, newValue, oldValue, eOpts) {
+    onFilterPlayerChange: function(combobox, newValue, oldValue, eOpts) {
         let selectedPlayer = this.getView().query('combobox[name=playerFilter]')[0].getValue(),
         selectedResult = this.getView().query('combobox[name=resultFilter]')[0].getValue();
 
         this.filterStore(selectedPlayer, selectedResult);
     },
 
-    onFilterResultChange: function(selectfield, newValue, oldValue, eOpts) {
+    onFilterResultChange: function(combobox, newValue, oldValue, eOpts) {
         let selectedPlayer = this.getView().query('combobox[name=playerFilter]')[0].getValue(),
         selectedResult = this.getView().query('combobox[name=resultFilter]')[0].getValue();
 

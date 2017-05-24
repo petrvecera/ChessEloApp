@@ -25,12 +25,13 @@ Ext.define('Enif.view.MainPanel', {
         'Enif.view.charts.WinsByColor',
         'Enif.view.grids.GameGrid',
         'Enif.view.charts.EloRating',
+        'Enif.view.pivot.RoundRobinGrid',
         'Ext.Toolbar',
         'Ext.Label',
         'Ext.Img',
         'Ext.Button',
-        'Ext.grid.Grid',
-        'Ext.Panel'
+        'Ext.Panel',
+        'Ext.pivot.Grid'
     ],
 
     controller: 'mainpanel',
@@ -140,6 +141,16 @@ Ext.define('Enif.view.MainPanel', {
             iconCls: 'x-fa fa-line-chart',
             routeValue: 'eloChart',
             title: 'Elo Rating Chart'
+        },
+        {
+            xtype: 'container',
+            routeValue: 'roundrobin',
+            title: 'Round Robin',
+            items: [
+                {
+                    xtype: 'pivot.roundrobingrid'
+                }
+            ]
         }
     ],
     listeners: {
