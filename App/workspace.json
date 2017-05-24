@@ -6,7 +6,10 @@
      * files can be found and "version" the version of the framework. For example:
      *
      *      "frameworks": {
-     *          
+     *          "ext": {
+     *              "path": "ext",
+     *              "version": "n.n.n.n"
+     *          },
      *          "extnew": {
      *              "path": "extnew",
      *              "version": "n.n.n.n"
@@ -20,10 +23,8 @@
     "frameworks": {
         "ext": {
             "path":"ext",
-            "version":"6.5.0.611"
+            "version":"6.5.0.775"
         }
-        
-        
     },
 
     /**
