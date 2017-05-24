@@ -28,7 +28,7 @@
         "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.0",
-    "xdsBuild": 152,
+    "xdsBuild": 156,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",
