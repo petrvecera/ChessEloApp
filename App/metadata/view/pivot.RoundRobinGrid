@@ -9,6 +9,7 @@
         "designer|userAlias": "pivot.roundrobingrid",
         "designer|userClassName": "pivot.RoundRobinGrid",
         "height": "100%",
+        "sortable": false,
         "width": "100%"
     },
     "configAlternates": {
@@ -16,7 +17,8 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string",
         "height": "auto",
-        "width": "auto"
+        "width": "auto",
+        "sortable": "boolean"
     },
     "name": "MyGrid",
     "designerId": "f8a3bb96-87fd-4171-bec6-85c63d827aec",
@@ -48,13 +50,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "name",
-                        "sortIndex": "uid"
+                        "sortIndex": "uid",
+                        "sortable": false
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "sortIndex": "datafield",
                         "direction": "string",
-                        "renderer": "function"
+                        "renderer": "function",
+                        "sortable": "boolean"
                     },
                     "name": "MyLeftaxisItem",
                     "designerId": "8756a3dd-5fd0-4de6-aa8b-84de49853997"
@@ -87,12 +91,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "games"
+                        "dataIndex": "games",
+                        "sortable": false
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "renderer": "function",
-                        "labelRenderer": "function"
+                        "labelRenderer": "function",
+                        "sortable": "boolean"
                     },
                     "name": "MyAggregateItem",
                     "designerId": "d59c16a9-39e3-48be-a658-90f30aab61d9",
@@ -168,6 +174,8 @@
                                     "    }",
                                     "    return false;",
                                     "});",
+                                    "",
+                                    "games.clearFilter();",
                                     "",
                                     "return wins + \" : \" + draws + \" : \" + loses + ' (' + games.getCount() + ')';",
                                     ""

@@ -28,12 +28,14 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
     },
     height: '100%',
     width: '100%',
+    sortable: false,
 
     matrix: {
         store: 'PlayerData',
         leftAxis: [
             {
                 dataIndex: 'name',
+                sortable: false,
                 sortIndex: 'uid'
             }
         ],
@@ -101,10 +103,13 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                     return false;
                 });
 
+                games.clearFilter();
+
                 return wins + " : " + draws + " : " + loses + ' (' + games.getCount() + ')';
 
             },
-            dataIndex: 'games'
+            dataIndex: 'games',
+            sortable: false
         }
     }
 
