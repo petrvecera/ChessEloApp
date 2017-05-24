@@ -28,12 +28,14 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
     },
     height: '100%',
     width: '100%',
+    sortable: false,
 
     matrix: {
         store: 'PlayerData',
         leftAxis: [
             {
                 dataIndex: 'name',
+                sortable: false,
                 sortIndex: 'uid'
             }
         ],
@@ -56,7 +58,12 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                     return;
                 }
 
-                let cellRow = playersStore.find('name', record.data["ext-153"])+1;
+                let extID = Object.keys(record.data).find(el => {
+                    console.log(el);
+                    return el.startsWith("ext");
+                });
+
+                let cellRow = playersStore.find('name', record.data[extID])+1;
 
                 if (cellColumn === cellRow) {
                     cell.setBodyStyle({
@@ -72,7 +79,8 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                 let games = Ext.getStore('GameRawData');
 
                 games.clearFilter();
-                games.filterBy(function(rec) {
+
+                games.getData().items.forEach(rec => {
                     if ((rec.get('playerWhite') === cellRow &&
                     rec.get('playerBlack') === cellColumn &&
                     rec.get('result') === 'white') ||
@@ -80,7 +88,6 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                     rec.get('playerWhite') === cellColumn &&
                     rec.get('result') === 'black')) {
                         wins++;
-                        return true;
                     } else if((rec.get('playerWhite') === cellRow &&
                     rec.get('playerBlack') === cellColumn &&
                     rec.get('result') === 'black') ||
@@ -88,7 +95,6 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                     rec.get('playerWhite') === cellColumn &&
                     rec.get('result') === 'white')) {
                         loses++;
-                        return true;
                     } else if((rec.get('playerWhite') === cellRow &&
                     rec.get('playerBlack') === cellColumn &&
                     rec.get('result') === 'draw') ||
@@ -96,16 +102,14 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                     rec.get('playerWhite') === cellColumn &&
                     rec.get('result') === 'draw')) {
                         draws++;
-                        return true;
                     }
-                    return false;
                 });
 
-                return wins + " : " + draws + " : " + loses + ' (' + games.getCount() + ')';
+                return wins + " : " + draws + " : " + loses + ' (' + (wins+draws+loses) + ')';
 
             },
-            dataIndex: 'games'
+            dataIndex: 'games',
+            sortable: false
         }
     }
-
 });

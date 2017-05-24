@@ -9,6 +9,7 @@
         "designer|userAlias": "pivot.roundrobingrid",
         "designer|userClassName": "pivot.RoundRobinGrid",
         "height": "100%",
+        "sortable": false,
         "width": "100%"
     },
     "configAlternates": {
@@ -16,7 +17,8 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string",
         "height": "auto",
-        "width": "auto"
+        "width": "auto",
+        "sortable": "boolean"
     },
     "name": "MyGrid",
     "designerId": "f8a3bb96-87fd-4171-bec6-85c63d827aec",
@@ -48,13 +50,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "name",
-                        "sortIndex": "uid"
+                        "sortIndex": "uid",
+                        "sortable": false
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "sortIndex": "datafield",
                         "direction": "string",
-                        "renderer": "function"
+                        "renderer": "function",
+                        "sortable": "boolean"
                     },
                     "name": "MyLeftaxisItem",
                     "designerId": "8756a3dd-5fd0-4de6-aa8b-84de49853997"
@@ -87,12 +91,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "games"
+                        "dataIndex": "games",
+                        "sortable": false
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
                         "renderer": "function",
-                        "labelRenderer": "function"
+                        "labelRenderer": "function",
+                        "sortable": "boolean"
                     },
                     "name": "MyAggregateItem",
                     "designerId": "d59c16a9-39e3-48be-a658-90f30aab61d9",
@@ -124,7 +130,12 @@
                                     "    return;",
                                     "}",
                                     "",
-                                    "let cellRow = playersStore.find('name', record.data[\"ext-153\"])+1;",
+                                    "let extID = Object.keys(record.data).find(el => {",
+                                    "    console.log(el);",
+                                    "    return el.startsWith(\"ext\");",
+                                    "});",
+                                    "",
+                                    "let cellRow = playersStore.find('name', record.data[extID])+1;",
                                     "",
                                     "if (cellColumn === cellRow) {",
                                     "    cell.setBodyStyle({",
@@ -140,7 +151,8 @@
                                     "let games = Ext.getStore('GameRawData');",
                                     "",
                                     "games.clearFilter();",
-                                    "games.filterBy(function(rec) {",
+                                    "",
+                                    "games.getData().items.forEach(rec => {",
                                     "    if ((rec.get('playerWhite') === cellRow &&",
                                     "        rec.get('playerBlack') === cellColumn &&",
                                     "        rec.get('result') === 'white') ||",
@@ -148,7 +160,6 @@
                                     "        rec.get('playerWhite') === cellColumn &&",
                                     "        rec.get('result') === 'black')) {",
                                     "        wins++;",
-                                    "        return true;",
                                     "    } else if((rec.get('playerWhite') === cellRow &&",
                                     "        rec.get('playerBlack') === cellColumn &&",
                                     "        rec.get('result') === 'black') ||",
@@ -156,7 +167,6 @@
                                     "        rec.get('playerWhite') === cellColumn &&",
                                     "        rec.get('result') === 'white')) {",
                                     "        loses++;",
-                                    "        return true;",
                                     "    } else if((rec.get('playerWhite') === cellRow &&",
                                     "        rec.get('playerBlack') === cellColumn &&",
                                     "        rec.get('result') === 'draw') ||",
@@ -164,12 +174,10 @@
                                     "        rec.get('playerWhite') === cellColumn &&",
                                     "        rec.get('result') === 'draw')) {",
                                     "        draws++;",
-                                    "        return true;",
                                     "    }",
-                                    "    return false;",
                                     "});",
                                     "",
-                                    "return wins + \" : \" + draws + \" : \" + loses + ' (' + games.getCount() + ')';",
+                                    "return wins + \" : \" + draws + \" : \" + loses + ' (' + (wins+draws+loses) + ')';",
                                     ""
                                 ]
                             },
