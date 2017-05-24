@@ -45,6 +45,14 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
             values.timestamp = nwTimestamp;
             //console.log("New TimeStamp is:" + values.timestamp);
 
+            //TODO: Proper verification of the form
+            if (values.playerWhite == null || values.playerBlack == null ){
+                Ext.toast('Invalid form!', 3000);
+                form.reset();
+                return;
+            }
+
+
             let newRecord = store.add(values);
 
             form.reset();
@@ -55,6 +63,8 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
                 },
                 success: function (batch, options) {
                     Ext.toast('Record sucesfully aded', 3000);
+                    // clear filters after sync / some kind of bug?
+                    store.clearFilter();
                 },
                 failure: function (batch, options) {
                     Ext.toast('Error while adding the record', 3000);

@@ -77,7 +77,6 @@ Ext.define('Enif.view.grids.GameGridViewController', {
         });
     },
 
-
     /* This function can move the record in the grid up and down by swapping their timestamp */
     moveRecords: function(move) {
         let grid = this.getView();

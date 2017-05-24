@@ -59,7 +59,7 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
                 }
 
                 let extID = Object.keys(record.data).find(el => {
-                    console.log(el);
+                    //console.log(el);
                     return el.startsWith("ext");
                 });
 
@@ -112,4 +112,5 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
             sortable: false
         }
     }
+
 });

@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.0.775"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:46284/",
+        "urlPrefix": "http://localhost:61134/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -20,7 +20,7 @@
         "exportPath": "",
         "spacesToIndent": 4,
         "sdkPath": "",
-        "lineEnding": "CRLF",
+        "lineEnding": "LF",
         "genTimestamps": false,
         "cacheBust": false,
         "buildShouldOverwriteIndex": true,
@@ -28,7 +28,7 @@
         "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.0",
-    "xdsBuild": 159,
+    "xdsBuild": 156,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",
