@@ -465,12 +465,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "iconCls": "x-fa fa-th",
                 "routeValue": "roundrobin",
                 "title": "Round Robin"
             },
             "configAlternates": {
                 "routeValue": "string",
-                "title": "string"
+                "title": "string",
+                "iconCls": "string"
             },
             "name": "MyContainer2",
             "designerId": "256b1d7d-59fd-4af1-b40b-72e83a6598d0",
@@ -478,6 +480,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "routeValue",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "iconCls",
                     "type": "string"
                 }
             ],
