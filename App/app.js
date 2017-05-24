@@ -43,7 +43,8 @@ Ext.application({
         'charts.WinsByColor',
         'Loading',
         'forms.AddGameDialog',
-        'forms.AddGameForm'
+        'forms.AddGameForm',
+        'pivot.RoundRobinGrid'
     ],
     controllers: [
         'StoreLoadController'

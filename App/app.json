@@ -1,19 +1,22 @@
 {
    "name": "Enif",
    "version": "1.0.0.0",
+   "framework": "ext",
+   "toolkit": "modern",
+   "theme": "theme-triton-8be0cabb-c569-427d-880e-fe6fe67e4e86",
+   "requires": [
+      "font-awesome",
+      "pivot",
+      "sencha-charts",
+      "d3",
+      "pivot-d3"
+   ],
    "indexHtmlPath": "index.html",
    "classpath": [
       "app"
    ],
    "overrides": [
       "overrides"
-   ],
-   "framework": "ext",
-   "toolkit": "modern",
-   "theme": "theme-triton-8be0cabb-c569-427d-880e-fe6fe67e4e86",
-   "requires": [
-      "font-awesome",
-      "sencha-charts"
    ],
    "fashion": {
       "inliner": {
@@ -125,5 +128,5 @@
    "ignore": [
       "(^|/)CVS(/?$|/.*?$)"
    ],
-   "id": "6935870e-03a6-4c39-8daa-aef7134b4f5a"
+   "id": "a23808c4-d7b7-4149-8e4e-9f71a7e3543e"
 }

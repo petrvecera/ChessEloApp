@@ -456,6 +456,44 @@
             },
             "name": "onTabChange",
             "designerId": "e6e0a454-51b2-4610-9ea5-00a5bae3514f"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "routeValue": "roundrobin",
+                "title": "Round Robin"
+            },
+            "configAlternates": {
+                "routeValue": "string",
+                "title": "string"
+            },
+            "name": "MyContainer2",
+            "designerId": "256b1d7d-59fd-4af1-b40b-72e83a6598d0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "pivot.roundrobingrid",
+                    "designerId": "1f05c7b1-90e1-448f-b7ca-d6043b9dc777",
+                    "masterInstanceId": "f8a3bb96-87fd-4171-bec6-85c63d827aec"
+                }
+            ]
         }
     ]
 }
