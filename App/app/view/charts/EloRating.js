@@ -25,6 +25,8 @@ Ext.define('Enif.view.charts.EloRating', {
     requires: [
         'Enif.view.charts.EloRatingViewModel',
         'Enif.view.charts.EloRatingViewController',
+        'Ext.Toolbar',
+        'Ext.Button',
         'Ext.chart.CartesianChart',
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
@@ -41,7 +43,25 @@ Ext.define('Enif.view.charts.EloRating', {
 
     items: [
         {
+            xtype: 'toolbar',
+            docked: 'top',
+            layout: {
+                type: 'hbox',
+                align: 'end'
+            },
+            items: [
+                {
+                    xtype: 'button',
+                    text: 'Reset Zoom',
+                    listeners: {
+                        tap: 'onZoomResetButtonTap'
+                    }
+                }
+            ]
+        },
+        {
             xtype: 'cartesian',
+            reference: 'chart',
             height: '90%',
             itemId: 'mylinechart',
             width: '90%',
