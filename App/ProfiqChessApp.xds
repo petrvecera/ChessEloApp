@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.0.775"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:61134/",
+        "urlPrefix": "http://localhost:49159/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -28,7 +28,7 @@
         "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.0",
-    "xdsBuild": 156,
+    "xdsBuild": 166,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",

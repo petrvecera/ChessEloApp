@@ -23,6 +23,8 @@ Ext.define('Enif.controller.StoreLoadController', {
         // clear the filters on the store before loading
         gamesStore.clearFilter();
         gamesStore.load();
+        gamesStore.clearFilter();
+
 
         Ext.getStore("PlayerData").load();
     },
