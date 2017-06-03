@@ -9,6 +9,7 @@
         "controllers": [
             "StoreLoadController"
         ],
+        "defaultToken": "players",
         "models": [
             "PlayerData",
             "ChartsData"
@@ -33,7 +34,8 @@
             "Loading",
             "forms.AddGameDialog",
             "forms.AddGameForm",
-            "pivot.RoundRobinGrid"
+            "pivot.RoundRobinGrid",
+            "MainViewport"
         ]
     },
     "configAlternates": {
@@ -42,7 +44,8 @@
         "stores": "typedarray",
         "views": "typedarray",
         "controllers": "typedarray",
-        "requires": "typedarray"
+        "requires": "typedarray",
+        "defaultToken": "string"
     },
     "name": "Application",
     "designerId": "application",
@@ -55,24 +58,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|commentHeader": [
-                    "We need data from Person store for calculation in the views, load store before loading views and other stores"
-                ],
                 "fn": "launch",
                 "implHandler": [
-                    "",
-                    "",
-                    "Ext.getStore('PlayerData').load({",
-                    "    callback: function (records, operation, success) {",
-                    "        if(success){",
-                    "            Ext.first('#loading').destroy();",
-                    "            Ext.create('Enif.view.MainPanel', {fullscreen: true});",
-                    "        } else {",
-                    "            console.error('Error loading the application');",
-                    "            Ext.toast('Error loading the application', 55000);",
-                    "        }",
-                    "    }",
-                    "});"
+                    ""
                 ]
             },
             "configAlternates": {

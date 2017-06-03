@@ -21,34 +21,8 @@ Ext.define('Enif.view.MainPanelViewController', {
     alias: 'controller.mainpanel',
 
     requires: [
-        'Ext.route.Route',
         'Enif.view.forms.AddGameDialog'
     ],
-
-    routes: {
-        'players': 'showPlayers',
-        'games': 'showGames',
-        'eloChart': 'showEloChart'
-    },
-
-    showPlayers: function() {
-        this.changeTab(0);
-    },
-
-    showGames: function() {
-        this.changeTab(1);
-    },
-
-    showEloChart: function() {
-        this.changeTab(2);
-    },
-
-    changeTab: function(index) {
-        let view = this.getView();
-        if(view.getActiveItem() != index){
-            view.setActiveItem(index);
-        }
-    },
 
     onAddGameTap: function(button, e, eOpts) {
         Ext.create('Enif.view.forms.AddGameDialog').show();
@@ -59,7 +33,7 @@ Ext.define('Enif.view.MainPanelViewController', {
     },
 
     onTabChange: function(sender, value, oldValue, eOpts) {
-        //this.redirectTo(value.routeValue);
+        this.redirectTo(value.routeValue);
     }
 
 });

@@ -38,6 +38,7 @@ Ext.define('Enif.view.MainPanel', {
     viewModel: {
         type: 'mainpanel'
     },
+    height: '100%',
     id: 'mainTabPanel',
     maxWidth: '100%',
     tabBarPosition: 'left',
@@ -144,7 +145,7 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'container',
-            routeValue: 'roundrobin',
+            routeValue: 'roundRobin',
             iconCls: 'x-fa fa-th',
             title: 'Round Robin',
             items: [

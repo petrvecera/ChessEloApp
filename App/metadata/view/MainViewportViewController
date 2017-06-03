@@ -1,0 +1,107 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainviewport",
+        "designer|userClassName": "MainViewportViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "5680f1d8-9488-49fa-9800-f79dbf43c4d1",
+    "cn": [
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showPlayers",
+                "implHandler": [
+                    "this.getViewModel().set('activeTab', 0);"
+                ],
+                "url": "players"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showPlayers",
+            "designerId": "b930dcbb-de46-43f0-8b9a-762d5c5c0c2f"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showGames",
+                "implHandler": [
+                    "this.getViewModel().set('activeTab', 1);"
+                ],
+                "url": "games"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showGames",
+            "designerId": "8cd06a02-dd79-413e-9273-63a6a99b4cbb"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showEloChart",
+                "implHandler": [
+                    "this.getViewModel().set('activeTab', 2);"
+                ],
+                "url": "eloChart"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showEloChart",
+            "designerId": "1b3e85c7-990a-4d0a-abc3-ae9bb0302fe3"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showRoundRobin",
+                "implHandler": [
+                    "this.getViewModel().set('activeTab', 3);"
+                ],
+                "url": "roundRobin"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showRoundRobin",
+            "designerId": "b2da6481-1fd5-404d-89ca-2bf3f25473b0"
+        }
+    ]
+}

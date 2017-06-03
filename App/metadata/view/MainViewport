@@ -1,0 +1,91 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|commentHeader": [
+            "We need data from Person store for calculation in the views, load store before loading views and other stores"
+        ],
+        "designer|initialView": true,
+        "designer|userAlias": "mainviewport",
+        "designer|userClassName": "MainViewport",
+        "height": "100%",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|commentHeader": "comment",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyContainer4",
+    "designerId": "e2b73739-a41d-4106-90e9-f58abcd6b9d0",
+    "viewControllerInstanceId": "5680f1d8-9488-49fa-9800-f79dbf43c4d1",
+    "viewModelInstanceId": "bd380642-fc2a-4563-8315-c48a7521dc66",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "reference": "loading"
+            },
+            "configAlternates": {
+                "reference": "string"
+            },
+            "name": "loading",
+            "designerId": "65a615c6-8fb5-48be-ac2b-92439ff86723",
+            "masterInstanceId": "23e7e4da-c797-4f1a-84cf-320f8c9504eb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainContainerInitialize",
+                "implHandler": [
+                    "const view = component,",
+                    "      VM = this.getViewModel();",
+                    "",
+                    "",
+                    "Ext.getStore('PlayerData').load({",
+                    "    callback: function (records, operation, success) {",
+                    "        if(success){",
+                    "            view.lookup('loading').destroy();",
+                    "            //TODO:  It would be better to use databinding with active tab, but it's not possible to databind activeTab DSGNR-7902",
+                    "            const mainPanel = Ext.create('Enif.view.MainPanel', {activeItem: VM.get('activeTab')});",
+                    "",
+                    "            view.add(mainPanel);",
+                    "",
+                    "        } else {",
+                    "            console.error('Error loading the application');",
+                    "            Ext.toast('Error loading the application', 55000);",
+                    "        }",
+                    "    }",
+                    "});"
+                ],
+                "name": "initialize",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onMainContainerInitialize",
+            "designerId": "e5d3da90-83fe-4db4-9379-0b0a0a0104f9"
+        }
+    ]
+}
