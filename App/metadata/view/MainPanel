@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userAlias": "mainpanel",
         "designer|userClassName": "MainPanel",
+        "height": "100%",
         "id": "mainTabPanel",
         "maxWidth": "100%",
         "tabBarPosition": "left"
@@ -20,7 +21,8 @@
         "tabBarPosition": "string",
         "id": "string",
         "activeItem": "number",
-        "reference": "string"
+        "reference": "string",
+        "height": "auto"
     },
     "name": "MyTabPanel",
     "designerId": "20cd0446-3935-47fe-b19c-dcdcd45c24db",
@@ -443,7 +445,7 @@
             "userConfig": {
                 "fn": "onTabChange",
                 "implHandler": [
-                    "//this.redirectTo(value.routeValue);"
+                    "this.redirectTo(value.routeValue);"
                 ],
                 "name": "activeItemchange",
                 "scope": "me"
@@ -466,7 +468,7 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "x-fa fa-th",
-                "routeValue": "roundrobin",
+                "routeValue": "roundRobin",
                 "title": "Round Robin"
             },
             "configAlternates": {

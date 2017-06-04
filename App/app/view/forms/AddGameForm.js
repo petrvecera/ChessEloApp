@@ -27,6 +27,9 @@ Ext.define('Enif.view.forms.AddGameForm', {
         'Ext.picker.Date',
         'Ext.form.FieldSet',
         'Ext.field.ComboBox',
+        'Ext.field.Container',
+        'Ext.SegmentedButton',
+        'Ext.Button',
         'Ext.Toast'
     ],
 
@@ -99,51 +102,81 @@ Ext.define('Enif.view.forms.AddGameForm', {
             layout: 'hbox',
             items: [
                 {
-                    xtype: 'combobox',
+                    xtype: 'containerfield',
                     flex: 1,
-                    id: 'wonCombo',
-                    name: 'result',
                     margin: '0 10 0 0',
                     label: 'Won',
-                    value: 'white',
-                    editable: false,
-                    displayField: 'text',
-                    options: [
+                    labelMinWidth: 50,
+                    items: [
                         {
-                            text: 'White',
-                            value: 'white'
-                        },
-                        {
-                            text: 'Black',
-                            value: 'black'
-                        },
-                        {
-                            text: 'Draw',
-                            value: 'draw'
+                            xtype: 'segmentedbutton',
+                            name: 'playerWon',
+                            maxWidth: 300,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    flex: 2,
+                                    name: 'playerWhite',
+                                    iconAlign: 'top',
+                                    iconCls: 'x-fa fa-user-o',
+                                    text: 'White',
+                                    value: 'white'
+                                },
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'top',
+                                    iconCls: 'x-fa fa-pause',
+                                    text: 'Draw',
+                                    value: 'draw'
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 2,
+                                    name: 'playerBlack',
+                                    iconAlign: 'top',
+                                    iconCls: 'x-fa fa-user',
+                                    text: 'Black',
+                                    value: 'black'
+                                }
+                            ]
                         }
-                    ],
-                    valueField: 'value'
+                    ]
                 },
                 {
-                    xtype: 'combobox',
+                    xtype: 'containerfield',
                     flex: 1,
-                    name: 'timeout',
                     margin: '0 0 0 10',
+                    bodyAlign: 'center',
                     label: 'Run out of time',
-                    labelMinWidth: 120,
-                    value: false,
-                    editable: false,
-                    options: [
+                    labelMinWidth: 105,
+                    items: [
                         {
-                            text: 'No',
-                            value: false
-                        },
-                        {
-                            text: 'Yes',
-                            value: true
+                            xtype: 'segmentedbutton',
+                            height: 50,
+                            name: 'time',
+                            width: 100,
+                            value: 'false',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'center'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    pressed: true,
+                                    text: 'No',
+                                    value: 'false'
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    text: 'Yes',
+                                    value: 'true'
+                                }
+                            ]
                         }
-                    ],
-                    valueField: 'value'
+                    ]
                 }
             ]
         }
@@ -158,28 +191,18 @@ Ext.define('Enif.view.forms.AddGameForm', {
     },
 
     comboChange: function() {
-        let whiteName = Ext.first('combobox[name=playerWhite]').getSelection();
-        let blackName = Ext.first('combobox[name=playerBlack]').getSelection();
+        let whiteName = this.query('combobox[name=playerWhite]')[0].getSelection();
+        let blackName = this.query('combobox[name=playerBlack]')[0].getSelection();
+
+        if (whiteName == blackName && (whiteName != "" && blackName != "") ){
+            Ext.toast('Player can\'t play againts himself', 3000);
+        }
 
         whiteName = whiteName ? whiteName.get('name') : "";
         blackName = blackName ? blackName.get('name') : "";
 
-
-
-        Ext.first('#wonCombo').setOptions([
-            {
-                text: whiteName + " (White)",
-                value: 'white'
-            },
-            {
-                text: blackName + " (Black)",
-                value: 'black'
-            },
-            {
-                text: "Draw",
-                value: 'draw'
-            }
-        ]);
+        if(whiteName !== "") this.query('button[name=playerWhite]')[0].setText(whiteName);
+        if(blackName !== "") this.query('button[name=playerBlack]')[0].setText(blackName);
     }
 
 });

@@ -29,6 +29,75 @@
     "viewModelInstanceId": "03444f56-7d92-4251-8091-c037b1f68cc2",
     "cn": [
         {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "end",
+                "docked": "top"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "docked": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "44b96a3c-ec56-4274-b753-369a1e2b6940",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Reset Zoom"
+                    },
+                    "configAlternates": {
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "33e5c2f7-693b-45c9-8f08-b33b185e4c57",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onZoomResetButtonTap",
+                                "implHandler": [
+                                    "",
+                                    "let chart = this.lookupReference('chart'),",
+                                    "    interaction = chart && Ext.ComponentQuery.query('interaction[type=crosszoom]', chart)[0],",
+                                    "    undoButton = interaction && interaction.getUndoButton(),",
+                                    "    handler = undoButton && undoButton.config.handler;",
+                                    "if (handler) {",
+                                    "    handler();",
+                                    "}"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onZoomResetButtonTap",
+                            "designerId": "0b4dbf96-362f-4fdd-87a0-61bf97d7b714"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "type": "Ext.chart.CartesianChart",
             "reference": {
                 "name": "items",
@@ -46,6 +115,7 @@
                 "itemId": "mylinechart",
                 "margin": 25,
                 "padding": 20,
+                "reference": "chart",
                 "store": "EloRatinChart",
                 "width": "90%"
             },
@@ -57,7 +127,8 @@
                 "width": "auto",
                 "itemId": "string",
                 "padding": "auto",
-                "innerPadding": "object"
+                "innerPadding": "object",
+                "reference": "string"
             },
             "name": "MyLineChart",
             "designerId": "7e277f95-ade1-4d10-9e78-d280d95f668d",

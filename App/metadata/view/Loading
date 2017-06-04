@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
         "designer|userAlias": "loading",
         "designer|userClassName": "Loading",
         "height": "100%",

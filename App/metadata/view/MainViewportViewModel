@@ -1,0 +1,23 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            " activeTab: 0",
+            "}"
+        ],
+        "designer|userAlias": "mainviewport",
+        "designer|userClassName": "MainViewportViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "bd380642-fc2a-4563-8315-c48a7521dc66"
+}

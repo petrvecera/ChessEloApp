@@ -22,54 +22,88 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
 
     },
 
+    /* This is not very nice function - spaghetti code */
     addNewGame: function() {
-        let form = this.getView();
-        if (form.isValid()){
+        const form = this.getView();
+        // validation doens't work - crash?
+        //if (form.isValid()){
+        if (true){
 
-            let store = Ext.getStore("GameRawData"),
-                values = form.getValues ();
-
-
-            // Because we are allowing adding games to the history / future we need to correctly select the timestamp for the new record
-            // We get only a date and look into the old records and finds the empty timestamp slot
-
-            // Get the actual timestamp
-            let selectedDate = Ext.Date.format(new Date(values.timestamp), 'Y,m,d'),
-                nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time
-
-            // Search the games for new timestamp
-            while(this.isInGames(nwTimestamp, store)){
-                nwTimestamp++;
-            }
-
-            values.timestamp = nwTimestamp;
-            //console.log("New TimeStamp is:" + values.timestamp);
-
-            //TODO: Proper verification of the form
-            if (values.playerWhite == null || values.playerBlack == null ){
-                Ext.toast('Invalid form!', 3000);
-                form.reset();
-                return;
-            }
-
-
-            let newRecord = store.add(values);
-
-            form.reset();
-
-            store.sync({
+            Ext.getStore('GameRawData').load({
                 callback: function (records, operation, success) {
-                    Enif.app.getController('storeLoadController').reloadAllStores();
-                },
-                success: function (batch, options) {
-                    Ext.toast('Record sucesfully aded', 3000);
-                    // clear filters after sync / some kind of bug?
-                    store.clearFilter();
-                },
-                failure: function (batch, options) {
-                    Ext.toast('Error while adding the record', 3000);
+                    if(success){
+                        //TODO: FIX this - dirty hacks
+                        function isInGames (timeStamp, store) {
+                            return store.getData().items.some(item => {return item.get('timestamp') === timeStamp; });
+                        }
+
+
+                        const store = Ext.getStore("GameRawData"),
+                            values = form.getValues ();
+
+                        // I should be using references in here
+                        const wonBtn = form.query('segmentedbutton[name=playerWon]')[0];
+                        values.result = wonBtn.getValue();
+
+                        const timeoutBtn = form.query('segmentedbutton[name=time]')[0];
+                        values.timeout = (timeoutBtn.getValue() == 'true');
+
+                        // Because we are allowing adding games to the history / future we need to correctly select the timestamp for the new record
+                        // We get only a date and look into the old records and finds the empty timestamp slot
+
+                        // Get the actual timestamp
+                        let selectedDate = Ext.Date.format(new Date(values.timestamp), 'Y,m,d'),
+                            nwTimestamp = new Date(selectedDate).getTime(); // get the timestamp without time
+
+                        // Search the games for new timestamp
+                        while(isInGames(nwTimestamp, store)){
+                            nwTimestamp++;
+                        }
+
+                        values.timestamp = nwTimestamp;
+                        //console.log("New TimeStamp is:" + values.timestamp);
+
+                        //TODO: Proper verification of the form
+                        if (values.playerWhite == null || values.playerBlack == null ){
+                            Ext.toast('Invalid form!', 3000);
+                            form.reset();
+                            return;
+                        }
+
+                        let newRecord = store.add(values);
+
+                        //reset form
+                        timeoutBtn.setValue('false');
+                        form.query('button[name=playerWhite]')[0].setText('White');
+                        form.query('button[name=playerBlack]')[0].setText('Black');
+
+
+                        store.sync({
+                            callback: function (records, operation, success) {
+                                Enif.app.getController('storeLoadController').reloadAllStores();
+                            },
+                            success: function (batch, options) {
+                                Ext.toast('Record sucesfully aded', 3000);
+                                // clear filters after sync / some kind of bug?
+                                store.clearFilter();
+                            },
+                            failure: function (batch, options) {
+                                Ext.toast('Error while adding the record', 3000);
+                            }
+                        });
+
+
+                    } else {
+                        const errMsg = 'Error loading the data before push';
+                        console.error(errMsg);
+                        Ext.toast(errMsg, 55000);
+                    }
                 }
             });
+
+
+
+
 
 
         }else{

@@ -29,6 +29,17 @@ Ext.define('Enif.view.charts.EloRatingViewController', {
 
     },
 
+    onZoomResetButtonTap: function(button, e, eOpts) {
+
+        let chart = this.lookupReference('chart'),
+        interaction = chart && Ext.ComponentQuery.query('interaction[type=crosszoom]', chart)[0],
+        undoButton = interaction && interaction.getUndoButton(),
+        handler = undoButton && undoButton.config.handler;
+        if (handler) {
+            handler();
+        }
+    },
+
     onMylinechartInitialize: function(component, eOpts) {
         let playerData = Ext.getStore("PlayerData").getData();
         noPlayers = playerData.length;

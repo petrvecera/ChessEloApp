@@ -44,29 +44,17 @@ Ext.application({
         'Loading',
         'forms.AddGameDialog',
         'forms.AddGameForm',
-        'pivot.RoundRobinGrid'
+        'pivot.RoundRobinGrid',
+        'MainViewport'
     ],
     controllers: [
         'StoreLoadController'
     ],
+    defaultToken: 'players',
     name: 'Enif',
 
-    /* We need data from Person store for calculation in the views, load store before loading views and other stores */
     launch: function() {
-        Ext.create('Enif.view.Loading', {fullscreen: true});
-
-
-        Ext.getStore('PlayerData').load({
-            callback: function (records, operation, success) {
-                if(success){
-                    Ext.first('#loading').destroy();
-                    Ext.create('Enif.view.MainPanel', {fullscreen: true});
-                } else {
-                    console.error('Error loading the application');
-                    Ext.toast('Error loading the application', 55000);
-                }
-            }
-        });
+        Ext.create('Enif.view.MainViewport', {fullscreen: true});
     }
 
 });

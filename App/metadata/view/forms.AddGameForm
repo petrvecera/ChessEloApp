@@ -244,92 +244,216 @@
             "designerId": "c6eb63f7-fc66-4a4f-a7ce-3590b684a5c0",
             "cn": [
                 {
-                    "type": "Ext.field.ComboBox",
+                    "type": "Ext.field.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "Won",
-                        "displayField": "text",
-                        "editable": false,
-                        "id": "wonCombo",
                         "label": "Won",
+                        "labelMinWidth": 50,
                         "layout|flex": 1,
-                        "margin": "0 10 0 0",
-                        "name": "result",
-                        "options": [
-                            "[",
-                            "    {text: 'White',  value: 'white'},",
-                            "    {text: 'Black', value: 'black'},",
-                            "    {text: 'Draw',  value: 'draw'}",
-                            "]"
-                        ],
-                        "value": [
-                            "white"
-                        ],
-                        "valueField": "value"
-                    },
-                    "configAlternates": {
-                        "designer|displayName": "string",
-                        "displayField": "auto",
-                        "label": "string",
-                        "layout|flex": "number",
-                        "margin": "auto",
-                        "options": "array",
-                        "value": "object",
-                        "valueField": "auto",
-                        "name": "string",
-                        "editable": "boolean",
-                        "id": "string"
-                    },
-                    "name": "MyComboBox2",
-                    "designerId": "0f375def-321a-4753-8fd5-069fda543dd6"
-                },
-                {
-                    "type": "Ext.field.ComboBox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "editable": false,
-                        "label": "Run out of time",
-                        "labelMinWidth": 120,
-                        "layout|flex": 1,
-                        "margin": "0 0 0 10",
-                        "name": "timeout",
-                        "options": [
-                            "[{",
-                            "        text: 'No',",
-                            "    value: false",
-                            "},{",
-                            "    text: 'Yes',",
-                            "    value: true",
-                            "}",
-                            "",
-                            "]"
-                        ],
-                        "value": [
-                            "false"
-                        ],
-                        "valueField": "value"
+                        "margin": "0 10 0 0"
                     },
                     "configAlternates": {
                         "label": "string",
                         "labelMinWidth": "auto",
                         "layout|flex": "number",
-                        "margin": "auto",
-                        "name": "string",
-                        "options": "array",
-                        "value": "object",
-                        "valueField": "auto",
-                        "editable": "boolean"
+                        "margin": "auto"
                     },
-                    "name": "MyComboBox3",
-                    "designerId": "246391f3-1c6e-4ffd-a22d-dd8ec9b955ad"
+                    "name": "MyFieldContainer",
+                    "designerId": "2954b02a-9c79-44e4-a972-daec1540d71d",
+                    "cn": [
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "maxWidth": 300,
+                                "name": "playerWon"
+                            },
+                            "configAlternates": {
+                                "maxWidth": "auto",
+                                "name": "string"
+                            },
+                            "name": "MySegmentedButton1",
+                            "designerId": "855bb323-3529-41aa-9fcb-2483109a428a",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconAlign": "top",
+                                        "iconCls": "x-fa fa-user-o",
+                                        "layout|flex": 2,
+                                        "name": "playerWhite",
+                                        "text": "White",
+                                        "value": "white"
+                                    },
+                                    "configAlternates": {
+                                        "iconAlign": "string",
+                                        "iconCls": "string",
+                                        "layout|flex": "number",
+                                        "name": "string",
+                                        "text": "string",
+                                        "value": "auto"
+                                    },
+                                    "name": "MyButton5",
+                                    "designerId": "a7571ad3-2d9c-44a8-9885-fb97681c80f0"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconAlign": "top",
+                                        "iconCls": "x-fa fa-pause",
+                                        "text": "Draw",
+                                        "value": "draw"
+                                    },
+                                    "configAlternates": {
+                                        "iconAlign": "string",
+                                        "iconCls": "string",
+                                        "text": "string",
+                                        "value": "auto"
+                                    },
+                                    "name": "MyButton6",
+                                    "designerId": "4cabd673-00b8-45f6-a8eb-50ec0939af28"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconAlign": "top",
+                                        "iconCls": "x-fa fa-user",
+                                        "layout|flex": 2,
+                                        "name": "playerBlack",
+                                        "text": "Black",
+                                        "value": "black"
+                                    },
+                                    "configAlternates": {
+                                        "text": "string",
+                                        "iconAlign": "string",
+                                        "iconCls": "string",
+                                        "layout|flex": "number",
+                                        "name": "string",
+                                        "value": "auto"
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "8f1de1a0-83e9-4e36-b480-0fdfdd35b244"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyAlign": "center",
+                        "label": "Run out of time",
+                        "labelMinWidth": 105,
+                        "layout|flex": 1,
+                        "margin": "0 0 0 10"
+                    },
+                    "configAlternates": {
+                        "bodyAlign": "string",
+                        "label": "string",
+                        "labelMinWidth": "auto",
+                        "layout|flex": "number",
+                        "margin": "auto"
+                    },
+                    "name": "MyFieldContainer1",
+                    "designerId": "dd63a21e-6311-4b9a-8988-4c00d74b4ead",
+                    "cn": [
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|pack": "center",
+                                "height": 50,
+                                "name": "time",
+                                "value": "false",
+                                "width": 100
+                            },
+                            "configAlternates": {
+                                "container|pack": "string",
+                                "height": "auto",
+                                "name": "string",
+                                "value": "string",
+                                "width": "auto"
+                            },
+                            "name": "MySegmentedButton2",
+                            "designerId": "91234390-5c18-4fc2-900d-2fdbb8e16bcd",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "pressed": true,
+                                        "text": "No",
+                                        "value": "false"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "pressed": "boolean",
+                                        "text": "string",
+                                        "value": "auto"
+                                    },
+                                    "name": "MyButton8",
+                                    "designerId": "a00386a0-3e4a-4452-ae84-48824096b390"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "text": "Yes",
+                                        "value": "true"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "text": "string",
+                                        "value": "auto"
+                                    },
+                                    "name": "MyButton9",
+                                    "designerId": "2b52b7e9-4541-4b57-b042-38704b54ad57"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -343,28 +467,18 @@
             "userConfig": {
                 "fn": "comboChange",
                 "implHandler": [
-                    "let whiteName = Ext.first('combobox[name=playerWhite]').getSelection();",
-                    "let blackName = Ext.first('combobox[name=playerBlack]').getSelection();",
+                    "let whiteName = this.query('combobox[name=playerWhite]')[0].getSelection();",
+                    "let blackName = this.query('combobox[name=playerBlack]')[0].getSelection();",
+                    "",
+                    "if (whiteName == blackName && (whiteName != \"\" && blackName != \"\") ){",
+                    "    Ext.toast('Player can\\'t play againts himself', 3000);",
+                    "}",
                     "",
                     "whiteName = whiteName ? whiteName.get('name') : \"\";",
                     "blackName = blackName ? blackName.get('name') : \"\";",
                     "",
-                    "",
-                    "",
-                    "Ext.first('#wonCombo').setOptions([",
-                    "    {",
-                    "        text: whiteName + \" (White)\",",
-                    "        value: 'white'",
-                    "    },",
-                    "    {",
-                    "        text: blackName + \" (Black)\",",
-                    "        value: 'black'",
-                    "    },",
-                    "    {",
-                    "        text: \"Draw\",",
-                    "        value: 'draw'",
-                    "    }",
-                    "]);"
+                    "if(whiteName !== \"\") this.query('button[name=playerWhite]')[0].setText(whiteName);",
+                    "if(blackName !== \"\") this.query('button[name=playerBlack]')[0].setText(blackName);"
                 ]
             },
             "configAlternates": {

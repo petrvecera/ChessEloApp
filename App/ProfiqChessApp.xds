@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.0.775"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:61134/",
+        "urlPrefix": "http://localhost:59114/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -28,7 +28,7 @@
         "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.0",
-    "xdsBuild": 156,
+    "xdsBuild": 166,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",
@@ -63,7 +63,10 @@
             "57cfbda9-45da-4f54-91c8-9dd329b80697",
             "f8a3bb96-87fd-4171-bec6-85c63d827aec",
             "81b63d99-b8c3-41b1-8db3-0dfd384f54a3",
-            "f09556a4-68aa-4386-bc81-2dc733204ad4"
+            "f09556a4-68aa-4386-bc81-2dc733204ad4",
+            "e2b73739-a41d-4106-90e9-f58abcd6b9d0",
+            "bd380642-fc2a-4563-8315-c48a7521dc66",
+            "5680f1d8-9488-49fa-9800-f79dbf43c4d1"
         ],
         "store": [
             "5e1dbe0c-ad95-44ba-802c-267575d98dc0",
