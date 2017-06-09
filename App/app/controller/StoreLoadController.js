@@ -20,10 +20,12 @@ Ext.define('Enif.controller.StoreLoadController', {
 
     reloadAllStores: function() {
         let gamesStore = Ext.getStore("GameRawData");
-        // clear the filters on the store before loading
-        gamesStore.clearFilter();
-        gamesStore.load();
-        gamesStore.clearFilter();
+
+        gamesStore.load({
+            callback: function (records, operation, success) {
+                Ext.getStore("GameRawData").clearFilter();
+            }
+        });
 
 
         Ext.getStore("PlayerData").load();
