@@ -39,7 +39,10 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
 
 
                         const store = Ext.getStore("GameRawData"),
-                            values = form.getValues ();
+                              values = form.getValues ();
+
+                        // remove any filters from the store
+                        store.clearFilter();
 
                         // I should be using references in here
                         const wonBtn = form.query('segmentedbutton[name=playerWon]')[0];
