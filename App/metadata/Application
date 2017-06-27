@@ -35,7 +35,9 @@
             "forms.AddGameDialog",
             "forms.AddGameForm",
             "pivot.RoundRobinGrid",
-            "MainViewport"
+            "MainViewport",
+            "charts.EloRatingNavigator",
+            "mobile.MainPanel"
         ]
     },
     "configAlternates": {

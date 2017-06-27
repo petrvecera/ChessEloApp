@@ -1,0 +1,103 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|commentHeader": [
+            "Insert the empty items to the gird to disable the toolbar",
+            "Insert the emmpty plugins object",
+            "Insert the emtpy selectable to save space"
+        ],
+        "designer|userAlias": "mobile.mainpanel",
+        "designer|userClassName": "mobile.MainPanel",
+        "height": "100%",
+        "layout": "vbox",
+        "title": "Chess Elo Rating by profiq",
+        "titleAlign": "center"
+    },
+    "configAlternates": {
+        "designer|commentHeader": "comment",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "titleAlign": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "6ebd945c-a987-459c-aa65-5646117b8421",
+    "viewControllerInstanceId": "643a428e-8ebf-4121-93f0-163ed31f4b6a",
+    "viewModelInstanceId": "36589656-d81d-42e6-88d8-736721f921b7",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "forms.addgameform1",
+                "width": "100%"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "width": "auto"
+            },
+            "name": "forms.addgameform1",
+            "designerId": "b5fa7c54-7783-4116-9007-e7370328bce1",
+            "masterInstanceId": "95bcabb6-63de-4acc-a390-b1861fcc5c0c"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 900,
+                "items": [
+                    "{}"
+                ],
+                "plugins": [
+                    "{}"
+                ],
+                "selectable": [
+                    "{",
+                    "mode: 'single',",
+                    "checkbox: false",
+                    "}",
+                    "        ",
+                    "    "
+                ],
+                "title": "Games"
+            },
+            "configAlternates": {
+                "items": "object",
+                "plugins": "object",
+                "height": "auto",
+                "selectable": "object",
+                "title": "string"
+            },
+            "name": "grids.gamegrid1",
+            "designerId": "9eff4881-e176-4b90-98fc-ded0563da9c5",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "items",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "plugins",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede"
+        }
+    ]
+}

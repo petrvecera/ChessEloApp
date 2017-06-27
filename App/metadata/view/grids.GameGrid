@@ -10,7 +10,6 @@
         "designer|userClassName": "grids.GameGrid",
         "height": "100%",
         "maxWidth": 1000,
-        "minWidth": 900,
         "name": "grids.GameGrid",
         "selectable": [
             "{",

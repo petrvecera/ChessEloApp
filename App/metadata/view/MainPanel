@@ -445,6 +445,7 @@
             "userConfig": {
                 "fn": "onTabChange",
                 "implHandler": [
+                    "if(!value.routeValue) return;",
                     "this.redirectTo(value.routeValue);"
                 ],
                 "name": "activeItemchange",
@@ -503,6 +504,34 @@
                     "masterInstanceId": "f8a3bb96-87fd-4171-bec6-85c63d827aec"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "disabled",
+                "routeValue": "eloChartNavigator",
+                "title": "Elo Chart Navgator"
+            },
+            "configAlternates": {
+                "routeValue": "string",
+                "title": "string",
+                "designer|uiInterfaceName": "string"
+            },
+            "name": "charts.eloratingnavigator",
+            "designerId": "92106604-581d-48e5-a270-192a888e4f59",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "389f5e1b-a728-48fb-9467-3efdbf0299ec"
         }
     ]
 }

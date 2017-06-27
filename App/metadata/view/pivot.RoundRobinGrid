@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userAlias": "pivot.roundrobingrid",
         "designer|userClassName": "pivot.RoundRobinGrid",
+        "enableColumnSort": false,
         "height": "100%",
         "sortable": false,
         "width": "100%"
@@ -18,7 +19,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "width": "auto",
-        "sortable": "boolean"
+        "sortable": "boolean",
+        "enableColumnSort": "boolean"
     },
     "name": "MyGrid",
     "designerId": "f8a3bb96-87fd-4171-bec6-85c63d827aec",

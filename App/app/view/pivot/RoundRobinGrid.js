@@ -29,6 +29,7 @@ Ext.define('Enif.view.pivot.RoundRobinGrid', {
     height: '100%',
     width: '100%',
     sortable: false,
+    enableColumnSort: false,
 
     matrix: {
         store: 'PlayerData',

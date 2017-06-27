@@ -112,6 +112,10 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
         }else{
            Ext.Msg.alert('Error', 'The form is invalid!', Ext.emptyFn);
         }
+    },
+
+    onAddNewGameButtonTap: function(button, e, eOpts) {
+        this.addNewGame();
     }
 
 });

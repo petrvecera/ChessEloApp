@@ -51,7 +51,7 @@ Ext.define('Enif.view.charts.EloRatingViewController', {
                 colors: [
                 cl
                 ],
-                smooth: true,
+                //smooth: true,
                 style: {
                     stroke: cl,
                     lineWidth: 3

@@ -52,6 +52,7 @@ Ext.define('Enif.view.charts.EloRating', {
             items: [
                 {
                     xtype: 'button',
+                    ui: 'action',
                     text: 'Reset Zoom',
                     listeners: {
                         tap: 'onZoomResetButtonTap'
