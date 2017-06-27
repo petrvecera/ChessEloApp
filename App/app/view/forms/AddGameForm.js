@@ -27,6 +27,7 @@ Ext.define('Enif.view.forms.AddGameForm', {
         'Ext.picker.Date',
         'Ext.form.FieldSet',
         'Ext.field.ComboBox',
+        'Ext.Spacer',
         'Ext.field.Container',
         'Ext.SegmentedButton',
         'Ext.Button',
@@ -38,7 +39,7 @@ Ext.define('Enif.view.forms.AddGameForm', {
         type: 'forms.addgameform'
     },
     itemId: 'addForm',
-    maxWidth: 600,
+    width: '100%',
     header: false,
     titleAlign: 'center',
     defaultListenerScope: true,
@@ -53,20 +54,28 @@ Ext.define('Enif.view.forms.AddGameForm', {
             value: new Date(),
             picker: {
                 xtype: 'datepicker',
-                title: 'My Panel'
+                title: 'Date of Game',
+                titleAlign: 'center'
             }
         },
         {
             xtype: 'fieldset',
+            platformConfig: {
+                phone: {
+                    layout: 'vbox'
+                },
+                '!phone': {
+                    layout: 'hbox'
+                }
+            },
             id: 'players_fieldset',
             layout: 'hbox',
             items: [
                 {
                     xtype: 'combobox',
-                    flex: 1,
+                    flex: 3,
                     itemId: 'mycombobox',
                     name: 'playerWhite',
-                    margin: '0 10 0 0',
                     modelValidation: true,
                     label: 'White Player',
                     editable: false,
@@ -79,11 +88,14 @@ Ext.define('Enif.view.forms.AddGameForm', {
                     }
                 },
                 {
+                    xtype: 'spacer',
+                    flex: 1
+                },
+                {
                     xtype: 'combobox',
-                    flex: 1,
+                    flex: 3,
                     itemId: 'mycombobox1',
                     name: 'playerBlack',
-                    margin: '0 0 0 10',
                     modelValidation: true,
                     label: 'Black Player',
                     editable: false,
@@ -99,12 +111,19 @@ Ext.define('Enif.view.forms.AddGameForm', {
         },
         {
             xtype: 'fieldset',
+            platformConfig: {
+                phone: {
+                    layout: 'vbox'
+                },
+                '!phone': {
+                    layout: 'hbox'
+                }
+            },
             layout: 'hbox',
             items: [
                 {
                     xtype: 'containerfield',
-                    flex: 1,
-                    margin: '0 10 0 0',
+                    flex: 3,
                     label: 'Won',
                     labelMinWidth: 50,
                     items: [
@@ -143,9 +162,12 @@ Ext.define('Enif.view.forms.AddGameForm', {
                     ]
                 },
                 {
+                    xtype: 'spacer',
+                    flex: 1
+                },
+                {
                     xtype: 'containerfield',
-                    flex: 1,
-                    margin: '0 0 0 10',
+                    flex: 3,
                     bodyAlign: 'center',
                     label: 'Run out of time',
                     labelMinWidth: 105,
@@ -177,6 +199,33 @@ Ext.define('Enif.view.forms.AddGameForm', {
                             ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            xtype: 'container',
+            platformConfig: {
+                '!desktop': {
+                    hidden: false
+                },
+                desktop: {
+                    hidden: true
+                }
+            },
+            hidden: true,
+            margin: 10,
+            layout: 'center',
+            items: [
+                {
+                    xtype: 'button',
+                    ui: 'confirm',
+                    text: 'Add new game',
+                    listeners: {
+                        tap: {
+                            fn: 'onAddNewGameButtonTap',
+                            scope: 'controller'
+                        }
+                    }
                 }
             ]
         }

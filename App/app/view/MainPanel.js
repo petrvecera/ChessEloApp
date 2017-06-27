@@ -26,7 +26,7 @@ Ext.define('Enif.view.MainPanel', {
         'Enif.view.grids.GameGrid',
         'Enif.view.charts.EloRating',
         'Enif.view.pivot.RoundRobinGrid',
-        'Enif.view.charts.EloRating1',
+        'Enif.view.charts.EloRatingNavigator',
         'Ext.Toolbar',
         'Ext.Label',
         'Ext.Img',
@@ -156,9 +156,9 @@ Ext.define('Enif.view.MainPanel', {
             ]
         },
         {
-            xtype: 'charts.elorating1',
+            xtype: 'charts.eloratingnavigator',
             routeValue: 'eloChartNavigator',
-            title: 'New tab'
+            title: 'Elo Chart Navgator'
         }
     ],
     listeners: {

@@ -102,6 +102,28 @@
             },
             "name": "showRoundRobin",
             "designerId": "b2da6481-1fd5-404d-89ca-2bf3f25473b0"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showEloRatingNavigator",
+                "implHandler": [
+                    "this.getViewModel().set('activeTab', 4);"
+                ],
+                "url": "eloChartNavigator"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showEloRatingNavigator",
+            "designerId": "35f7d734-65a7-4eca-baef-4202474c4ba8"
         }
     ]
 }

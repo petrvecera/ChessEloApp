@@ -513,14 +513,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|uiInterfaceName": "disabled",
                 "routeValue": "eloChartNavigator",
-                "title": "New tab"
+                "title": "Elo Chart Navgator"
             },
             "configAlternates": {
                 "routeValue": "string",
-                "title": "string"
+                "title": "string",
+                "designer|uiInterfaceName": "string"
             },
-            "name": "charts.elorating1",
+            "name": "charts.eloratingnavigator",
             "designerId": "92106604-581d-48e5-a270-192a888e4f59",
             "customConfigs": [
                 {

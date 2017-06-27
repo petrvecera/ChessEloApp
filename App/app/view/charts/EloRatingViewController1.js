@@ -15,7 +15,7 @@
 
 Ext.define('Enif.view.charts.EloRatingViewController1', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.charts.elorating1',
+    alias: 'controller.charts.eloratingnavigator',
 
     getColor: function(index) {
         index = index ? index : 0;
@@ -27,6 +27,58 @@ Ext.define('Enif.view.charts.EloRatingViewController1', {
         return colors[index];
 
 
+    },
+
+    init: function(view) {
+         if (!Ext.supports.Touch) {
+                    /**
+                     * Touch devices do not need the toggle buttons
+                     * as the panzoom interaction can determine which
+                     * interaction to use based on how many touches.
+                     * 1 touch point is a pan, 2 touch points is a zoom.
+                     */
+                    var chart = view.lookup('chart'),
+                        toolbar = view.lookup('toolbar'),
+                        interaction = chart.getInteraction('panzoom'),
+                        button = interaction.getModeToggleButton();
+
+                    toolbar.add(button);
+                }
+    },
+
+    toggleInteractions: function() {
+        let chart = this.lookupReference('chart'),
+            interactionCrossZoom = chart && Ext.ComponentQuery.query('interaction[type=crosszoom]', chart)[0],
+            interactionPanZoom = chart && Ext.ComponentQuery.query('interaction[type=panzoom]', chart)[0],
+            interactionCrossZoomEnabled = interactionCrossZoom.getEnabled(),
+            interactionPanZoomEnabled = interactionPanZoom.getEnabled(),
+            resetCrossZoomBtn = this.lookupReference('resetCrossZoom'),
+            togglePanZoomBtn = this.lookupReference('panZoomToggle');
+
+
+            if(interactionCrossZoomEnabled){
+                // enable pan zoom
+                interactionPanZoom.setEnabled(true);
+                interactionCrossZoom.setEnabled(false);
+                resetCrossZoomBtn.setDisabled(true);
+                togglePanZoomBtn.setDisabled(false);
+            }else{
+                // enable cross zoom
+                interactionPanZoom.setEnabled(false);
+                interactionCrossZoom.setEnabled(true);
+                resetCrossZoomBtn.setDisabled(false);
+                togglePanZoomBtn.setDisabled(true);
+            }
+
+
+    },
+
+    onEnableCrossZoomButtonTap: function(button, e, eOpts) {
+        this.toggleInteractions();
+    },
+
+    onEnablePanZoomButtonTap: function(button, e, eOpts) {
+        this.toggleInteractions();
     },
 
     onZoomResetButtonTap: function(button, e, eOpts) {

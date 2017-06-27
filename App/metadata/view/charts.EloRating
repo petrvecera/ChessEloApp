@@ -54,10 +54,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "text": "Reset Zoom"
+                        "designer|uiInterfaceName": "action",
+                        "text": "Reset Zoom",
+                        "ui": "action"
                     },
                     "configAlternates": {
-                        "text": "string"
+                        "text": "string",
+                        "designer|uiInterfaceName": "string",
+                        "ui": "string"
                     },
                     "name": "MyButton",
                     "designerId": "33e5c2f7-693b-45c9-8f08-b33b185e4c57",

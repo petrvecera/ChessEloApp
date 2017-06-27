@@ -13,11 +13,11 @@
         "designer|userClassName": "forms.AddGameForm",
         "header": false,
         "itemId": "addForm",
-        "maxWidth": 600,
         "requires": [
             "Ext.Toast"
         ],
-        "titleAlign": "center"
+        "titleAlign": "center",
+        "width": "100%"
     },
     "configAlternates": {
         "designer|userAlias": "string",
@@ -28,7 +28,8 @@
         "requires": "typedarray",
         "titleAlign": "string",
         "header": "boolean",
-        "itemId": "string"
+        "itemId": "string",
+        "width": "auto"
     },
     "name": "MyFormPanel",
     "designerId": "95bcabb6-63de-4acc-a390-b1861fcc5c0c",
@@ -69,10 +70,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "My Panel"
+                        "title": "Date of Game",
+                        "titleAlign": "center"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "titleAlign": "string"
                     },
                     "name": "MyDatePicker",
                     "designerId": "2dd11274-f4d8-4121-92e3-64b5c6b0727d"
@@ -88,14 +91,33 @@
             "codeClass": null,
             "userConfig": {
                 "id": "players_fieldset",
-                "layout": "hbox"
+                "layout": "hbox",
+                "platformConfig": [
+                    "{",
+                    "phone: {",
+                    "                layout: 'vbox'",
+                    "            },",
+                    "            '!phone': {",
+                    "                layout: 'hbox'",
+                    "            }",
+                    "}"
+                ]
             },
             "configAlternates": {
                 "layout": "string",
-                "id": "string"
+                "id": "string",
+                "platformConfigs": "object",
+                "platformConfig": "object"
             },
             "name": "MyFieldSet",
             "designerId": "9821951b-1876-47c4-93f3-69c8dd1e4171",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "platformConfig",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.field.ComboBox",
@@ -110,8 +132,7 @@
                         "editable": false,
                         "itemId": "mycombobox",
                         "label": "White Player",
-                        "layout|flex": 1,
-                        "margin": "0 10 0 0",
+                        "layout|flex": 3,
                         "modelValidation": true,
                         "name": "playerWhite",
                         "queryMode": "local",
@@ -162,6 +183,22 @@
                     ]
                 },
                 {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySpacer2",
+                    "designerId": "bb035f39-4c4c-4e63-9236-217be066b1e7"
+                },
+                {
                     "type": "Ext.field.ComboBox",
                     "reference": {
                         "name": "items",
@@ -174,8 +211,7 @@
                         "editable": false,
                         "itemId": "mycombobox1",
                         "label": "Black Player",
-                        "layout|flex": 1,
-                        "margin": "0 0 0 10",
+                        "layout|flex": 3,
                         "modelValidation": true,
                         "name": "playerBlack",
                         "queryMode": "local",
@@ -235,13 +271,31 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout": "hbox"
+                "layout": "hbox",
+                "platformConfig": [
+                    "{",
+                    "phone: {",
+                    "                layout: 'vbox'",
+                    "            },",
+                    "            '!phone': {",
+                    "                layout: 'hbox'",
+                    "            }",
+                    "}"
+                ]
             },
             "configAlternates": {
-                "layout": "string"
+                "layout": "string",
+                "platformConfig": "object"
             },
             "name": "MyFieldSet1",
             "designerId": "c6eb63f7-fc66-4a4f-a7ce-3590b684a5c0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "platformConfig",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.field.Container",
@@ -253,8 +307,7 @@
                     "userConfig": {
                         "label": "Won",
                         "labelMinWidth": 50,
-                        "layout|flex": 1,
-                        "margin": "0 10 0 0"
+                        "layout|flex": 3
                     },
                     "configAlternates": {
                         "label": "string",
@@ -362,6 +415,22 @@
                     ]
                 },
                 {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySpacer3",
+                    "designerId": "9ef84c73-bc84-4fb3-b8f2-aee39251a1e9"
+                },
+                {
                     "type": "Ext.field.Container",
                     "reference": {
                         "name": "items",
@@ -372,8 +441,7 @@
                         "bodyAlign": "center",
                         "label": "Run out of time",
                         "labelMinWidth": 105,
-                        "layout|flex": 1,
-                        "margin": "0 0 0 10"
+                        "layout|flex": 3
                     },
                     "configAlternates": {
                         "bodyAlign": "string",
@@ -487,6 +555,94 @@
             },
             "name": "comboChange",
             "designerId": "74ad054d-a942-4acf-bb56-8ab34ad224ce"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Add new game (hidden)",
+                "hidden": true,
+                "layout": "center",
+                "margin": 10,
+                "platformConfig": [
+                    "{",
+                    "            '!desktop': {",
+                    "                hidden: false",
+                    "            },",
+                    "            'desktop': {",
+                    "                hidden: true",
+                    "            }",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "platformConfig": "object",
+                "designer|displayName": "string",
+                "hidden": "boolean",
+                "layout": "string",
+                "margin": "auto"
+            },
+            "name": "MyContainer5",
+            "designerId": "79a7ef0d-e623-40ab-9043-512075471710",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "platformConfig",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "confirm",
+                        "text": "Add new game",
+                        "ui": "confirm"
+                    },
+                    "configAlternates": {
+                        "designer|uiInterfaceName": "string",
+                        "text": "string",
+                        "ui": "string"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "bcd3ffd9-7e3f-419c-ac04-f4270c694fe8",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddNewGameButtonTap",
+                                "implHandler": [
+                                    "this.addNewGame();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onAddNewGameButtonTap",
+                            "designerId": "e5971093-128b-4599-9e67-051b6ccc6a0f"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

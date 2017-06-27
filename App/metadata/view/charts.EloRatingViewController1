@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "charts.elorating1",
+        "designer|userAlias": "charts.eloratingnavigator",
         "designer|userClassName": "charts.EloRatingViewController1"
     },
     "configAlternates": {
@@ -47,6 +47,86 @@
             },
             "name": "getColor",
             "designerId": "a94f0e09-b903-4932-bca2-18f4095d558d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    " if (!Ext.supports.Touch) {",
+                    "            /**",
+                    "             * Touch devices do not need the toggle buttons",
+                    "             * as the panzoom interaction can determine which",
+                    "             * interaction to use based on how many touches.",
+                    "             * 1 touch point is a pan, 2 touch points is a zoom.",
+                    "             */",
+                    "            var chart = view.lookup('chart'),",
+                    "                toolbar = view.lookup('toolbar'),",
+                    "                interaction = chart.getInteraction('panzoom'),",
+                    "                button = interaction.getModeToggleButton();",
+                    "",
+                    "            toolbar.add(button);",
+                    "        }"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "5ab61479-9923-4abe-9b7e-1cc0ca761e94"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "toggleInteractions",
+                "implHandler": [
+                    "let chart = this.lookupReference('chart'),",
+                    "    interactionCrossZoom = chart && Ext.ComponentQuery.query('interaction[type=crosszoom]', chart)[0],",
+                    "    interactionPanZoom = chart && Ext.ComponentQuery.query('interaction[type=panzoom]', chart)[0],",
+                    "    interactionCrossZoomEnabled = interactionCrossZoom.getEnabled(),",
+                    "    interactionPanZoomEnabled = interactionPanZoom.getEnabled(),",
+                    "    resetCrossZoomBtn = this.lookupReference('resetCrossZoom'),",
+                    "    togglePanZoomBtn = this.lookupReference('panZoomToggle');",
+                    "",
+                    "",
+                    "    if(interactionCrossZoomEnabled){",
+                    "        // enable pan zoom",
+                    "        interactionPanZoom.setEnabled(true);",
+                    "        interactionCrossZoom.setEnabled(false);",
+                    "        resetCrossZoomBtn.setDisabled(true);",
+                    "        togglePanZoomBtn.setDisabled(false);",
+                    "    }else{",
+                    "        // enable cross zoom",
+                    "        interactionPanZoom.setEnabled(false);",
+                    "        interactionCrossZoom.setEnabled(true);",
+                    "        resetCrossZoomBtn.setDisabled(false);",
+                    "        togglePanZoomBtn.setDisabled(true);",
+                    "    }",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "toggleInteractions",
+            "designerId": "7eba9196-024a-4279-a4b8-bc4ee58acdad"
         }
     ]
 }

@@ -38,7 +38,6 @@ Ext.define('Enif.view.grids.GameGrid', {
     name: 'grids.GameGrid',
     width: '100%',
     maxWidth: 1000,
-    minWidth: 900,
     selectable: {
         mode: 'single',
         checkbox: true

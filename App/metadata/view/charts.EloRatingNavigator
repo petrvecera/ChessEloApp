@@ -11,8 +11,8 @@
             "Don't forget to add series to the requires (needed for the production build)",
             "FYI: The data are dynamic - not shown inside SA canvas"
         ],
-        "designer|userAlias": "charts.elorating1",
-        "designer|userClassName": "charts.EloRating1",
+        "designer|userAlias": "charts.eloratingnavigator",
+        "designer|userClassName": "charts.EloRatingNavigator",
         "layout": "fit",
         "requires": [
             "Ext.chart.series.Line"
@@ -39,15 +39,135 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "end",
-                "docked": "top"
+                "docked": "top",
+                "reference": "toolbar"
             },
             "configAlternates": {
                 "container|align": "string",
-                "docked": "string"
+                "docked": "string",
+                "reference": "string"
             },
             "name": "MyToolbar",
             "designerId": "8116aecd-e110-45b3-8c8a-833d1df43534",
             "cn": [
+                {
+                    "type": "Ext.SegmentedButton",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySegmentedButton",
+                    "designerId": "90649ad2-b792-496f-9a6c-4fa1affcbd8e",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "text": "Cross Zoom"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "d6c17a44-6ca9-46ea-8103-d493e20137d8",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEnableCrossZoomButtonTap",
+                                        "implHandler": [
+                                            "this.toggleInteractions();"
+                                        ],
+                                        "name": "tap",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onEnableCrossZoomButtonTap",
+                                    "designerId": "f29f30c0-43d6-4bae-8047-6b3ce8ab3f18"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "pressed": true,
+                                "text": "Pan Zoom"
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number",
+                                "pressed": "boolean",
+                                "text": "string"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "52a3232e-d959-44f4-859f-c3eca5958955",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEnablePanZoomButtonTap",
+                                        "implHandler": [
+                                            "this.toggleInteractions();"
+                                        ],
+                                        "name": "tap",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onEnablePanZoomButtonTap",
+                                    "designerId": "14d78970-ee96-4ad6-995a-c55cb346652a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 40
+                    },
+                    "configAlternates": {
+                        "width": "number"
+                    },
+                    "name": "MySpacer1",
+                    "designerId": "cb147480-2994-404b-bbc6-db1023149a37"
+                },
                 {
                     "type": "Ext.Button",
                     "reference": {
@@ -56,10 +176,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "text": "Reset Zoom"
+                        "designer|uiInterfaceName": "action",
+                        "disabled": true,
+                        "reference": "resetCrossZoom",
+                        "text": "Reset Zoom",
+                        "ui": "action"
                     },
                     "configAlternates": {
-                        "text": "string"
+                        "text": "string",
+                        "designer|uiInterfaceName": "string",
+                        "disabled": "boolean",
+                        "reference": "string",
+                        "ui": "string"
                     },
                     "name": "MyButton",
                     "designerId": "036ad079-b731-4309-8dff-6f45627cd8cd",
@@ -224,6 +352,7 @@
                                     "    }",
                                     "}"
                                 ],
+                                "id": "eloAxis",
                                 "margin": 10,
                                 "position": "right",
                                 "title": "Elo rating"
@@ -234,7 +363,8 @@
                                 "margin": "number",
                                 "position": "string",
                                 "title": "string",
-                                "designer|displayName": "string"
+                                "designer|displayName": "string",
+                                "id": "string"
                             },
                             "name": "MyNumericAxis",
                             "designerId": "f82d0ab0-8e4e-430e-80a7-4d51e0209086"
@@ -256,16 +386,6 @@
                             "designerId": "dc934788-fd0f-494f-8736-b25f91673922"
                         },
                         {
-                            "type": "Ext.chart.interactions.CrossZoom",
-                            "reference": {
-                                "name": "interactions",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "name": "MyCrossZoomInteraction",
-                            "designerId": "fd02f594-89ab-49eb-be3a-e56039f8e616"
-                        },
-                        {
                             "type": "Ext.chart.interactions.ItemInfo",
                             "reference": {
                                 "name": "interactions",
@@ -280,6 +400,72 @@
                             },
                             "name": "MyItemInfoInteraction",
                             "designerId": "bb2719f7-61e8-445f-90b6-10b761113f79"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.PanZoom",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "axes": [
+                                    "{",
+                                    "left: {",
+                                    "                        allowPan: false,",
+                                    "                        allowZoom: false",
+                                    "                    }",
+                                    "}"
+                                ],
+                                "modeToggleButton": [
+                                    "{",
+                                    "                width: 200,",
+                                    "                defaults: {",
+                                    "                    flex: 1,",
+                                    "                    ui: 'action'",
+                                    "                },",
+                                    "                reference: 'panZoomToggle',",
+                                    "                items: [{",
+                                    "                    iconCls: 'x-fa fa-arrows',",
+                                    "                    text: 'Pan',",
+                                    "                    value: 'pan'",
+                                    "                }, {",
+                                    "                    iconCls: 'x-fa fa-search-plus',",
+                                    "                    text: 'Zoom',",
+                                    "                    value: 'zoom'",
+                                    "                }]",
+                                    "            }"
+                                ]
+                            },
+                            "configAlternates": {
+                                "modeToggleButton": "object",
+                                "axes": "object"
+                            },
+                            "name": "MyPanZoomInteraction",
+                            "designerId": "e03a639a-13c3-4743-b1c9-edb2bf4ccee7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "modeToggleButton",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.interactions.CrossZoom",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enabled": false
+                            },
+                            "configAlternates": {
+                                "enabled": "boolean"
+                            },
+                            "name": "MyCrossZoomInteraction1",
+                            "designerId": "630602ab-c4b9-44f0-a91b-1e28c98db786"
                         }
                     ]
                 },

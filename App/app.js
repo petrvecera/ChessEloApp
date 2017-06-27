@@ -46,7 +46,8 @@ Ext.application({
         'forms.AddGameForm',
         'pivot.RoundRobinGrid',
         'MainViewport',
-        'charts.EloRating1'
+        'charts.EloRatingNavigator',
+        'mobile.MainPanel'
     ],
     controllers: [
         'StoreLoadController'

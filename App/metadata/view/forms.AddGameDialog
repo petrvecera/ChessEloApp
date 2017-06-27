@@ -34,7 +34,8 @@
             "close"
         ],
         "title": "Add new match",
-        "titleAlign": "center"
+        "titleAlign": "center",
+        "width": 660
     },
     "configAlternates": {
         "buttons": "object",
@@ -43,7 +44,8 @@
         "buttonAlign": "string",
         "dismissAction": "typedarray",
         "title": "string",
-        "titleAlign": "string"
+        "titleAlign": "string",
+        "width": "auto"
     },
     "name": "MyDialog",
     "designerId": "19e403b2-96af-45b1-a181-cb7ea4171355",

@@ -27,6 +27,7 @@ Ext.define('Enif.view.forms.AddGameDialog', {
     viewModel: {
         type: 'forms.addgamedialog'
     },
+    width: 660,
     buttonAlign: 'right',
     buttons: {
         ok: {

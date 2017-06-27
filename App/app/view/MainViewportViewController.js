@@ -25,7 +25,8 @@ Ext.define('Enif.view.MainViewportViewController', {
         'players': 'showPlayers',
         'games': 'showGames',
         'eloChart': 'showEloChart',
-        'roundRobin': 'showRoundRobin'
+        'roundRobin': 'showRoundRobin',
+        'eloChartNavigator': 'showEloRatingNavigator'
     },
 
     showPlayers: function() {
@@ -44,6 +45,10 @@ Ext.define('Enif.view.MainViewportViewController', {
         this.getViewModel().set('activeTab', 3);
     },
 
+    showEloRatingNavigator: function() {
+        this.getViewModel().set('activeTab', 4);
+    },
+
     onMainContainerInitialize: function(component, eOpts) {
         const view = component,
         VM = this.getViewModel();
@@ -53,8 +58,14 @@ Ext.define('Enif.view.MainViewportViewController', {
             callback: function (records, operation, success) {
                 if(success){
                     view.lookup('loading').destroy();
-                    //TODO:  It would be better to use databinding with active tab, but it's not possible to databind activeTab DSGNR-7902
-                    const mainPanel = Ext.create('Enif.view.MainPanel', {activeItem: VM.get('activeTab')});
+                    let mainPanel;
+
+                    if (Ext.platformTags.desktop){
+                        //TODO:  It would be better to use databinding with active tab, but it's not possible to databind activeTab DSGNR-7902
+                        mainPanel = Ext.create('Enif.view.MainPanel', {activeItem: VM.get('activeTab')});
+                    }else{
+                        mainPanel = Ext.create('Enif.view.mobile.MainPanel');
+                    }
 
                     view.add(mainPanel);
 
