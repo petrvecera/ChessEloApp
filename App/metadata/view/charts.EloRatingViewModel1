@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "charts.elorating1",
+        "designer|userClassName": "charts.EloRatingViewModel1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "charts.EloRatingViewModel1",
+    "designerId": "b655367c-4f68-4a26-97d0-020da2c68bba"
+}

@@ -1,0 +1,52 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "charts.elorating1",
+        "designer|userClassName": "charts.EloRatingViewController1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "charts.EloRatingViewController1",
+    "designerId": "27c54707-86aa-4eec-a978-39accaac620d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "index"
+                ],
+                "fn": "getColor",
+                "implHandler": [
+                    "index = index ? index : 0;",
+                    "let colors = [\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"];",
+                    "",
+                    "if(index >= colors.length){",
+                    "    index -= colors.length;",
+                    "}",
+                    "return colors[index];",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getColor",
+            "designerId": "a94f0e09-b903-4932-bca2-18f4095d558d"
+        }
+    ]
+}

@@ -263,7 +263,7 @@
                             "        colors: [",
                             "            cl",
                             "        ],",
-                            "        smooth: true,",
+                            "        //smooth: true,",
                             "        style: {",
                             "            stroke: cl,",
                             "            lineWidth: 3",
