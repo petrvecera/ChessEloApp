@@ -1,0 +1,20 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chart.elorating",
+        "designer|userClassName": "chart.EloRating"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyContainer",
+    "designerId": "362562fc-364d-41c3-ae19-a9ea4f4d47d7",
+    "viewControllerInstanceId": "58e65a7d-75a6-4574-9c97-2dfc01b8725f",
+    "viewModelInstanceId": "f31d8534-2308-43ff-b35c-95cd8b5b7266"
+}
