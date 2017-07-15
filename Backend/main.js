@@ -143,8 +143,7 @@ function recalculateAllState() {
     chartGames.clear();
     chartDays.clear();
 
-    games.get().forEach(game => {
-        const k = 40;
+    const k = 20;
         /*
         K is the development coefficient.
         K = 40 for a player new to the rating list until he has completed events with at least 30 games
@@ -154,7 +153,8 @@ function recalculateAllState() {
 
         K = 20 for RAPID and BLITZ ratings all players.
         */
-       
+
+    games.get().forEach(game => {       
         const
             p1 = players.get(game.playerWhite),
             p2 = players.get(game.playerBlack),
