@@ -1,0 +1,101 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "mytabpanel",
+        "designer|userClassName": "MyTabPanel",
+        "tabBarPosition": "left"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "tabBarPosition": "string"
+    },
+    "name": "MyTabPanel",
+    "designerId": "78e94260-af4b-4058-8282-ac2e9b42d169",
+    "viewControllerInstanceId": "e964b883-78a7-4bdf-b263-fb7aba3a41a1",
+    "viewModelInstanceId": "5303a1b2-e115-49f3-a37c-5e5e57aaf54b",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "x-fa fa-users",
+                "title": "Players"
+            },
+            "configAlternates": {
+                "iconCls": "string",
+                "title": "string"
+            },
+            "name": "grid.playergrid",
+            "designerId": "dadafd7a-4865-4cb9-a565-4b62281e5fd8",
+            "masterInstanceId": "d55893a1-3a20-4acc-b4b3-0b551c329de4"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "x-fa fa-trophy",
+                "title": "Games"
+            },
+            "configAlternates": {
+                "iconCls": "string",
+                "title": "string"
+            },
+            "name": "grid.gamesgrid",
+            "designerId": "0b7668ff-c106-41bd-abb3-e29076fdd098",
+            "masterInstanceId": "57bcce35-2898-46e4-b075-50208c99f16c"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "x-fa fa-line-chart ",
+                "title": "Elo Rating Chart"
+            },
+            "configAlternates": {
+                "iconCls": "string",
+                "title": "string"
+            },
+            "name": "chart.elorating",
+            "designerId": "9a169996-0970-4078-a1bc-74344fbdfa33",
+            "masterInstanceId": "362562fc-364d-41c3-ae19-a9ea4f4d47d7"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Our Elo Rating App"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "861eaeae-9ba3-4715-9a5a-4abc080bedd3"
+        }
+    ]
+}
