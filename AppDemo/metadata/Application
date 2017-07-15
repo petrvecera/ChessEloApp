@@ -1,0 +1,33 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "PlayerData",
+            "GamesData"
+        ],
+        "name": "MyApp",
+        "stores": [
+            "PlayerData",
+            "GamesData"
+        ],
+        "views": [
+            "grid.PlayerGrid",
+            "grid.GamesGrid",
+            "MyTabPanel",
+            "chart.EloRating"
+        ]
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

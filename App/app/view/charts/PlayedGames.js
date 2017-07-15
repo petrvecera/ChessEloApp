@@ -80,7 +80,7 @@ Ext.define('Enif.view.charts.PlayedGames', {
             legend: {
                 xtype: 'legend',
                 axisLock: false,
-                docked: 'left',
+                docked: 'right',
                 layout: 'center'
             }
         }

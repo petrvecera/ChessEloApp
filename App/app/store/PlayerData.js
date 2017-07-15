@@ -49,6 +49,9 @@ Ext.define('Enif.store.PlayerData', {
             listeners: {
                 datachanged: {
                     fn: me.onJsonstoreDataChange
+                },
+                load: {
+                    fn: me.onJsonstoreLoad
                 }
             }
         }, cfg)]);
@@ -79,6 +82,11 @@ Ext.define('Enif.store.PlayerData', {
             wins: winsBlack
         }]);
 
+    },
+
+    onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
+        // sort the store after load
+        store.sort('rating', 'DESC');
     }
 
 });

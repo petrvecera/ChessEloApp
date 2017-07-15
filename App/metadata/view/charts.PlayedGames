@@ -99,7 +99,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "axisLock": false,
-                        "docked": "left",
+                        "docked": "right",
                         "layout": "center"
                     },
                     "configAlternates": {

@@ -254,7 +254,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|displayName": "Players",
-                        "minHeight": 380,
+                        "minHeight": 420,
                         "title": "Players"
                     },
                     "configAlternates": {
@@ -294,14 +294,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1
+                                "layout|flex": 1,
+                                "title": "Player ELO ladder",
+                                "titleAlign": "center"
                             },
                             "configAlternates": {
-                                "layout|flex": "number"
+                                "layout|flex": "number",
+                                "title": "string",
+                                "titleAlign": "string"
                             },
-                            "name": "charts.playedgames",
-                            "designerId": "d5eb3424-fa60-4ca3-b062-94639a7437c3",
-                            "masterInstanceId": "7827932d-2760-4de2-85c3-462b983627fb"
+                            "name": "charts.ladder",
+                            "designerId": "8a4ef64e-3769-40e9-bd12-d0c6571327c5",
+                            "masterInstanceId": "64976ed7-a5dc-4b6e-9b73-e9a45fededc8"
                         },
                         {
                             "type": "linkedinstance",
@@ -311,18 +315,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "title": "Wins by color",
-                                "titleAlign": "center"
+                                "layout|flex": 1
                             },
                             "configAlternates": {
-                                "layout|flex": "number",
-                                "title": "string",
-                                "titleAlign": "string"
+                                "layout|flex": "number"
                             },
-                            "name": "charts.winsbycolor",
-                            "designerId": "97f5e92f-0e2f-4933-822c-78b6ae50a94c",
-                            "masterInstanceId": "f013a06f-88fb-41b1-9e54-5e67009eb345"
+                            "name": "charts.playedgames",
+                            "designerId": "d5eb3424-fa60-4ca3-b062-94639a7437c3",
+                            "masterInstanceId": "7827932d-2760-4de2-85c3-462b983627fb"
                         }
                     ]
                 }
@@ -436,6 +436,41 @@
             "masterInstanceId": "182f6fb5-2748-4328-b241-bcf4e025d36b"
         },
         {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "disabled",
+                "iconCls": "x-fa fa-line-chart",
+                "routeValue": "eloChartNavigator",
+                "title": "Elo Navigator"
+            },
+            "configAlternates": {
+                "routeValue": "string",
+                "title": "string",
+                "designer|uiInterfaceName": "string",
+                "iconCls": "string"
+            },
+            "name": "charts.eloratingnavigator",
+            "designerId": "92106604-581d-48e5-a270-192a888e4f59",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "iconCls",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "389f5e1b-a728-48fb-9467-3efdbf0299ec"
+        },
+        {
             "type": "viewcontrollereventbinding",
             "reference": {
                 "name": "listeners",
@@ -513,25 +548,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|uiInterfaceName": "disabled",
-                "routeValue": "eloChartNavigator",
-                "title": "Elo Chart Navgator"
+                "iconCls": "x-fa fa-pie-chart",
+                "title": "Stats"
             },
             "configAlternates": {
-                "routeValue": "string",
-                "title": "string",
-                "designer|uiInterfaceName": "string"
+                "iconCls": "string",
+                "title": "string"
             },
-            "name": "charts.eloratingnavigator",
-            "designerId": "92106604-581d-48e5-a270-192a888e4f59",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "routeValue",
-                    "type": "string"
-                }
-            ],
-            "masterInstanceId": "389f5e1b-a728-48fb-9467-3efdbf0299ec"
+            "name": "stats1",
+            "designerId": "fb7094ba-8b62-40f1-8384-b6632b649d8a",
+            "masterInstanceId": "eb58451e-e11e-4172-a845-8906ec424c37"
         }
     ]
 }

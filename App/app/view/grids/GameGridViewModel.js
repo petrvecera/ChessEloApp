@@ -15,6 +15,16 @@
 
 Ext.define('Enif.view.grids.GameGridViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.grids.gamegrid'
+    alias: 'viewmodel.grids.gamegrid',
+
+    requires: [
+        'Ext.data.ChainedStore'
+    ],
+
+    stores: {
+        GameGridData: {
+            source: 'GameRawData'
+        }
+    }
 
 });

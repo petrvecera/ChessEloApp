@@ -13,5 +13,25 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "2a7ed042-a9f8-4774-a2ec-fe2e4b38f38a"
+    "designerId": "10eeccd1-5094-43fb-b1b5-89bd4051f335",
+    "cn": [
+        {
+            "type": "Ext.data.ChainedStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "PlayerGridStore",
+                "source": "PlayerData"
+            },
+            "configAlternates": {
+                "name": "string",
+                "source": "store"
+            },
+            "name": "MyChainedStore",
+            "designerId": "17939c3a-b57a-4c17-b572-627e9591392b"
+        }
+    ]
 }

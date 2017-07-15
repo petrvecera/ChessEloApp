@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.0.775"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:52129/",
+        "urlPrefix": "http://localhost:49775/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -34,10 +34,12 @@
     "framework": "modern65",
     "viewOrderMap": {
         "view": [
-            "2e7df700-2eb9-4d81-9313-52cf2d3f428b",
-            "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede",
             "fca3da24-0771-404e-8d73-1ec6f64395a0",
             "871f527f-c451-407f-880c-f2439e68c45a",
+            "2e7df700-2eb9-4d81-9313-52cf2d3f428b",
+            "10eeccd1-5094-43fb-b1b5-89bd4051f335",
+            "31dc0b3f-dded-4d6b-9db0-f7e1e48d8043",
+            "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede",
             "20cd0446-3935-47fe-b19c-dcdcd45c24db",
             "0831b947-3495-4a75-8cc3-c9dee1f8f625",
             "68339302-3d89-4726-a226-12abb89e51d4",
@@ -59,8 +61,6 @@
             "fe4d9ffb-03b2-4807-a770-20b61ea8d543",
             "04acbce3-27d8-49ec-93d5-c3daf501bde9",
             "f013a06f-88fb-41b1-9e54-5e67009eb345",
-            "2a7ed042-a9f8-4774-a2ec-fe2e4b38f38a",
-            "2bc8c22a-f4c1-4f76-b7a4-01ca94b23b84",
             "19e403b2-96af-45b1-a181-cb7ea4171355",
             "18b9f3ed-dddf-467e-8b53-9e0d902af9be",
             "57cfbda9-45da-4f54-91c8-9dd329b80697",
@@ -72,7 +72,13 @@
             "5680f1d8-9488-49fa-9800-f79dbf43c4d1",
             "6ebd945c-a987-459c-aa65-5646117b8421",
             "36589656-d81d-42e6-88d8-736721f921b7",
-            "643a428e-8ebf-4121-93f0-163ed31f4b6a"
+            "643a428e-8ebf-4121-93f0-163ed31f4b6a",
+            "64976ed7-a5dc-4b6e-9b73-e9a45fededc8",
+            "84c284f6-4ec2-4ac9-a230-efbdad94ae82",
+            "0fbf6938-5835-4dbe-8170-d051e0fd7e9c",
+            "eb58451e-e11e-4172-a845-8906ec424c37",
+            "e741b7ae-6ffd-45ef-a385-cd1d3e06a4e4",
+            "5412396c-d53c-4a5e-9f67-a2de40a7fc9b"
         ],
         "store": [
             "5e1dbe0c-ad95-44ba-802c-267575d98dc0",

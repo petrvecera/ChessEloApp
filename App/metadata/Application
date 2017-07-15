@@ -37,7 +37,9 @@
             "pivot.RoundRobinGrid",
             "MainViewport",
             "charts.EloRatingNavigator",
-            "mobile.MainPanel"
+            "mobile.MainPanel",
+            "charts.Ladder",
+            "stats"
         ]
     },
     "configAlternates": {

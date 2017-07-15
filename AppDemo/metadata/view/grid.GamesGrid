@@ -1,0 +1,183 @@
+{
+    "type": "Ext.grid.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "grid.gamesgrid",
+        "designer|userClassName": "grid.GamesGrid",
+        "height": "100%",
+        "name": "grid.GamesGrid",
+        "store": "GamesData",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "name": "string",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyGrid",
+    "designerId": "57bcce35-2898-46e4-b075-50208c99f16c",
+    "viewControllerInstanceId": "0678b915-a252-4052-954b-2170e99d9e1c",
+    "viewModelInstanceId": "754dad37-609f-40f7-96cf-c841de063f02",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "timestamp",
+                "docked": null,
+                "format": "00",
+                "text": "Timestamp"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn13",
+            "designerId": "b7935fc9-cc87-41f6-812c-52dff72859ff"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "playerWhiteRating",
+                "docked": null,
+                "format": "00",
+                "text": "Player White Rating"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn16",
+            "designerId": "152c3990-9cd9-4a54-8d0c-955624a87105"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "playerWhite",
+                "docked": null,
+                "format": "00",
+                "text": "Player White"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn14",
+            "designerId": "f50fb6c5-bb89-447e-b6f0-c99dd5697b40"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "dataIndex": "playerBlack",
+                "docked": null,
+                "format": "00",
+                "text": "Player Black"
+            },
+            "configAlternates": {
+                "align": "string",
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn15",
+            "designerId": "f49547b5-8714-40ed-aaad-b6c5dbac5979"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "playerBlackRating",
+                "docked": null,
+                "format": "00",
+                "text": "Player Black Rating"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn17",
+            "designerId": "d458a660-9133-4e55-a375-0f1db4c10aa9"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "result",
+                "docked": null,
+                "text": "Result"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "5f130bb6-98bc-452d-8fe2-5ef393737be5"
+        },
+        {
+            "type": "Ext.grid.column.Boolean",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "timeout",
+                "docked": null,
+                "text": "Timeout"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyBooleanColumn1",
+            "designerId": "9dc7a67f-96f0-4804-8a6a-b245dcf2db8f"
+        }
+    ]
+}

@@ -46,18 +46,18 @@ Ext.define('Enif.view.mobile.MainPanel', {
         },
         {
             xtype: 'grids.gamegrid',
-            height: 900,
-            selectable: {
-                mode: 'single',
-                checkbox: false
-            },
-            title: 'Games',
             items: {
                 
             },
             plugins: {
                 
-            }
+            },
+            height: 900,
+            selectable: {
+                mode: 'single',
+                checkbox: false
+            },
+            title: 'Games'
         }
     ]
 

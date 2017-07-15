@@ -119,6 +119,8 @@ Ext.define('Enif.view.charts.EloRatingViewController1', {
                 title: playerData.getAt(i).get('name'),
                 tooltip: {
                     trackMouse: true,
+                    showDelay: 2,
+                    hideDelay: 0,
                     width: 100,
                     height: 28,
                     renderer: function (toolTip, record, ctx) {

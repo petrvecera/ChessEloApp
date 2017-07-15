@@ -53,16 +53,6 @@
                     "codeClass": null,
                     "name": "MyJsonReader",
                     "designerId": "9672817e-810f-4ed3-8c5a-d4b91d4dfc14"
-                },
-                {
-                    "type": "Ext.data.writer.Json",
-                    "reference": {
-                        "name": "writer",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "name": "MyJsonWriter",
-                    "designerId": "4d2d2ba8-2127-4e26-aa01-fa23a983d771"
                 }
             ]
         },
@@ -103,6 +93,28 @@
             },
             "name": "onJsonstoreBeforeLoad",
             "designerId": "d9523ac8-f15b-4065-81f3-720575a44224"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "// Performance, we have too many points in the chart, we should try to remove the duplicates in here"
+                ],
+                "name": "load"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onJsonstoreLoad",
+            "designerId": "fe783e24-31b7-444b-8620-397f95c95213"
         }
     ]
 }

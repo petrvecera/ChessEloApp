@@ -10,13 +10,16 @@
             "This chart has dynamic store // it's not shown inside SA"
         ],
         "designer|userAlias": "charts.winsbycolor",
-        "designer|userClassName": "charts.WinsByColor"
+        "designer|userClassName": "charts.WinsByColor",
+        "title": "Wins by color",
+        "titleAlign": "center"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string",
         "title": "string",
-        "designer|commentHeader": "comment"
+        "designer|commentHeader": "comment",
+        "titleAlign": "string"
     },
     "name": "MyPanel",
     "designerId": "f013a06f-88fb-41b1-9e54-5e67009eb345",

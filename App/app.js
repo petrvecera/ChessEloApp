@@ -47,7 +47,9 @@ Ext.application({
         'pivot.RoundRobinGrid',
         'MainViewport',
         'charts.EloRatingNavigator',
-        'mobile.MainPanel'
+        'mobile.MainPanel',
+        'charts.Ladder',
+        'stats'
     ],
     controllers: [
         'StoreLoadController'
