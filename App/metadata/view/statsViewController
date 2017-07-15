@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "grids.playergrids",
-        "designer|userClassName": "grids.PlayerGridsViewController"
+        "designer|userAlias": "stats",
+        "designer|userClassName": "statsViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "31dc0b3f-dded-4d6b-9db0-f7e1e48d8043"
+    "designerId": "5412396c-d53c-4a5e-9f67-a2de40a7fc9b"
 }

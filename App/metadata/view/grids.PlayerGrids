@@ -10,7 +10,9 @@
         "designer|userClassName": "grids.PlayerGrids",
         "maxWidth": 1000,
         "name": "grids.PlayerGrids",
-        "store": "PlayerData",
+        "store": [
+            "{PlayerGridStore}"
+        ],
         "width": "100%"
     },
     "configAlternates": {
@@ -18,14 +20,14 @@
         "designer|userClassName": "string",
         "height": "auto",
         "name": "string",
-        "store": "store",
+        "store": "binding",
         "width": "auto",
         "maxWidth": "auto"
     },
     "name": "MyGrid",
     "designerId": "2e7df700-2eb9-4d81-9313-52cf2d3f428b",
-    "viewControllerInstanceId": "7f50da6e-644d-4bb0-8fd2-0dd6b9e3556c",
-    "viewModelInstanceId": "e9eef30c-d6d8-400a-968c-56884200918d",
+    "viewControllerInstanceId": "31dc0b3f-dded-4d6b-9db0-f7e1e48d8043",
+    "viewModelInstanceId": "10eeccd1-5094-43fb-b1b5-89bd4051f335",
     "cn": [
         {
             "type": "Ext.grid.column.Column",
@@ -37,12 +39,14 @@
             "userConfig": {
                 "dataIndex": "name",
                 "docked": null,
+                "summary": "count",
                 "text": "Name"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
-                "text": "string"
+                "text": "string",
+                "summary": "string"
             },
             "name": "MyColumn4",
             "designerId": "67d9b2b0-5bc3-4daf-9466-fb0518534304"
@@ -58,6 +62,7 @@
                 "dataIndex": "rating",
                 "docked": null,
                 "format": "0",
+                "summary": "average",
                 "text": "Rating",
                 "width": 59
             },
@@ -66,7 +71,8 @@
                 "docked": "string",
                 "format": "string",
                 "text": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn14",
             "designerId": "4675abc9-d668-4599-8929-e4878cb99e8c"
@@ -161,6 +167,7 @@
                 "dataIndex": "games",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Games",
                 "width": 66
             },
@@ -170,7 +177,8 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn2",
             "designerId": "2882ca1f-8067-44cc-a6bb-b5fcbd189bcd"
@@ -185,13 +193,15 @@
             "userConfig": {
                 "designer|displayName": "Separator",
                 "docked": null,
+                "hideable": false,
                 "width": 1
             },
             "configAlternates": {
                 "cell": "object",
                 "docked": "string",
                 "width": "auto",
-                "designer|displayName": "string"
+                "designer|displayName": "string",
+                "hideable": "boolean"
             },
             "name": "MyColumn",
             "designerId": "66a3132b-416b-4187-8c6c-f4437956a3d7",
@@ -226,6 +236,7 @@
                 "dataIndex": "winsWhite",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Wins White",
                 "width": 90
             },
@@ -235,7 +246,8 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn",
             "designerId": "73df0b0b-42ba-4b4b-aafd-2e334a82436a"
@@ -252,6 +264,7 @@
                 "dataIndex": "winsBlack",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Wins Black",
                 "width": 90
             },
@@ -261,7 +274,8 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn16",
             "designerId": "0361774f-b1a3-431a-bb42-c63629416986"
@@ -278,6 +292,7 @@
                 "dataIndex": "losesWhite",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Loses White",
                 "width": 90
             },
@@ -287,7 +302,8 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn17",
             "designerId": "469579c2-0d69-4a34-bce3-8d9cf355036d"
@@ -304,6 +320,7 @@
                 "dataIndex": "losesBlack",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Loses Black",
                 "width": 84
             },
@@ -313,7 +330,8 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn18",
             "designerId": "f849325e-3c6c-46f6-af41-9b7b9f83db1e"
@@ -330,6 +348,7 @@
                 "dataIndex": "drawWhite",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Draw White",
                 "width": 90
             },
@@ -339,7 +358,8 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn19",
             "designerId": "3a0dfacc-b41c-4f90-8580-75e5b547eaee"
@@ -356,6 +376,7 @@
                 "dataIndex": "drawBlack",
                 "docked": null,
                 "format": "00",
+                "summary": "sum",
                 "text": "Draw Black",
                 "width": 90
             },
@@ -365,10 +386,27 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
-                "width": "auto"
+                "width": "auto",
+                "summary": "string"
             },
             "name": "MyNumberColumn20",
             "designerId": "6b9fca93-f394-43e3-bf21-4f7e2bb59d4d"
+        },
+        {
+            "type": "Ext.grid.plugin.Summary",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MySummary",
+            "designerId": "a26e12c7-a367-453f-8b68-0265557404a8"
         }
     ]
 }

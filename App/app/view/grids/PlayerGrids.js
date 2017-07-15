@@ -18,25 +18,34 @@ Ext.define('Enif.view.grids.PlayerGrids', {
     alias: 'widget.grids.playergrids',
 
     requires: [
+        'Enif.view.grids.PlayerGridsViewModel',
         'Ext.grid.column.Number',
-        'Ext.grid.cell.Widget'
+        'Ext.grid.cell.Widget',
+        'Ext.grid.plugin.Summary'
     ],
 
+    viewModel: {
+        type: 'grids.playergrids'
+    },
     name: 'grids.PlayerGrids',
     width: '100%',
     maxWidth: 1000,
-    store: 'PlayerData',
 
+    bind: {
+        store: '{PlayerGridStore}'
+    },
     columns: [
         {
             xtype: 'gridcolumn',
             dataIndex: 'name',
+            summary: 'count',
             text: 'Name'
         },
         {
             xtype: 'numbercolumn',
             width: 59,
             dataIndex: 'rating',
+            summary: 'average',
             text: 'Rating',
             format: '0'
         },
@@ -69,12 +78,14 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 66,
             align: 'center',
             dataIndex: 'games',
+            summary: 'sum',
             text: 'Games',
             format: '00'
         },
         {
             xtype: 'gridcolumn',
             width: 1,
+            hideable: false,
             cell: {
                 xtype: 'widgetcell',
                 cellCls: 'custom_line'
@@ -85,6 +96,7 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 90,
             align: 'center',
             dataIndex: 'winsWhite',
+            summary: 'sum',
             text: 'Wins White',
             format: '00'
         },
@@ -93,6 +105,7 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 90,
             align: 'center',
             dataIndex: 'winsBlack',
+            summary: 'sum',
             text: 'Wins Black',
             format: '00'
         },
@@ -101,6 +114,7 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 90,
             align: 'center',
             dataIndex: 'losesWhite',
+            summary: 'sum',
             text: 'Loses White',
             format: '00'
         },
@@ -109,6 +123,7 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 84,
             align: 'center',
             dataIndex: 'losesBlack',
+            summary: 'sum',
             text: 'Loses Black',
             format: '00'
         },
@@ -117,6 +132,7 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 90,
             align: 'center',
             dataIndex: 'drawWhite',
+            summary: 'sum',
             text: 'Draw White',
             format: '00'
         },
@@ -125,8 +141,14 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             width: 90,
             align: 'center',
             dataIndex: 'drawBlack',
+            summary: 'sum',
             text: 'Draw Black',
             format: '00'
+        }
+    ],
+    plugins: [
+        {
+            type: 'gridsummaryrow'
         }
     ]
 

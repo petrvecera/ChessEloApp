@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewController",
+    "type": "Ext.app.ViewModel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "grids.playergrids",
-        "designer|userClassName": "grids.PlayerGridsViewController"
+        "designer|userAlias": "stats",
+        "designer|userClassName": "statsViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "31dc0b3f-dded-4d6b-9db0-f7e1e48d8043"
+    "designerId": "e741b7ae-6ffd-45ef-a385-cd1d3e06a4e4"
 }

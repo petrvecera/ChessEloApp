@@ -17,7 +17,9 @@
             "checkbox: true",
             "}"
         ],
-        "store": "GameRawData",
+        "store": [
+            "{GameGridData}"
+        ],
         "striped": false,
         "width": "100%"
     },
@@ -26,7 +28,7 @@
         "designer|userClassName": "string",
         "height": "auto",
         "name": "string",
-        "store": "store",
+        "store": "binding",
         "width": "auto",
         "maxWidth": "auto",
         "selectable": "object",

@@ -21,12 +21,13 @@ Ext.define('Enif.view.MainPanel', {
         'Enif.view.MainPanelViewModel',
         'Enif.view.MainPanelViewController',
         'Enif.view.grids.PlayerGrids',
+        'Enif.view.charts.Ladder',
         'Enif.view.charts.PlayedGames',
-        'Enif.view.charts.WinsByColor',
         'Enif.view.grids.GameGrid',
         'Enif.view.charts.EloRating',
-        'Enif.view.pivot.RoundRobinGrid',
         'Enif.view.charts.EloRatingNavigator',
+        'Enif.view.pivot.RoundRobinGrid',
+        'Enif.view.stats',
         'Ext.Toolbar',
         'Ext.Label',
         'Ext.Img',
@@ -100,7 +101,7 @@ Ext.define('Enif.view.MainPanel', {
             items: [
                 {
                     xtype: 'grids.playergrids',
-                    minHeight: 380,
+                    minHeight: 420,
                     title: 'Players'
                 },
                 {
@@ -109,13 +110,13 @@ Ext.define('Enif.view.MainPanel', {
                     layout: 'hbox',
                     items: [
                         {
-                            xtype: 'charts.playedgames',
-                            flex: 1
+                            xtype: 'charts.ladder',
+                            flex: 1,
+                            title: 'Player ELO ladder',
+                            titleAlign: 'center'
                         },
                         {
-                            xtype: 'charts.winsbycolor',
-                            title: 'Wins by color',
-                            titleAlign: 'center',
+                            xtype: 'charts.playedgames',
                             flex: 1
                         }
                     ]
@@ -145,6 +146,12 @@ Ext.define('Enif.view.MainPanel', {
             title: 'Elo Rating Chart'
         },
         {
+            xtype: 'charts.eloratingnavigator',
+            routeValue: 'eloChartNavigator',
+            title: 'Elo Navigator',
+            iconCls: 'x-fa fa-line-chart'
+        },
+        {
             xtype: 'container',
             routeValue: 'roundRobin',
             iconCls: 'x-fa fa-th',
@@ -156,9 +163,9 @@ Ext.define('Enif.view.MainPanel', {
             ]
         },
         {
-            xtype: 'charts.eloratingnavigator',
-            routeValue: 'eloChartNavigator',
-            title: 'Elo Chart Navgator'
+            xtype: 'stats',
+            title: 'Stats',
+            iconCls: 'x-fa fa-pie-chart'
         }
     ],
     listeners: {

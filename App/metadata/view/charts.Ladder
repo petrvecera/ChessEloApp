@@ -1,0 +1,212 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|extend": "Ext.Panel",
+        "designer|userAlias": "charts.ladder",
+        "designer|userClassName": "charts.Ladder"
+    },
+    "configAlternates": {
+        "designer|extend": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "64976ed7-a5dc-4b6e-9b73-e9a45fededc8",
+    "viewControllerInstanceId": "0fbf6938-5835-4dbe-8170-d051e0fd7e9c",
+    "viewModelInstanceId": "84c284f6-4ec2-4ac9-a230-efbdad94ae82",
+    "cn": [
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "store": "PlayerData",
+                "width": "100%"
+            },
+            "configAlternates": {
+                "insetPadding": "string",
+                "height": "auto",
+                "store": "store",
+                "width": "auto"
+            },
+            "name": "ColumnChart3D",
+            "designerId": "b835fe25-b4c2-47a2-9bd9-84860f09a9ca",
+            "isBuiltIn": true,
+            "iconCls": "icon-column-chart",
+            "autoName": "ColumnChart3D",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "name"
+                        ],
+                        "grid": true,
+                        "label": [
+                            "  {rotate: {",
+                            "                    degrees: -60",
+                            "                }",
+                            "            }"
+                        ],
+                        "position": "bottom",
+                        "title": "Players"
+                    },
+                    "configAlternates": {
+                        "grid": "boolean",
+                        "fields": "typedarray",
+                        "position": "string",
+                        "title": "string",
+                        "label": "object"
+                    },
+                    "name": "My3DCategoryAxis",
+                    "designerId": "2eee9d2f-7fbe-4c05-85b4-0eb7fffdcf96"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric3D",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "rating"
+                        ],
+                        "grid": [
+                            "{",
+                            "odd: {",
+                            "fillStyle: 'rgba(255, 255, 255, 0.06)'",
+                            "},",
+                            "even: {",
+                            "fillStyle: 'rgba(0, 0, 0, 0.05)'",
+                            "}",
+                            "}"
+                        ],
+                        "minimum": 950,
+                        "position": "left",
+                        "title": "Rating"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "grid": "object",
+                        "minimum": "number",
+                        "position": "string",
+                        "title": "string"
+                    },
+                    "name": "My3DNumericAxis",
+                    "designerId": "98bf5396-f5f0-4c68-a9e0-6ecdb635dd17"
+                },
+                {
+                    "type": "Ext.chart.series.Bar3D",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": [
+                            "[",
+                            "    '#115fa6',",
+                            "    '#94ae0a',",
+                            "    '#a61120',",
+                            "    '#ff8809',",
+                            "    '#ffd13e',",
+                            "    '#a61187',",
+                            "    '#24ad9a',",
+                            "    '#7c7474',",
+                            "    '#a66111'",
+                            "]"
+                        ],
+                        "highlight": [
+                            "{",
+                            "                fillStyle: 'rgba(43, 130, 186, 1.0)',",
+                            "                strokeStyle: 'rgba(0, 0, 0, .2)',",
+                            "                showStroke: true,",
+                            "                lineWidth: 2",
+                            "                }",
+                            "            "
+                        ],
+                        "label": [
+                            "{",
+                            "    field: 'rating',",
+                            "    display: 'over',",
+                            "    renderer: function(text){",
+                            "        return ''+Math.round(text);",
+                            "    }",
+                            "",
+                            "}"
+                        ],
+                        "xField": "name",
+                        "yField": [
+                            "rating"
+                        ]
+                    },
+                    "configAlternates": {
+                        "highlight": "object",
+                        "colors": "array",
+                        "label": "object",
+                        "xField": "datafield",
+                        "yField": "typedarray"
+                    },
+                    "name": "My3DBarSeries",
+                    "designerId": "50d8dd45-f040-40d5-b70d-f4ce7fdd6d54",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "sprite",
+                                    "config",
+                                    "rendererData",
+                                    "index"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "return {",
+                                    "            fillStyle: this.config.colors[index],",
+                                    "            strokeStyle: index % 2 ? 'none' : 'black',",
+                                    "        };"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "renderer",
+                            "designerId": "d337587f-9bcf-4c8e-b280-08a9b59a8e0f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.interactions.ItemHighlight",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyItemHighlightInteraction1",
+                    "designerId": "c1beed6f-70b9-47bb-91d9-b0e92e727ef4"
+                }
+            ]
+        }
+    ]
+}

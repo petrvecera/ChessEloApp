@@ -1,0 +1,62 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stats",
+        "designer|userClassName": "stats",
+        "height": "100%",
+        "layout": "hbox",
+        "title": "Chart Stats"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "eb58451e-e11e-4172-a845-8906ec424c37",
+    "viewControllerInstanceId": "5412396c-d53c-4a5e-9f67-a2de40a7fc9b",
+    "viewModelInstanceId": "e741b7ae-6ffd-45ef-a385-cd1d3e06a4e4",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "layout|flex": "number"
+            },
+            "name": "charts.winsbycolor1",
+            "designerId": "8d35f8c4-72cc-4a56-b086-66521fb94ee1",
+            "masterInstanceId": "f013a06f-88fb-41b1-9e54-5e67009eb345"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "layout|flex": "number"
+            },
+            "name": "charts.playedgames1",
+            "designerId": "09082629-5d40-4890-aa9e-3eaa574321fe",
+            "masterInstanceId": "7827932d-2760-4de2-85c3-462b983627fb"
+        }
+    ]
+}

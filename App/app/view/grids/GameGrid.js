@@ -42,9 +42,11 @@ Ext.define('Enif.view.grids.GameGrid', {
         mode: 'single',
         checkbox: true
     },
-    store: 'GameRawData',
     striped: false,
 
+    bind: {
+        store: '{GameGridData}'
+    },
     columns: [
         {
             xtype: 'rownumberer',

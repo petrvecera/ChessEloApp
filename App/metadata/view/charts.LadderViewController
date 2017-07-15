@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "grids.playergrids",
-        "designer|userClassName": "grids.PlayerGridsViewController"
+        "designer|userAlias": "charts.ladder",
+        "designer|userClassName": "charts.LadderViewController"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "31dc0b3f-dded-4d6b-9db0-f7e1e48d8043"
+    "designerId": "0fbf6938-5835-4dbe-8170-d051e0fd7e9c"
 }

@@ -22,8 +22,7 @@ Ext.define('Enif.store.EloRatinChart', {
     requires: [
         'Enif.model.ChartsData',
         'Ext.data.proxy.Ajax',
-        'Ext.data.reader.Json',
-        'Ext.data.writer.Json'
+        'Ext.data.reader.Json'
     ],
 
     constructor: function(cfg) {
@@ -44,14 +43,14 @@ Ext.define('Enif.store.EloRatinChart', {
                 },
                 reader: {
                     type: 'json'
-                },
-                writer: {
-                    type: 'json'
                 }
             },
             listeners: {
                 beforeload: {
                     fn: me.onJsonstoreBeforeLoad
+                },
+                load: {
+                    fn: me.onJsonstoreLoad
                 }
             }
         }, cfg)]);
@@ -75,6 +74,10 @@ Ext.define('Enif.store.EloRatinChart', {
         }
 
         store.getModel().addFields(customFields);
+    },
+
+    onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
+        // Performance, we have too many points in the chart, we should try to remove the duplicates in here
     }
 
 });

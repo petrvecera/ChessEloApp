@@ -31,6 +31,8 @@ Ext.define('Enif.view.charts.WinsByColor', {
     viewModel: {
         type: 'charts.winsbycolor'
     },
+    title: 'Wins by color',
+    titleAlign: 'center',
 
     items: [
         {

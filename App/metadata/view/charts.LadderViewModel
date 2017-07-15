@@ -1,17 +1,17 @@
 {
-    "type": "Ext.app.ViewController",
+    "type": "Ext.app.ViewModel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "grids.playergrids",
-        "designer|userClassName": "grids.PlayerGridsViewController"
+        "designer|userAlias": "charts.ladder",
+        "designer|userClassName": "charts.LadderViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "31dc0b3f-dded-4d6b-9db0-f7e1e48d8043"
+    "designerId": "84c284f6-4ec2-4ac9-a230-efbdad94ae82"
 }

@@ -106,6 +106,29 @@
             },
             "name": "onJsonstoreDataChange",
             "designerId": "ec450c34-3d52-4b07-a5b2-c35a9041558b"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "// sort the store after load",
+                    "store.sort('rating', 'DESC');"
+                ],
+                "name": "load"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onJsonstoreLoad",
+            "designerId": "2ee9b769-7774-4293-8f01-b57b3f7b1898"
         }
     ]
 }
