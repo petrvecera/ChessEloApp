@@ -21,7 +21,10 @@ Ext.define('Enif.view.grids.PlayerGrids', {
         'Enif.view.grids.PlayerGridsViewModel',
         'Ext.grid.column.Number',
         'Ext.grid.cell.Widget',
-        'Ext.grid.plugin.Summary'
+        'Ext.grid.plugin.Summary',
+        'Ext.data.summary.Count',
+        'Ext.data.summary.Average',
+        'Ext.data.summary.Sum'
     ],
 
     viewModel: {
