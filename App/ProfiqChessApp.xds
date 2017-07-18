@@ -3,11 +3,11 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "6.5.0.180",
-            "frameworkVersion": "6.5.0.775"
+            "cmdVersion": "6.5.1.241",
+            "frameworkVersion": "6.5.1.341"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:49775/",
+        "urlPrefix": "http://localhost:50794/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -27,8 +27,8 @@
         "generateArchitectVersion": false,
         "installStatus": "Not Installed"
     },
-    "xdsVersion": "4.2.1",
-    "xdsBuild": 224,
+    "xdsVersion": "4.2.2",
+    "xdsBuild": 267,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",

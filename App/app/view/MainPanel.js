@@ -25,7 +25,6 @@ Ext.define('Enif.view.MainPanel', {
         'Enif.view.charts.PlayedGames',
         'Enif.view.grids.GameGrid',
         'Enif.view.charts.EloRating',
-        'Enif.view.charts.EloRatingNavigator',
         'Enif.view.pivot.RoundRobinGrid',
         'Enif.view.stats',
         'Ext.Toolbar',
@@ -111,9 +110,9 @@ Ext.define('Enif.view.MainPanel', {
                     items: [
                         {
                             xtype: 'charts.ladder',
-                            flex: 1,
                             title: 'Player ELO ladder',
-                            titleAlign: 'center'
+                            titleAlign: 'center',
+                            flex: 1
                         },
                         {
                             xtype: 'charts.playedgames',
@@ -146,12 +145,6 @@ Ext.define('Enif.view.MainPanel', {
             title: 'Elo Rating Chart'
         },
         {
-            xtype: 'charts.eloratingnavigator',
-            routeValue: 'eloChartNavigator',
-            title: 'Elo Navigator',
-            iconCls: 'x-fa fa-line-chart'
-        },
-        {
             xtype: 'container',
             routeValue: 'roundRobin',
             iconCls: 'x-fa fa-th',
@@ -164,8 +157,8 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'stats',
-            title: 'Stats',
-            iconCls: 'x-fa fa-pie-chart'
+            iconCls: 'x-fa fa-pie-chart',
+            title: 'Stats'
         }
     ],
     listeners: {
