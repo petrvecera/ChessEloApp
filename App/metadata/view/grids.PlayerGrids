@@ -10,6 +10,11 @@
         "designer|userClassName": "grids.PlayerGrids",
         "maxWidth": 1000,
         "name": "grids.PlayerGrids",
+        "requires": [
+            "Ext.data.summary.Count",
+            "Ext.data.summary.Average",
+            "Ext.data.summary.Sum"
+        ],
         "store": [
             "{PlayerGridStore}"
         ],
@@ -22,7 +27,8 @@
         "name": "string",
         "store": "binding",
         "width": "auto",
-        "maxWidth": "auto"
+        "maxWidth": "auto",
+        "requires": "typedarray"
     },
     "name": "MyGrid",
     "designerId": "2e7df700-2eb9-4d81-9313-52cf2d3f428b",
