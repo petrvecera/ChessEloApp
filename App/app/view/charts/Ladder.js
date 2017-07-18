@@ -23,7 +23,9 @@ Ext.define('Enif.view.charts.Ladder', {
         'Ext.chart.axis.Category3D',
         'Ext.chart.axis.Numeric3D',
         'Ext.chart.series.Bar3D',
-        'Ext.chart.interactions.ItemHighlight'
+        'Ext.chart.interactions.ItemHighlight',
+        'Ext.chart.grid.VerticalGrid3D',
+        'Ext.chart.grid.HorizontalGrid3D'
     ],
 
     viewModel: {
