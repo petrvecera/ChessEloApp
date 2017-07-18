@@ -7,12 +7,17 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "charts.ladder",
-        "designer|userClassName": "charts.Ladder"
+        "designer|userClassName": "charts.Ladder",
+        "requires": [
+            "Ext.chart.grid.VerticalGrid3D",
+            "Ext.chart.grid.HorizontalGrid3D"
+        ]
     },
     "configAlternates": {
         "designer|extend": "string",
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "requires": "typedarray"
     },
     "designerId": "64976ed7-a5dc-4b6e-9b73-e9a45fededc8",
     "viewControllerInstanceId": "0fbf6938-5835-4dbe-8170-d051e0fd7e9c",
