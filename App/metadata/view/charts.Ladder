@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|extend": "Ext.Panel",
         "designer|userAlias": "charts.ladder",
         "designer|userClassName": "charts.Ladder"
     },

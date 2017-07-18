@@ -436,41 +436,6 @@
             "masterInstanceId": "182f6fb5-2748-4328-b241-bcf4e025d36b"
         },
         {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|uiInterfaceName": "disabled",
-                "iconCls": "x-fa fa-line-chart",
-                "routeValue": "eloChartNavigator",
-                "title": "Elo Navigator"
-            },
-            "configAlternates": {
-                "routeValue": "string",
-                "title": "string",
-                "designer|uiInterfaceName": "string",
-                "iconCls": "string"
-            },
-            "name": "charts.eloratingnavigator",
-            "designerId": "92106604-581d-48e5-a270-192a888e4f59",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "routeValue",
-                    "type": "string"
-                },
-                {
-                    "group": "(Custom Properties)",
-                    "name": "iconCls",
-                    "type": "string"
-                }
-            ],
-            "masterInstanceId": "389f5e1b-a728-48fb-9467-3efdbf0299ec"
-        },
-        {
             "type": "viewcontrollereventbinding",
             "reference": {
                 "name": "listeners",
