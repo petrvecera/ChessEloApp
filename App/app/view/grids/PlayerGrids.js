@@ -46,11 +46,12 @@ Ext.define('Enif.view.grids.PlayerGrids', {
         },
         {
             xtype: 'numbercolumn',
-            width: 59,
-            dataIndex: 'rating',
-            summary: 'average',
-            text: 'Rating',
-            format: '0'
+            width: 66,
+            align: 'center',
+            dataIndex: 'games',
+            summary: 'sum',
+            text: 'Games',
+            format: '00'
         },
         {
             xtype: 'numbercolumn',
@@ -58,14 +59,6 @@ Ext.define('Enif.view.grids.PlayerGrids', {
             align: 'center',
             dataIndex: 'wins',
             text: 'Wins',
-            format: '00'
-        },
-        {
-            xtype: 'numbercolumn',
-            width: 69,
-            align: 'center',
-            dataIndex: 'loses',
-            text: 'Loses',
             format: '00'
         },
         {
@@ -78,12 +71,27 @@ Ext.define('Enif.view.grids.PlayerGrids', {
         },
         {
             xtype: 'numbercolumn',
-            width: 66,
+            width: 69,
             align: 'center',
-            dataIndex: 'games',
-            summary: 'sum',
-            text: 'Games',
+            dataIndex: 'loses',
+            text: 'Loses',
             format: '00'
+        },
+        {
+            xtype: 'numbercolumn',
+            width: 59,
+            dataIndex: 'rating',
+            summary: 'average',
+            text: 'Rating',
+            format: '0'
+        },
+        {
+            xtype: 'numbercolumn',
+            hidden: true,
+            width: 59,
+            dataIndex: 'rating',
+            summary: 'average',
+            text: 'Full Rating'
         },
         {
             xtype: 'gridcolumn',

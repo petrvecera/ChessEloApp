@@ -7,7 +7,7 @@
             "frameworkVersion": "6.5.1.341"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:50794/",
+        "urlPrefix": "http://localhost:64038/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -25,7 +25,12 @@
         "cacheBust": false,
         "buildShouldOverwriteIndex": true,
         "generateArchitectVersion": false,
-        "installStatus": "Not Installed"
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
     },
     "xdsVersion": "4.2.2",
     "xdsBuild": 267,

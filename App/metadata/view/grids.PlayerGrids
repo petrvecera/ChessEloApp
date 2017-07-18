@@ -65,23 +65,25 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "rating",
+                "align": "center",
+                "dataIndex": "games",
                 "docked": null,
-                "format": "0",
-                "summary": "average",
-                "text": "Rating",
-                "width": 59
+                "format": "00",
+                "summary": "sum",
+                "text": "Games",
+                "width": 66
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
                 "format": "string",
                 "text": "string",
+                "align": "string",
                 "width": "auto",
                 "summary": "string"
             },
-            "name": "MyNumberColumn14",
-            "designerId": "4675abc9-d668-4599-8929-e4878cb99e8c"
+            "name": "MyNumberColumn2",
+            "designerId": "2882ca1f-8067-44cc-a6bb-b5fcbd189bcd"
         },
         {
             "type": "Ext.grid.column.Number",
@@ -118,32 +120,6 @@
             "codeClass": null,
             "userConfig": {
                 "align": "center",
-                "dataIndex": "loses",
-                "docked": null,
-                "format": "00",
-                "text": "Loses",
-                "width": 69
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "format": "string",
-                "text": "string",
-                "align": "string",
-                "width": "auto"
-            },
-            "name": "MyNumberColumn1",
-            "designerId": "e80e379c-9110-4c02-9fee-41616c51c3ff"
-        },
-        {
-            "type": "Ext.grid.column.Number",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "align": "center",
                 "dataIndex": "draws",
                 "docked": null,
                 "format": "00",
@@ -170,12 +146,11 @@
             "codeClass": null,
             "userConfig": {
                 "align": "center",
-                "dataIndex": "games",
+                "dataIndex": "loses",
                 "docked": null,
                 "format": "00",
-                "summary": "sum",
-                "text": "Games",
-                "width": 66
+                "text": "Loses",
+                "width": 69
             },
             "configAlternates": {
                 "dataIndex": "datafield",
@@ -183,11 +158,63 @@
                 "format": "string",
                 "text": "string",
                 "align": "string",
+                "width": "auto"
+            },
+            "name": "MyNumberColumn1",
+            "designerId": "e80e379c-9110-4c02-9fee-41616c51c3ff"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "rating",
+                "docked": null,
+                "format": "0",
+                "summary": "average",
+                "text": "Rating",
+                "width": 59
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string",
                 "width": "auto",
                 "summary": "string"
             },
-            "name": "MyNumberColumn2",
-            "designerId": "2882ca1f-8067-44cc-a6bb-b5fcbd189bcd"
+            "name": "MyNumberColumn14",
+            "designerId": "4675abc9-d668-4599-8929-e4878cb99e8c"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "rating",
+                "docked": null,
+                "hidden": true,
+                "summary": "average",
+                "text": "Full Rating",
+                "width": 59
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string",
+                "width": "auto",
+                "summary": "string",
+                "hidden": "boolean"
+            },
+            "name": "MyNumberColumn4",
+            "designerId": "9e11efa5-b28f-4100-9775-5494806ec3ca"
         },
         {
             "type": "Ext.grid.column.Column",
