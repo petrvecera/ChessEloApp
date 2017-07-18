@@ -7,12 +7,16 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "GamesData",
-        "idProperty": "uid"
+        "idProperty": "uid",
+        "requires": [
+            "Ext.data.validator.Presence"
+        ]
     },
     "configAlternates": {
         "designer|userClassName": "string",
         "idProperty": "string",
-        "identifier": "string"
+        "identifier": "string",
+        "requires": "typedarray"
     },
     "name": "MyModel",
     "designerId": "a2e3473c-6f12-4e1a-925e-9eda90ecf526",

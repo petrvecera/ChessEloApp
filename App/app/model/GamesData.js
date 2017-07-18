@@ -19,7 +19,8 @@ Ext.define('Enif.model.GamesData', {
     requires: [
         'Ext.data.field.Number',
         'Ext.data.field.String',
-        'Ext.data.field.Boolean'
+        'Ext.data.field.Boolean',
+        'Ext.data.validator.Presence'
     ],
 
 
