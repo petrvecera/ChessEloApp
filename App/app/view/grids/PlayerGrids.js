@@ -39,6 +39,13 @@ Ext.define('Enif.view.grids.PlayerGrids', {
     },
     columns: [
         {
+            xtype: 'numbercolumn',
+            hidden: true,
+            width: 80,
+            dataIndex: 'uid',
+            text: 'ID'
+        },
+        {
             xtype: 'gridcolumn',
             dataIndex: 'name',
             summary: 'count',

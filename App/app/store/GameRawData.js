@@ -23,7 +23,8 @@ Ext.define('Enif.store.GameRawData', {
         'Enif.model.GamesData',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
-        'Ext.data.writer.Json'
+        'Ext.data.writer.Json',
+        'Ext.util.Sorter'
     ],
 
     constructor: function(cfg) {
@@ -55,10 +56,11 @@ Ext.define('Enif.store.GameRawData', {
                 },
                 remove: {
                     fn: me.onJsonstoreRemove
-                },
-                load: {
-                    fn: me.onJsonstoreLoad
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'timestamp'
             }
         }, cfg)]);
     },
@@ -70,11 +72,6 @@ Ext.define('Enif.store.GameRawData', {
 
     onJsonstoreRemove: function(store, records, index, isMove, eOpts) {
         store.sync();
-    },
-
-    onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
-        // sort the store after load
-        store.sort('timestamp', 'DESC');
     }
 
 });

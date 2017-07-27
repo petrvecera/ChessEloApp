@@ -130,11 +130,10 @@ Ext.define('Enif.view.forms.AddGameForm', {
                         {
                             xtype: 'segmentedbutton',
                             name: 'playerWon',
-                            maxWidth: 300,
+                            maxWidth: 350,
                             items: [
                                 {
                                     xtype: 'button',
-                                    flex: 2,
                                     name: 'playerWhite',
                                     iconAlign: 'top',
                                     iconCls: 'x-fa fa-user-o',
@@ -150,7 +149,6 @@ Ext.define('Enif.view.forms.AddGameForm', {
                                 },
                                 {
                                     xtype: 'button',
-                                    flex: 2,
                                     name: 'playerBlack',
                                     iconAlign: 'top',
                                     iconCls: 'x-fa fa-user',
@@ -243,8 +241,11 @@ Ext.define('Enif.view.forms.AddGameForm', {
         let whiteName = this.query('combobox[name=playerWhite]')[0].getSelection();
         let blackName = this.query('combobox[name=playerBlack]')[0].getSelection();
 
-        if (whiteName == blackName && (whiteName != "" && blackName != "") ){
+        if (whiteName == blackName && (whiteName != "" || whiteName != null)){
             Ext.toast('Player can\'t play againts himself', 3000);
+            // <debug>
+            console.log(`Players playing against each other:${whiteName} vs ${blackName}`);
+            // </debug>
         }
 
         whiteName = whiteName ? whiteName.get('name') : "";

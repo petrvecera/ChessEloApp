@@ -99,9 +99,16 @@ Ext.define('Enif.view.MainPanel', {
             layout: 'vbox',
             items: [
                 {
-                    xtype: 'grids.playergrids',
-                    minHeight: 420,
-                    title: 'Players'
+                    xtype: 'panel',
+                    collapsible: 'top',
+                    title: 'Players',
+                    titleAlign: 'center',
+                    items: [
+                        {
+                            xtype: 'grids.playergrids',
+                            minHeight: 420
+                        }
+                    ]
                 },
                 {
                     xtype: 'container',

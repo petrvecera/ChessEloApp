@@ -77,6 +77,10 @@ Ext.define('Enif.view.charts.EloRatingViewController', {
         }
 
 
+
+
+
+
     }
 
 });
