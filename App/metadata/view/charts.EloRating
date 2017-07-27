@@ -13,6 +13,7 @@
         ],
         "designer|userAlias": "charts.elorating",
         "designer|userClassName": "charts.EloRating",
+        "margin": 10,
         "requires": [
             "Ext.chart.series.Line"
         ]
@@ -21,7 +22,8 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string",
         "designer|commentHeader": "comment",
-        "requires": "typedarray"
+        "requires": "typedarray",
+        "margin": "auto"
     },
     "name": "MyContainer",
     "designerId": "182f6fb5-2748-4328-b241-bcf4e025d36b",
@@ -132,105 +134,22 @@
                 "itemId": "string",
                 "padding": "auto",
                 "innerPadding": "object",
-                "reference": "string"
+                "reference": "string",
+                "axes": "binding"
             },
             "name": "MyLineChart",
             "designerId": "7e277f95-ade1-4d10-9e78-d280d95f668d",
             "isBuiltIn": true,
             "iconCls": "icon-line-chart",
             "autoName": "MyLineChart",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "axes",
+                    "type": "string"
+                }
+            ],
             "cn": [
-                {
-                    "type": "Ext.chart.axis.Category",
-                    "reference": {
-                        "name": "axes",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fields": [
-                            "timestamp"
-                        ],
-                        "title": "Dates"
-                    },
-                    "configAlternates": {
-                        "fields": "typedarray",
-                        "title": "string"
-                    },
-                    "name": "MyCategoryAxis",
-                    "designerId": "e7984f0b-cd06-4540-90f8-7cb7a3fe64d9",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|params": [
-                                    "axis",
-                                    "label",
-                                    "layoutContext",
-                                    "lastLabel"
-                                ],
-                                "fn": "renderer",
-                                "implHandler": [
-                                    "return Ext.Date.format(new Date(label), 'd.m.y');"
-                                ]
-                            },
-                            "configAlternates": {
-                                "designer|params": "typedarray",
-                                "fn": "string",
-                                "implHandler": "code"
-                            },
-                            "name": "renderer",
-                            "designerId": "bbd8638b-4511-4d6b-b2ef-b00d77d501f9"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.chart.axis.Numeric",
-                    "reference": {
-                        "name": "axes",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "Elo Rating Left",
-                        "fields": [
-                            "player0Rating",
-                            "player1Rating",
-                            "player2Rating",
-                            "player3Rating",
-                            "player4Rating",
-                            "player5Rating",
-                            "player6Rating",
-                            "player7Rating",
-                            "player8Rating"
-                        ],
-                        "grid": [
-                            "{",
-                            "    odd: {",
-                            "        line: '#e8e8e8'",
-                            "    }",
-                            "}"
-                        ],
-                        "margin": 10,
-                        "position": "right",
-                        "title": "Elo rating"
-                    },
-                    "configAlternates": {
-                        "fields": "typedarray",
-                        "grid": "object",
-                        "margin": "number",
-                        "position": "string",
-                        "title": "string",
-                        "designer|displayName": "string"
-                    },
-                    "name": "MyNumericAxis",
-                    "designerId": "6c9cbf91-e9bb-4521-8498-aa7b6ace8d6b"
-                },
                 {
                     "type": "Ext.chart.legend.Legend",
                     "reference": {
@@ -292,6 +211,10 @@
                             "    });",
                             "}",
                             "",
+                            "",
+                            "",
+                            "",
+                            "",
                             ""
                         ],
                         "name": "initialize",
@@ -331,6 +254,94 @@
                     },
                     "name": "MyItemInfoInteraction",
                     "designerId": "5ccc7003-c55d-4f7d-ade2-cde73a5789bf"
+                },
+                {
+                    "type": "Ext.chart.axis.Category",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "timestamp"
+                        ],
+                        "title": "Dates"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "title": "string"
+                    },
+                    "name": "MyCategoryAxis1",
+                    "designerId": "3d8140ec-aa02-4d08-a3bb-b7ee708868b0",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "axis",
+                                    "label",
+                                    "layoutContext",
+                                    "lastLabel"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "                        return Ext.Date.format(new Date(label), 'd.m.y');",
+                                    ""
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "renderer",
+                            "designerId": "80ecb7d8-c588-4002-8fd4-e3c1d4c8008e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "player0Rating",
+                            "player1Rating",
+                            "player2Rating",
+                            "player3Rating",
+                            "player4Rating",
+                            "player5Rating",
+                            "player6Rating",
+                            "player7Rating",
+                            "player8Rating"
+                        ],
+                        "grid": [
+                            "{",
+                            "                        odd: {",
+                            "                            line: '#e8e8e8'",
+                            "                        }",
+                            "                    }"
+                        ],
+                        "position": "right",
+                        "title": "Elo rating"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "grid": "object",
+                        "position": "string",
+                        "title": "string"
+                    },
+                    "name": "MyNumericAxis1",
+                    "designerId": "1d5985ae-7ef9-4ae7-8081-d51242924473"
                 }
             ]
         }

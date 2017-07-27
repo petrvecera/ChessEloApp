@@ -326,7 +326,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "maxWidth": 300,
+                                "maxWidth": 350,
                                 "name": "playerWon"
                             },
                             "configAlternates": {
@@ -346,7 +346,6 @@
                                     "userConfig": {
                                         "iconAlign": "top",
                                         "iconCls": "x-fa fa-user-o",
-                                        "layout|flex": 2,
                                         "name": "playerWhite",
                                         "text": "White",
                                         "value": "white"
@@ -394,7 +393,6 @@
                                     "userConfig": {
                                         "iconAlign": "top",
                                         "iconCls": "x-fa fa-user",
-                                        "layout|flex": 2,
                                         "name": "playerBlack",
                                         "text": "Black",
                                         "value": "black"
@@ -538,8 +536,11 @@
                     "let whiteName = this.query('combobox[name=playerWhite]')[0].getSelection();",
                     "let blackName = this.query('combobox[name=playerBlack]')[0].getSelection();",
                     "",
-                    "if (whiteName == blackName && (whiteName != \"\" && blackName != \"\") ){",
+                    "if (whiteName == blackName && (whiteName != \"\" || whiteName != null)){",
                     "    Ext.toast('Player can\\'t play againts himself', 3000);",
+                    "    // <debug>",
+                    "    console.log(`Players playing against each other:${whiteName} vs ${blackName}`);",
+                    "    // </debug>",
                     "}",
                     "",
                     "whiteName = whiteName ? whiteName.get('name') : \"\";",

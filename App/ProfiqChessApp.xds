@@ -2,12 +2,12 @@
     "name": "ProfiqChessApp",
     "settings": {
         "cmd": {
-            "license": "commercial",
+            "license": "custom",
             "cmdVersion": "6.5.1.241",
-            "frameworkVersion": "6.5.1.341"
+            "frameworkOverride": "C:\\Users\\Petr\\Documents\\Architect\\frameworks\\6.5.1.341\\commercial"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:64038/",
+        "urlPrefix": "http://localhost:54961/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -25,15 +25,10 @@
         "cacheBust": false,
         "buildShouldOverwriteIndex": true,
         "generateArchitectVersion": false,
-        "installStatus": "Not Installed",
-        "lastBuildSelection": {
-            "value": "webBuild",
-            "display": "Build web app",
-            "buildPlatform": false
-        }
+        "installStatus": "Not Installed"
     },
     "xdsVersion": "4.2.2",
-    "xdsBuild": 267,
+    "xdsBuild": 276,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",

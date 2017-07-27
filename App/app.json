@@ -1,5 +1,6 @@
 {
    "name": "Enif",
+   "namespace": "Enif",
    "version": "1.0.0.0",
    "framework": "ext",
    "toolkit": "modern",
@@ -19,6 +20,7 @@
       "overrides"
    ],
    "fashion": {
+      "missingParameters": "error",
       "inliner": {
          "enable": false
       }
@@ -128,5 +130,5 @@
    "ignore": [
       "(^|/)CVS(/?$|/.*?$)"
    ],
-   "id": "27c18a36-7d8f-49e6-9cab-5ded3c38a252"
+   "id": "1c1aefd6-1045-4756-94a6-ddcfb87f230f"
 }

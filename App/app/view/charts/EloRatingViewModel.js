@@ -15,6 +15,43 @@
 
 Ext.define('Enif.view.charts.EloRatingViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.charts.elorating'
+    alias: 'viewmodel.charts.elorating',
+
+    data: {
+        axes: [
+            {
+                type: 'category',
+                renderer: function(axis, label, layoutContext, lastLabel) {
+                                    return Ext.Date.format(new Date(label), 'd.m.y');
+                                },
+                fields: [
+                    'timestamp'
+                ],
+                title: 'Dates'
+            },
+            {
+                type: 'numeric',
+                fields: [
+                    'player0Rating',
+                    'player1Rating',
+                    'player2Rating',
+                    'player3Rating',
+                    'player4Rating',
+                    'player5Rating',
+                    'player6Rating',
+                    'player7Rating',
+                    'player8Rating'
+                ],
+                grid: {
+                    odd: {
+                        line: '#e8e8e8'
+                    }
+                },
+                margin: 10,
+                position: 'right',
+                title: 'Elo rating'
+            }
+        ]
+    }
 
 });

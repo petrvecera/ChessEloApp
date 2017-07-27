@@ -115,27 +115,22 @@
             "designerId": "bad3e925-3a7d-4f9b-bbeb-08378c65b2eb"
         },
         {
-            "type": "basiceventbinding",
+            "type": "Ext.util.Sorter",
             "reference": {
-                "name": "listeners",
-                "type": "array"
+                "name": "sorters",
+                "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onJsonstoreLoad",
-                "implHandler": [
-                    "// sort the store after load",
-                    "store.sort('timestamp', 'DESC');"
-                ],
-                "name": "load"
+                "direction": "DESC",
+                "property": "timestamp"
             },
             "configAlternates": {
-                "fn": "string",
-                "implHandler": "code",
-                "name": "string"
+                "direction": "string",
+                "property": "string"
             },
-            "name": "onJsonstoreLoad",
-            "designerId": "c35ed3ee-6224-4c22-804e-e6ddf86f8cd2"
+            "name": "MySorter",
+            "designerId": "fad357c7-8fc7-46e7-bc92-e77d731ad38f"
         }
     ]
 }

@@ -246,25 +246,46 @@
             ],
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "Players",
-                        "minHeight": 420,
-                        "title": "Players"
+                        "collapsible": "top",
+                        "title": "Players",
+                        "titleAlign": "center"
                     },
                     "configAlternates": {
-                        "designer|displayName": "string",
+                        "collapsible": "string",
                         "title": "string",
-                        "minHeight": "auto"
+                        "titleAlign": "string"
                     },
-                    "name": "grids.playergrids",
-                    "designerId": "0945d88b-34f7-4a53-b418-789f7cf527f9",
-                    "masterInstanceId": "2e7df700-2eb9-4d81-9313-52cf2d3f428b"
+                    "name": "MyPanel",
+                    "designerId": "aa4df271-d6fb-4214-ad7a-682b32c961d4",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Players",
+                                "minHeight": 420
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "title": "string",
+                                "minHeight": "auto"
+                            },
+                            "name": "grids.playergrids",
+                            "designerId": "0945d88b-34f7-4a53-b418-789f7cf527f9",
+                            "masterInstanceId": "2e7df700-2eb9-4d81-9313-52cf2d3f428b"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.Container",

@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "basePath": "ext/build/",
+        "basePath": "ext/build",
         "designer|userClassName": "Library",
         "libraryRequires": [
             "sencha-charts",

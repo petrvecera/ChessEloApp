@@ -36,6 +36,30 @@
     "viewModelInstanceId": "10eeccd1-5094-43fb-b1b5-89bd4051f335",
     "cn": [
         {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "uid",
+                "docked": null,
+                "hidden": true,
+                "text": "ID",
+                "width": 80
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "hidden": "boolean",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyNumberColumn5",
+            "designerId": "368d4608-e429-4eb9-877e-415d6bb2d3e9"
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",

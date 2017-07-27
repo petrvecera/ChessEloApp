@@ -28,11 +28,11 @@ Ext.define('Enif.view.charts.EloRating', {
         'Ext.Toolbar',
         'Ext.Button',
         'Ext.chart.CartesianChart',
-        'Ext.chart.axis.Category',
-        'Ext.chart.axis.Numeric',
         'Ext.chart.legend.Legend',
         'Ext.chart.interactions.CrossZoom',
         'Ext.chart.interactions.ItemInfo',
+        'Ext.chart.axis.Category',
+        'Ext.chart.axis.Numeric',
         'Ext.chart.series.Line'
     ],
 
@@ -40,6 +40,7 @@ Ext.define('Enif.view.charts.EloRating', {
     viewModel: {
         type: 'charts.elorating'
     },
+    margin: 10,
 
     items: [
         {
@@ -86,11 +87,28 @@ Ext.define('Enif.view.charts.EloRating', {
                 right: 10,
                 bottom: 10
             },
+            legend: {
+                xtype: 'legend',
+                docked: 'bottom'
+            },
+            listeners: {
+                initialize: 'onMylinechartInitialize'
+            },
+            interactions: [
+                {
+                    type: 'crosszoom'
+                },
+                {
+                    type: 'iteminfo',
+                    enabled: false
+                }
+            ],
             axes: [
                 {
                     type: 'category',
                     renderer: function(axis, label, layoutContext, lastLabel) {
                         return Ext.Date.format(new Date(label), 'd.m.y');
+
                     },
                     fields: [
                         'timestamp'
@@ -115,25 +133,8 @@ Ext.define('Enif.view.charts.EloRating', {
                             line: '#e8e8e8'
                         }
                     },
-                    margin: 10,
                     position: 'right',
                     title: 'Elo rating'
-                }
-            ],
-            legend: {
-                xtype: 'legend',
-                docked: 'bottom'
-            },
-            listeners: {
-                initialize: 'onMylinechartInitialize'
-            },
-            interactions: [
-                {
-                    type: 'crosszoom'
-                },
-                {
-                    type: 'iteminfo',
-                    enabled: false
                 }
             ]
         }
