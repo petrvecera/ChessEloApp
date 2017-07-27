@@ -32,7 +32,7 @@
             "codeClass": null,
             "userConfig": {
                 "height": "100%",
-                "store": "PlayerData",
+                "store": "SortedPlayerData",
                 "width": "100%"
             },
             "configAlternates": {

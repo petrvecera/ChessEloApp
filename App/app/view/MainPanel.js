@@ -101,6 +101,7 @@ Ext.define('Enif.view.MainPanel', {
             items: [
                 {
                     xtype: 'panel',
+                    minHeight: 420,
                     collapsible: 'top',
                     title: 'Players',
                     titleAlign: 'center',

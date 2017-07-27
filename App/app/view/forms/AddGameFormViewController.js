@@ -77,13 +77,14 @@ Ext.define('Enif.view.forms.AddGameFormViewController', {
 
                         //reset form
                         timeoutBtn.setValue('false');
-                        form.query('button[name=playerWhite]')[0].setText('White');
-                        form.query('button[name=playerBlack]')[0].setText('Black');
+                        //form.query('button[name=playerWhite]')[0].setText('White');
+                        //form.query('button[name=playerBlack]')[0].setText('Black');
 
 
                         store.sync({
                             callback: function (records, operation, success) {
-                                Enif.app.getController('storeLoadController').reloadAllStores();
+                                // This would wipe the combo-boxes, let's load the stores onthe form close
+                                //Enif.app.getController('storeLoadController').reloadAllStores();
                             },
                             success: function (batch, options) {
                                 Ext.toast('Record sucesfully aded', 3000);

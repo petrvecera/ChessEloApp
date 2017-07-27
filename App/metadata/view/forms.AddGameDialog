@@ -22,6 +22,7 @@
             "        text: 'Cancel',",
             "        ui: 'cancel',",
             "        handler: function() {",
+            "            Enif.app.getController('storeLoadController').reloadAllStores();",
             "            this.up('dialog').destroy();",
             "        }",
             "    }",
@@ -35,7 +36,7 @@
         ],
         "title": "Add new match",
         "titleAlign": "center",
-        "width": 660
+        "width": 700
     },
     "configAlternates": {
         "buttons": "object",
@@ -94,6 +95,7 @@
                         ],
                         "fn": "handler",
                         "implHandler": [
+                            "Enif.app.getController('storeLoadController').reloadAllStores();",
                             "this.up('dialog').destroy();"
                         ]
                     },

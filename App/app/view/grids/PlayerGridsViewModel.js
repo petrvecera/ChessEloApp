@@ -15,16 +15,6 @@
 
 Ext.define('Enif.view.grids.PlayerGridsViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.grids.playergrids',
-
-    requires: [
-        'Ext.data.ChainedStore'
-    ],
-
-    stores: {
-        PlayerGridStore: {
-            source: 'PlayerData'
-        }
-    }
+    alias: 'viewmodel.grids.playergrids'
 
 });

@@ -118,7 +118,7 @@
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
                     "// sort the store after load",
-                    "store.sort('rating', 'DESC');"
+                    "//store.sort('rating', 'DESC');"
                 ],
                 "name": "load"
             },

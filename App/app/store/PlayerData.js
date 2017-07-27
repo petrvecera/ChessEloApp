@@ -86,7 +86,7 @@ Ext.define('Enif.store.PlayerData', {
 
     onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
         // sort the store after load
-        store.sort('rating', 'DESC');
+        //store.sort('rating', 'DESC');
     }
 
 });

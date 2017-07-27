@@ -28,9 +28,9 @@ Ext.define('Enif.view.forms.AddGameForm', {
         'Ext.form.FieldSet',
         'Ext.field.ComboBox',
         'Ext.Spacer',
+        'Ext.Button',
         'Ext.field.Container',
         'Ext.SegmentedButton',
-        'Ext.Button',
         'Ext.Toast'
     ],
 
@@ -73,7 +73,7 @@ Ext.define('Enif.view.forms.AddGameForm', {
             items: [
                 {
                     xtype: 'combobox',
-                    flex: 3,
+                    flex: 8,
                     itemId: 'mycombobox',
                     name: 'playerWhite',
                     modelValidation: true,
@@ -92,8 +92,22 @@ Ext.define('Enif.view.forms.AddGameForm', {
                     flex: 1
                 },
                 {
+                    xtype: 'button',
+                    flex: 1,
+                    itemId: 'mybutton11',
+                    iconCls: 'x-fa fa-exchange',
+                    text: '',
+                    listeners: {
+                        tap: 'onMybutton11Tap'
+                    }
+                },
+                {
+                    xtype: 'spacer',
+                    flex: 1
+                },
+                {
                     xtype: 'combobox',
-                    flex: 3,
+                    flex: 8,
                     itemId: 'mycombobox1',
                     name: 'playerBlack',
                     modelValidation: true,
@@ -123,14 +137,13 @@ Ext.define('Enif.view.forms.AddGameForm', {
             items: [
                 {
                     xtype: 'containerfield',
-                    flex: 3,
+                    flex: 8,
                     label: 'Won',
                     labelMinWidth: 50,
                     items: [
                         {
                             xtype: 'segmentedbutton',
                             name: 'playerWon',
-                            maxWidth: 350,
                             items: [
                                 {
                                     xtype: 'button',
@@ -160,12 +173,11 @@ Ext.define('Enif.view.forms.AddGameForm', {
                     ]
                 },
                 {
-                    xtype: 'spacer',
-                    flex: 1
+                    xtype: 'spacer'
                 },
                 {
                     xtype: 'containerfield',
-                    flex: 3,
+                    flex: 8,
                     bodyAlign: 'center',
                     label: 'Run out of time',
                     labelMinWidth: 105,
@@ -233,6 +245,19 @@ Ext.define('Enif.view.forms.AddGameForm', {
         this.comboChange();
     },
 
+    onMybutton11Tap: function(button, e, eOpts) {
+        const whiteCombo = this.query('combobox[name=playerWhite]')[0];
+        const blackCombo = this.query('combobox[name=playerBlack]')[0];
+
+        const whiteSelection = whiteCombo.getSelection();
+        const blackSelection = blackCombo.getSelection();
+
+        // to avoid player playing aginast each other protection
+        blackCombo.setSelection('');
+        whiteCombo.setSelection(blackSelection);
+        blackCombo.setSelection(whiteSelection);
+    },
+
     onMycombobox1Change: function(combobox, newValue, oldValue, eOpts) {
         this.comboChange();
     },
@@ -241,15 +266,17 @@ Ext.define('Enif.view.forms.AddGameForm', {
         let whiteName = this.query('combobox[name=playerWhite]')[0].getSelection();
         let blackName = this.query('combobox[name=playerBlack]')[0].getSelection();
 
-        if (whiteName == blackName && (whiteName != "" || whiteName != null)){
+        whiteName = whiteName ? whiteName.get('name') : "";
+        blackName = blackName ? blackName.get('name') : "";
+
+
+        if (whiteName == blackName && (whiteName !== "" && whiteName !== null)){
             Ext.toast('Player can\'t play againts himself', 3000);
             // <debug>
             console.log(`Players playing against each other:${whiteName} vs ${blackName}`);
             // </debug>
         }
 
-        whiteName = whiteName ? whiteName.get('name') : "";
-        blackName = blackName ? blackName.get('name') : "";
 
         if(whiteName !== "") this.query('button[name=playerWhite]')[0].setText(whiteName);
         if(blackName !== "") this.query('button[name=playerBlack]')[0].setText(blackName);

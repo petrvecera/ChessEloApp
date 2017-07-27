@@ -258,13 +258,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "collapsible": "top",
+                        "minHeight": 420,
                         "title": "Players",
                         "titleAlign": "center"
                     },
                     "configAlternates": {
                         "collapsible": "string",
                         "title": "string",
-                        "titleAlign": "string"
+                        "titleAlign": "string",
+                        "minHeight": "auto"
                     },
                     "name": "MyPanel",
                     "designerId": "aa4df271-d6fb-4214-ad7a-682b32c961d4",
