@@ -7,7 +7,7 @@
             "frameworkOverride": "C:\\Users\\Petr\\Documents\\Architect\\frameworks\\6.5.1.341\\commercial"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:54961/",
+        "urlPrefix": "http://localhost:53324/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -25,7 +25,12 @@
         "cacheBust": false,
         "buildShouldOverwriteIndex": true,
         "generateArchitectVersion": false,
-        "installStatus": "Not Installed"
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
     },
     "xdsVersion": "4.2.2",
     "xdsBuild": 276,

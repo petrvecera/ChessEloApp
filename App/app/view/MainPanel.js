@@ -32,7 +32,8 @@ Ext.define('Enif.view.MainPanel', {
         'Ext.Img',
         'Ext.Button',
         'Ext.Panel',
-        'Ext.pivot.Grid'
+        'Ext.pivot.Grid',
+        'Ext.panel.Collapser'
     ],
 
     controller: 'mainpanel',
