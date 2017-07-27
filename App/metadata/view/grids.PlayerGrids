@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|userAlias": "grids.playergrids",
         "designer|userClassName": "grids.PlayerGrids",
+        "height": "100%",
         "maxWidth": 1000,
         "name": "grids.PlayerGrids",
         "requires": [
@@ -15,9 +16,7 @@
             "Ext.data.summary.Average",
             "Ext.data.summary.Sum"
         ],
-        "store": [
-            "{PlayerGridStore}"
-        ],
+        "store": "SortedPlayerData",
         "width": "100%"
     },
     "configAlternates": {
@@ -25,10 +24,10 @@
         "designer|userClassName": "string",
         "height": "auto",
         "name": "string",
-        "store": "binding",
         "width": "auto",
         "maxWidth": "auto",
-        "requires": "typedarray"
+        "requires": "typedarray",
+        "store": "store"
     },
     "name": "MyGrid",
     "designerId": "2e7df700-2eb9-4d81-9313-52cf2d3f428b",

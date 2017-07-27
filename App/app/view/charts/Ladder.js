@@ -37,7 +37,7 @@ Ext.define('Enif.view.charts.Ladder', {
             xtype: 'cartesian',
             height: '100%',
             width: '100%',
-            store: 'PlayerData',
+            store: 'SortedPlayerData',
             axes: [
                 {
                     type: 'category3d',

@@ -30,13 +30,12 @@ Ext.define('Enif.view.grids.PlayerGrids', {
     viewModel: {
         type: 'grids.playergrids'
     },
+    height: '100%',
     name: 'grids.PlayerGrids',
     width: '100%',
     maxWidth: 1000,
+    store: 'SortedPlayerData',
 
-    bind: {
-        store: '{PlayerGridStore}'
-    },
     columns: [
         {
             xtype: 'numbercolumn',

@@ -27,7 +27,7 @@ Ext.define('Enif.view.forms.AddGameDialog', {
     viewModel: {
         type: 'forms.addgamedialog'
     },
-    width: 660,
+    width: 700,
     buttonAlign: 'right',
     buttons: {
         ok: {
@@ -42,6 +42,7 @@ Ext.define('Enif.view.forms.AddGameDialog', {
             text: 'Cancel',
             ui: 'cancel',
             handler: function() {
+                    Enif.app.getController('storeLoadController').reloadAllStores();
                     this.up('dialog').destroy();
                 }
         }
@@ -59,6 +60,7 @@ Ext.define('Enif.view.forms.AddGameDialog', {
         {
             xtype: 'tool',
             handler: function(owner, tool, event) {
+                Enif.app.getController('storeLoadController').reloadAllStores();
                 this.up('dialog').destroy();
             },
             type: 'close'

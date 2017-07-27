@@ -132,7 +132,7 @@
                         "editable": false,
                         "itemId": "mycombobox",
                         "label": "White Player",
-                        "layout|flex": 3,
+                        "layout|flex": 8,
                         "modelValidation": true,
                         "name": "playerWhite",
                         "queryMode": "local",
@@ -199,6 +199,79 @@
                     "designerId": "bb035f39-4c4c-4e63-9236-217be066b1e7"
                 },
                 {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "swapButton",
+                        "iconCls": "x-fa fa-exchange",
+                        "itemId": "mybutton11",
+                        "layout|flex": 1,
+                        "text": ""
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "2a1a5346-bf36-4121-9022-1ea0e32978ff",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton11Tap",
+                                "implHandler": [
+                                    "const whiteCombo = this.query('combobox[name=playerWhite]')[0];",
+                                    "const blackCombo = this.query('combobox[name=playerBlack]')[0];",
+                                    "",
+                                    "const whiteSelection = whiteCombo.getSelection();",
+                                    "const blackSelection = blackCombo.getSelection();",
+                                    "",
+                                    "// to avoid player playing aginast each other protection",
+                                    "blackCombo.setSelection('');",
+                                    "whiteCombo.setSelection(blackSelection);",
+                                    "blackCombo.setSelection(whiteSelection);"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMybutton11Tap",
+                            "designerId": "d3b78b5c-7594-4ed6-8f0f-cf9cc31fd7b5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySpacer1",
+                    "designerId": "c44aabbe-7960-472e-aa07-9fa090483aef"
+                },
+                {
                     "type": "Ext.field.ComboBox",
                     "reference": {
                         "name": "items",
@@ -211,7 +284,7 @@
                         "editable": false,
                         "itemId": "mycombobox1",
                         "label": "Black Player",
-                        "layout|flex": 3,
+                        "layout|flex": 8,
                         "modelValidation": true,
                         "name": "playerBlack",
                         "queryMode": "local",
@@ -307,7 +380,7 @@
                     "userConfig": {
                         "label": "Won",
                         "labelMinWidth": 50,
-                        "layout|flex": 3
+                        "layout|flex": 8
                     },
                     "configAlternates": {
                         "label": "string",
@@ -326,7 +399,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "maxWidth": 350,
                                 "name": "playerWon"
                             },
                             "configAlternates": {
@@ -419,9 +491,6 @@
                         "type": "array"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": 1
-                    },
                     "configAlternates": {
                         "layout|flex": "number"
                     },
@@ -439,7 +508,7 @@
                         "bodyAlign": "center",
                         "label": "Run out of time",
                         "labelMinWidth": 105,
-                        "layout|flex": 3
+                        "layout|flex": 8
                     },
                     "configAlternates": {
                         "bodyAlign": "string",
@@ -536,15 +605,17 @@
                     "let whiteName = this.query('combobox[name=playerWhite]')[0].getSelection();",
                     "let blackName = this.query('combobox[name=playerBlack]')[0].getSelection();",
                     "",
-                    "if (whiteName == blackName && (whiteName != \"\" || whiteName != null)){",
+                    "whiteName = whiteName ? whiteName.get('name') : \"\";",
+                    "blackName = blackName ? blackName.get('name') : \"\";",
+                    "",
+                    "",
+                    "if (whiteName == blackName && (whiteName !== \"\" && whiteName !== null)){",
                     "    Ext.toast('Player can\\'t play againts himself', 3000);",
                     "    // <debug>",
                     "    console.log(`Players playing against each other:${whiteName} vs ${blackName}`);",
                     "    // </debug>",
                     "}",
                     "",
-                    "whiteName = whiteName ? whiteName.get('name') : \"\";",
-                    "blackName = blackName ? blackName.get('name') : \"\";",
                     "",
                     "if(whiteName !== \"\") this.query('button[name=playerWhite]')[0].setText(whiteName);",
                     "if(blackName !== \"\") this.query('button[name=playerBlack]')[0].setText(blackName);"
