@@ -11,6 +11,9 @@
         "height": "100%",
         "id": "mainTabPanel",
         "maxWidth": "100%",
+        "requires": [
+            "Ext.panel.Collapser"
+        ],
         "tabBarPosition": "left"
     },
     "configAlternates": {
@@ -22,7 +25,8 @@
         "id": "string",
         "activeItem": "number",
         "reference": "string",
-        "height": "auto"
+        "height": "auto",
+        "requires": "typedarray"
     },
     "name": "MyTabPanel",
     "designerId": "20cd0446-3935-47fe-b19c-dcdcd45c24db",
