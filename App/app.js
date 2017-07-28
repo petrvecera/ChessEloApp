@@ -28,7 +28,8 @@ Ext.application({
         'GameRawData',
         'PlayerData',
         'EloRatinChart',
-        'WinsByColor'
+        'WinsByColor',
+        'SortedPlayerData'
     ],
     views: [
         'grids.PlayerGrids',
