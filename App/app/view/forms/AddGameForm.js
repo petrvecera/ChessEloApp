@@ -173,7 +173,8 @@ Ext.define('Enif.view.forms.AddGameForm', {
                     ]
                 },
                 {
-                    xtype: 'spacer'
+                    xtype: 'container',
+                    flex: 3
                 },
                 {
                     xtype: 'containerfield',
