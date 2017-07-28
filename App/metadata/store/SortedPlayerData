@@ -1,0 +1,43 @@
+{
+    "type": "Ext.data.ChainedStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SortedPlayerData",
+        "source": "PlayerData",
+        "storeId": "SortedPlayerData"
+    },
+    "configAlternates": {
+        "name": "string",
+        "source": "store",
+        "designer|userClassName": "string",
+        "storeId": "string"
+    },
+    "name": "MyChainedStore",
+    "designerId": "6b008ef5-a3df-4c35-8924-96a355410f01",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Elo sorter",
+                "direction": "DESC",
+                "property": "rating"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "direction": "string",
+                "property": "string"
+            },
+            "name": "MySorter1",
+            "designerId": "57fdbdee-2e42-4f96-8e48-4f43be2ead19"
+        }
+    ]
+}
