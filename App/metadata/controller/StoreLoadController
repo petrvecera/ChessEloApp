@@ -31,11 +31,13 @@
                     "gamesStore.load({",
                     "    callback: function (records, operation, success) {",
                     "        Ext.getStore(\"GameRawData\").clearFilter();",
+                    "        Ext.getStore(\"PlayerData\").load();",
+                    "        Ext.getStore(\"pivot.HeatMap\").load();",
                     "    }",
                     "});",
                     "",
                     "",
-                    "Ext.getStore(\"PlayerData\").load();"
+                    ""
                 ]
             },
             "configAlternates": {

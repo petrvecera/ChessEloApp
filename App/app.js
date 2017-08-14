@@ -29,7 +29,8 @@ Ext.application({
         'PlayerData',
         'EloRatinChart',
         'WinsByColor',
-        'SortedPlayerData'
+        'SortedPlayerData',
+        'pivot.HeatMap'
     ],
     views: [
         'grids.PlayerGrids',
@@ -46,7 +47,8 @@ Ext.application({
         'charts.EloRatingNavigator',
         'mobile.MainPanel',
         'charts.Ladder',
-        'stats'
+        'stats',
+        'pivot.HeatMap'
     ],
     controllers: [
         'StoreLoadController'

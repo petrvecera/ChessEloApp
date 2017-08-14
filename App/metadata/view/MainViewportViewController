@@ -111,18 +111,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "showEloRatingNavigator",
+                "fn": "showHeatMap",
                 "implHandler": [
                     "this.getViewModel().set('activeTab', 4);"
                 ],
-                "url": "eloChartNavigator"
+                "url": "heatMap"
             },
             "configAlternates": {
                 "fn": "string",
                 "implHandler": "code",
                 "url": "string"
             },
-            "name": "showEloRatingNavigator",
+            "name": "showHeatMap",
             "designerId": "35f7d734-65a7-4eca-baef-4202474c4ba8"
         }
     ]

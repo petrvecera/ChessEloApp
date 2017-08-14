@@ -7,7 +7,7 @@
             "frameworkOverride": "C:\\Users\\Petr\\Documents\\Architect\\frameworks\\6.5.1.341\\commercial"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:56938/",
+        "urlPrefix": "http://localhost:50947/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -33,7 +33,7 @@
         }
     },
     "xdsVersion": "4.2.2",
-    "xdsBuild": 276,
+    "xdsBuild": 282,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "modern65",
@@ -83,14 +83,18 @@
             "0fbf6938-5835-4dbe-8170-d051e0fd7e9c",
             "eb58451e-e11e-4172-a845-8906ec424c37",
             "e741b7ae-6ffd-45ef-a385-cd1d3e06a4e4",
-            "5412396c-d53c-4a5e-9f67-a2de40a7fc9b"
+            "5412396c-d53c-4a5e-9f67-a2de40a7fc9b",
+            "f2086249-c5b6-402e-8734-63fe40732375",
+            "c2fe7158-0d0a-4bdc-b390-1d9669f1ab97",
+            "23132ed2-745b-4d37-b150-08f6e205a88f"
         ],
         "store": [
             "5e1dbe0c-ad95-44ba-802c-267575d98dc0",
             "04bd77ec-b3e7-4205-9228-a4eb646455b5",
             "576bbeb2-ea6f-4940-a374-064cc7992449",
             "c98fb906-5912-438c-840c-c73b497cb23b",
-            "6b008ef5-a3df-4c35-8924-96a355410f01"
+            "6b008ef5-a3df-4c35-8924-96a355410f01",
+            "243e0059-51fd-4b6b-8b6b-081750087ca5"
         ],
         "controller": [
             "edb8115d-75a0-47da-87ed-ff0fc1fa7d3e"

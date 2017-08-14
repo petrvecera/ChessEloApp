@@ -23,7 +23,8 @@
             "PlayerData",
             "EloRatinChart",
             "WinsByColor",
-            "SortedPlayerData"
+            "SortedPlayerData",
+            "pivot.HeatMap"
         ],
         "views": [
             "grids.PlayerGrids",
@@ -40,7 +41,8 @@
             "charts.EloRatingNavigator",
             "mobile.MainPanel",
             "charts.Ladder",
-            "stats"
+            "stats",
+            "pivot.HeatMap"
         ]
     },
     "configAlternates": {
