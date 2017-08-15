@@ -44,7 +44,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "html": "Currently displaying Wins"
+                        "html": "Currently displaying winrate in %"
                     },
                     "configAlternates": {
                         "html": "string"

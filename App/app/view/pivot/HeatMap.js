@@ -38,7 +38,7 @@ Ext.define('Enif.view.pivot.HeatMap', {
             items: [
                 {
                     xtype: 'label',
-                    html: 'Currently displaying Wins'
+                    html: 'Currently displaying winrate in %'
                 }
             ]
         },

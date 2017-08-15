@@ -166,11 +166,15 @@ Ext.define('Enif.store.pivot.HeatMap', {
                 });
 
                 const numberOfGames = wins + draws + loses;
+                let displayedData = ((wins / numberOfGames)*100).toFixed(0);
+                if(numberOfGames === 0 ){
+                    displayedData = -1;
+                }
 
                 thisStoreData.push({
                     player1: playerName,
                     player2: playerName2,
-                    dataField: wins,
+                    dataField: displayedData,
                     wins: wins,
                     draws: draws,
                     loses: loses,
