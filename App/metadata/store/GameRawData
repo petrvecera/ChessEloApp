@@ -79,7 +79,8 @@
                 ],
                 "fn": "onGameDataChange",
                 "implHandler": [
-                    "Ext.getStore('EloRatinChart').load();"
+                    "Ext.getStore('EloRatinChart').load();",
+                    "Ext.getStore(\"pivot.HeatMap\").load();"
                 ],
                 "name": "datachanged"
             },

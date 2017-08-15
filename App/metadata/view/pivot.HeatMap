@@ -1,0 +1,189 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pivot.heatmap",
+        "designer|userClassName": "pivot.HeatMap",
+        "title": "My Panel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "f2086249-c5b6-402e-8734-63fe40732375",
+    "viewControllerInstanceId": "23132ed2-745b-4d37-b150-08f6e205a88f",
+    "viewModelInstanceId": "c2fe7158-0d0a-4bdc-b390-1d9669f1ab97",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "2610d526-2a91-4892-a394-3ca979d1a978",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Currently displaying winrate in %"
+                    },
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "name": "MyLabel",
+                    "designerId": "fe885b67-0002-42a0-8b78-098d77ef3b16"
+                }
+            ]
+        },
+        {
+            "type": "Ext.d3.HeatMap",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "legend": [
+                    "{",
+                    "                    docked: 'right',",
+                    "                    padding: 50,",
+                    "                    items: {",
+                    "                        count: 5,",
+                    "                        slice: [1],",
+                    "                        reverse: true,",
+                    "                        size: {",
+                    "                            x: 60,",
+                    "                            y: 30",
+                    "                        }",
+                    "                    }",
+                    "                }"
+                ],
+                "padding": "50 50 50 100",
+                "store": "pivot.HeatMap",
+                "tiles": [
+                    "{",
+                    "            attr: {",
+                    "                'stroke': '#081d58',",
+                    "                'stroke-width': 2",
+                    "            }",
+                    "        }"
+                ],
+                "width": "100%"
+            },
+            "configAlternates": {
+                "height": "auto",
+                "legend": "object",
+                "padding": "auto",
+                "store": "store",
+                "tiles": "object",
+                "width": "auto"
+            },
+            "name": "MyHeatMap",
+            "designerId": "03961e38-d768-46a7-aefb-62b5d79b7e43",
+            "cn": [
+                {
+                    "type": "Ext.d3.axis.Data.X",
+                    "reference": {
+                        "name": "xAxis",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "axis": [
+                            "{\"orient\":\"top\"}"
+                        ],
+                        "field": "player2",
+                        "scale": [
+                            "{\"type\":\"band\"}"
+                        ],
+                        "step": 86400000,
+                        "title": [
+                            "{\"text\":\"Player2\"}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "axis": "object",
+                        "field": "string",
+                        "scale": "object",
+                        "step": "number",
+                        "title": "object"
+                    },
+                    "name": "MyXAxis",
+                    "designerId": "c4dc719e-b7f5-4b98-8f22-e7d2d09812b8"
+                },
+                {
+                    "type": "Ext.d3.axis.Data.Y",
+                    "reference": {
+                        "name": "yAxis",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "axis": [
+                            "{\"orient\":\"left\"}"
+                        ],
+                        "field": "player1",
+                        "scale": [
+                            "{\"type\":\"band\"}"
+                        ],
+                        "step": 100,
+                        "title": [
+                            "{\"text\":\"Player1\"}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "axis": "object",
+                        "field": "string",
+                        "scale": "object",
+                        "step": "number",
+                        "title": "object"
+                    },
+                    "name": "MyYAxis",
+                    "designerId": "4961fa5b-c134-407d-bce0-3fbc6f7d3ab9"
+                },
+                {
+                    "type": "Ext.d3.axis.Color",
+                    "reference": {
+                        "name": "colorAxis",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "field": "dataField",
+                        "minimum": 0,
+                        "scale": [
+                            "{type: 'linear', range: ['#ffffd9', '#49b6c4', '#225ea8']}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "scale": "object",
+                        "field": "string",
+                        "minimum": "number"
+                    },
+                    "name": "MyColorAxis",
+                    "designerId": "4f2cfae2-9f24-43fe-bc0a-565f355ec431"
+                }
+            ]
+        }
+    ]
+}

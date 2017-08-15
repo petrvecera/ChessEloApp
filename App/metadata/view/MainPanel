@@ -495,7 +495,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "iconCls": "x-fa fa-th",
+                "iconCls": "x-fa fa-table",
                 "routeValue": "roundRobin",
                 "title": "Round Robin"
             },
@@ -531,6 +531,34 @@
                     "masterInstanceId": "f8a3bb96-87fd-4171-bec6-85c63d827aec"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "x-fa fa-th",
+                "routeValue": "heatMap",
+                "title": "Heat Map"
+            },
+            "configAlternates": {
+                "title": "string",
+                "iconCls": "string",
+                "routeValue": "string"
+            },
+            "name": "pivot.heatmap",
+            "designerId": "683c47e0-ad56-4f90-84a6-d54fa3319f5a",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "f2086249-c5b6-402e-8734-63fe40732375"
         },
         {
             "type": "linkedinstance",

@@ -68,6 +68,7 @@ Ext.define('Enif.store.GameRawData', {
     /* Reaload the chart */
     onGameDataChange: function(store, eOpts) {
         Ext.getStore('EloRatinChart').load();
+        Ext.getStore("pivot.HeatMap").load();
     },
 
     onJsonstoreRemove: function(store, records, index, isMove, eOpts) {

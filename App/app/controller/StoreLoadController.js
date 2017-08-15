@@ -24,11 +24,13 @@ Ext.define('Enif.controller.StoreLoadController', {
         gamesStore.load({
             callback: function (records, operation, success) {
                 Ext.getStore("GameRawData").clearFilter();
+                Ext.getStore("PlayerData").load();
+                Ext.getStore("pivot.HeatMap").load();
             }
         });
 
 
-        Ext.getStore("PlayerData").load();
+
     },
 
     /* TODO: Figure out the best way to use global variables */

@@ -82,11 +82,15 @@ Ext.define('Enif.store.PlayerData', {
             wins: winsBlack
         }]);
 
+
+        // also reload the heatmap
+        Ext.getStore("pivot.HeatMap").load();
+
     },
 
     onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
         // sort the store after load
-        //store.sort('rating', 'DESC');
+        //store.sort('rating', 'DESC')
     }
 
 });

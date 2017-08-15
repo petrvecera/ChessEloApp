@@ -26,6 +26,7 @@ Ext.define('Enif.view.MainPanel', {
         'Enif.view.grids.GameGrid',
         'Enif.view.charts.EloRating',
         'Enif.view.pivot.RoundRobinGrid',
+        'Enif.view.pivot.HeatMap',
         'Enif.view.stats',
         'Ext.Toolbar',
         'Ext.Label',
@@ -156,13 +157,19 @@ Ext.define('Enif.view.MainPanel', {
         {
             xtype: 'container',
             routeValue: 'roundRobin',
-            iconCls: 'x-fa fa-th',
+            iconCls: 'x-fa fa-table',
             title: 'Round Robin',
             items: [
                 {
                     xtype: 'pivot.roundrobingrid'
                 }
             ]
+        },
+        {
+            xtype: 'pivot.heatmap',
+            iconCls: 'x-fa fa-th',
+            title: 'Heat Map',
+            routeValue: 'heatMap'
         },
         {
             xtype: 'stats',
