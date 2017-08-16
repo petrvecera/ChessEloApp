@@ -19,13 +19,16 @@ Ext.define('Enif.view.pivot.HeatMap', {
 
     requires: [
         'Enif.view.pivot.HeatMapViewModel',
+        'Enif.view.pivot.HeatMapViewController',
         'Ext.Toolbar',
+        'Ext.field.Select',
         'Ext.Label',
         'Ext.d3.HeatMap',
         'Ext.d3.axis.Data',
         'Ext.d3.axis.Color'
     ],
 
+    controller: 'pivot.heatmap',
     viewModel: {
         type: 'pivot.heatmap'
     },
@@ -37,8 +40,42 @@ Ext.define('Enif.view.pivot.HeatMap', {
             docked: 'top',
             items: [
                 {
+                    xtype: 'selectfield',
+                    margin: '10 10 0 50',
+                    label: 'Displaying',
+                    editable: false,
+                    displayField: 'text',
+                    options: [
+                        {
+                            text: 'Win Rate',
+                            value: 'winRate'
+                        },
+                        {
+                            text: 'Lose Rate',
+                            value: 'loseRate'
+                        },
+                        {
+                            text: 'Number of wins',
+                            value: 'wins'
+                        },
+                        {
+                            text: 'Number of losses',
+                            value: 'loses'
+                        },
+                        {
+                            text: 'Number of draws',
+                            value: 'draws'
+                        }
+                    ],
+                    valueField: 'value',
+                    listeners: {
+                        change: 'onStatComboChange'
+                    }
+                },
+                {
                     xtype: 'label',
-                    html: 'Currently displaying winrate in %'
+                    html: 'of the left player againts the top player. The players are sorted by ELO rating',
+                    margin: '10 0 0 0 '
                 }
             ]
         },

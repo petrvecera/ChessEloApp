@@ -167,9 +167,9 @@ Ext.define('Enif.view.MainPanel', {
         },
         {
             xtype: 'pivot.heatmap',
+            routeValue: 'heatMap',
             iconCls: 'x-fa fa-th',
-            title: 'Heat Map',
-            routeValue: 'heatMap'
+            title: 'Heat Map'
         },
         {
             xtype: 'stats',

@@ -8,8 +8,8 @@
    "requires": [
       "font-awesome",
       "pivot",
-      "sencha-charts",
       "d3",
+      "sencha-charts",
       "pivot-d3"
    ],
    "indexHtmlPath": "index.html",

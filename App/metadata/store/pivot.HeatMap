@@ -60,13 +60,17 @@
             "    }",
             "]"
         ],
+        "designer|commentHeader": [
+            "The data are FAKE to just show something in the design view"
+        ],
         "designer|userClassName": "pivot.HeatMap",
         "storeId": "pivot.HeatMap"
     },
     "configAlternates": {
         "data": "array",
         "designer|userClassName": "string",
-        "storeId": "string"
+        "storeId": "string",
+        "designer|commentHeader": "comment"
     },
     "name": "MyStore",
     "designerId": "243e0059-51fd-4b6b-8b6b-081750087ca5",
@@ -129,7 +133,7 @@
             "userConfig": {
                 "fn": "onStoreLoad",
                 "implHandler": [
-                    "const playerData = Ext.getStore('PlayerData').getData();",
+                    "const playerData = Ext.getStore('SortedPlayerData').getData();",
                     "if (!playerData) return;",
                     "",
                     "const gameStore = Ext.getStore('GameRawData');",
@@ -181,15 +185,20 @@
                     "        });",
                     "",
                     "        const numberOfGames = wins + draws + loses;",
-                    "        let displayedData = ((wins / numberOfGames)*100).toFixed(0);",
+                    "        let winRate = ((wins / numberOfGames)*100).toFixed(0);",
+                    "        let loseRate = ((loses / numberOfGames)*100).toFixed(0);",
+                    "",
                     "        if(numberOfGames === 0 ){",
-                    "            displayedData = -1;",
+                    "            winRate = -1;",
+                    "            loseRate = 1;",
                     "        }",
                     "",
                     "        thisStoreData.push({",
                     "            player1: playerName,",
                     "            player2: playerName2,",
-                    "            dataField: displayedData,",
+                    "            dataField: winRate,",
+                    "            winRate: winRate,",
+                    "            loseRate: loseRate,",
                     "            wins: wins,",
                     "            draws: draws,",
                     "            loses: loses,",
@@ -274,6 +283,70 @@
             },
             "name": "MyInteger18",
             "designerId": "ba396c65-368f-4cdf-acb9-25cf937e8492"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "The heatMap can't use data binding, we need to change the data in the store for this"
+                ],
+                "designer|params": [
+                    "field"
+                ],
+                "fn": "changeDataField",
+                "implHandler": [
+                    "const data = this.getData();",
+                    "for(let i = 0; i < data.length; i++){",
+                    "    const record = data.getAt(i);",
+                    "    record.set('dataField', record.get(field));",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|commentHeader": "comment",
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "changeDataField",
+            "designerId": "71f83ee4-140d-46b4-ae82-5dd71a08979f"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "winRate"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber4",
+            "designerId": "dc415aea-b675-40aa-b28f-62e88f5f9b3c"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "loseRate"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber5",
+            "designerId": "97346fe8-7194-427c-9f32-6f4c18efb13a"
         }
     ]
 }

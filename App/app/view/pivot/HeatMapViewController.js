@@ -15,5 +15,10 @@
 
 Ext.define('Enif.view.pivot.HeatMapViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.pivot.heatmap'
+    alias: 'controller.pivot.heatmap',
+
+    onStatComboChange: function(selectfield, newValue, oldValue, eOpts) {
+        Ext.getStore("pivot.HeatMap").changeDataField(newValue);
+    }
+
 });

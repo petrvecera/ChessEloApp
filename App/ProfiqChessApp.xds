@@ -7,7 +7,7 @@
             "frameworkOverride": "C:\\Users\\Petr\\Documents\\Architect\\frameworks\\6.5.1.341\\commercial"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:50947/",
+        "urlPrefix": "http://localhost:64151/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",

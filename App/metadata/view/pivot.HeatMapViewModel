@@ -6,12 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{dataField: 'dataField'}"
+        ],
         "designer|userAlias": "pivot.heatmap",
         "designer|userClassName": "pivot.HeatMapViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "data": "object"
     },
     "designerId": "c2fe7158-0d0a-4bdc-b390-1d9669f1ab97"
 }

@@ -37,6 +37,69 @@
             "designerId": "2610d526-2a91-4892-a394-3ca979d1a978",
             "cn": [
                 {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "text",
+                        "editable": false,
+                        "label": "Displaying",
+                        "margin": "10 10 0 50",
+                        "options": [
+                            "[",
+                            "    {text: 'Win Rate', value: 'winRate'},",
+                            "    {text: 'Lose Rate', value: 'loseRate'},",
+                            "    {text: 'Number of wins',  value: 'wins'},",
+                            "    {text: 'Number of losses', value: 'loses'},",
+                            "    {text: 'Number of draws',  value: 'draws'}",
+                            "]"
+                        ],
+                        "valueField": "value"
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "label": "string",
+                        "options": "array",
+                        "queryMode": "string",
+                        "value": "object",
+                        "valueField": "datafield",
+                        "forceSelection": "boolean",
+                        "margin": "auto"
+                    },
+                    "name": "MySelectField",
+                    "designerId": "f7d28071-4dad-4af0-abeb-62fb8f24aa17",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatComboChange",
+                                "implHandler": [
+                                    "Ext.getStore(\"pivot.HeatMap\").changeDataField(newValue);"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onStatComboChange",
+                            "designerId": "432ec8e8-c4d4-4d4c-a48c-3a2b29f38eab"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.Label",
                     "reference": {
                         "name": "items",
@@ -44,13 +107,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "html": "Currently displaying winrate in %"
+                        "html": "of the left player againts the top player. The players are sorted by ELO rating",
+                        "margin": "10 0 0 0 "
                     },
                     "configAlternates": {
-                        "html": "string"
+                        "html": "string",
+                        "margin": "auto"
                     },
                     "name": "MyLabel",
-                    "designerId": "fe885b67-0002-42a0-8b78-098d77ef3b16"
+                    "designerId": "f331943a-5bc9-4247-bd97-b0befb64f079"
                 }
             ]
         },
@@ -177,8 +242,8 @@
                     },
                     "configAlternates": {
                         "scale": "object",
-                        "field": "string",
-                        "minimum": "number"
+                        "minimum": "number",
+                        "field": "string"
                     },
                     "name": "MyColorAxis",
                     "designerId": "4f2cfae2-9f24-43fe-bc0a-565f355ec431"
