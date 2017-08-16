@@ -13,6 +13,9 @@
  * Do NOT hand edit this file.
  */
 
+/*
+    The data are FAKE to just show something in the design view
+*/
 Ext.define('Enif.store.pivot.HeatMap', {
     extend: 'Ext.data.Store',
 
@@ -103,6 +106,14 @@ Ext.define('Enif.store.pivot.HeatMap', {
                 {
                     type: 'int',
                     name: 'numberOfGames'
+                },
+                {
+                    type: 'float',
+                    name: 'winRate'
+                },
+                {
+                    type: 'float',
+                    name: 'loseRate'
                 }
             ],
             listeners: {
@@ -114,7 +125,7 @@ Ext.define('Enif.store.pivot.HeatMap', {
     },
 
     onStoreLoad: function(store, records, successful, operation, eOpts) {
-        const playerData = Ext.getStore('PlayerData').getData();
+        const playerData = Ext.getStore('SortedPlayerData').getData();
         if (!playerData) return;
 
         const gameStore = Ext.getStore('GameRawData');
@@ -166,15 +177,20 @@ Ext.define('Enif.store.pivot.HeatMap', {
                 });
 
                 const numberOfGames = wins + draws + loses;
-                let displayedData = ((wins / numberOfGames)*100).toFixed(0);
+                let winRate = ((wins / numberOfGames)*100).toFixed(0);
+                let loseRate = ((loses / numberOfGames)*100).toFixed(0);
+
                 if(numberOfGames === 0 ){
-                    displayedData = -1;
+                    winRate = -1;
+                    loseRate = 1;
                 }
 
                 thisStoreData.push({
                     player1: playerName,
                     player2: playerName2,
-                    dataField: displayedData,
+                    dataField: winRate,
+                    winRate: winRate,
+                    loseRate: loseRate,
                     wins: wins,
                     draws: draws,
                     loses: loses,
@@ -185,6 +201,15 @@ Ext.define('Enif.store.pivot.HeatMap', {
 
         // Set the data (reverse to get better players on TOP)
         store.setData(thisStoreData.reverse());
+    },
+
+    /* The heatMap can't use data binding, we need to change the data in the store for this */
+    changeDataField: function(field) {
+        const data = this.getData();
+        for(let i = 0; i < data.length; i++){
+            const record = data.getAt(i);
+            record.set('dataField', record.get(field));
+        }
     }
 
 });

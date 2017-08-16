@@ -15,6 +15,10 @@
 
 Ext.define('Enif.view.pivot.HeatMapViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.pivot.heatmap'
+    alias: 'viewmodel.pivot.heatmap',
+
+    data: {
+        dataField: 'dataField'
+    }
 
 });
