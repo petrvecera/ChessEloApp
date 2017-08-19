@@ -133,7 +133,19 @@ Ext.define('Enif.view.charts.EloRating', {
                             line: '#e8e8e8'
                         }
                     },
+                    id: 'elo-axis',
                     position: 'right',
+                    title: 'Elo rating'
+                },
+                {
+                    type: 'numeric',
+                    grid: {
+                        odd: {
+                            line: '#e8e8e8'
+                        }
+                    },
+                    linkedTo: 'elo-axis',
+                    position: 'left',
                     title: 'Elo rating'
                 }
             ]

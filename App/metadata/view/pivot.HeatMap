@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userAlias": "pivot.heatmap",
         "designer|userClassName": "pivot.HeatMap",
-        "title": "My Panel"
+        "title": "HeatMap"
     },
     "configAlternates": {
         "designer|userAlias": "string",

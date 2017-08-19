@@ -27,10 +27,11 @@ Ext.define('Enif.view.MainPanel', {
         'Enif.view.charts.EloRating',
         'Enif.view.pivot.RoundRobinGrid',
         'Enif.view.pivot.HeatMap',
+        'Enif.view.charts.PlayerVsPlayer',
         'Enif.view.stats',
         'Ext.Toolbar',
-        'Ext.Label',
         'Ext.Img',
+        'Ext.Label',
         'Ext.Button',
         'Ext.Panel',
         'Ext.pivot.Grid',
@@ -53,17 +54,16 @@ Ext.define('Enif.view.MainPanel', {
             docked: 'top',
             items: [
                 {
-                    xtype: 'label',
-                    cls: 'main_text',
-                    html: 'Chess ELO App by',
-                    margin: '0 0 0 80'
-                },
-                {
                     xtype: 'image',
                     height: 40,
                     width: 180,
                     margin: '0 0 0 -10',
                     src: 'https://www.profiq.com/wp-content/themes/profiq/images/logo.png'
+                },
+                {
+                    xtype: 'label',
+                    cls: 'main_text',
+                    html: 'Chess ELO App'
                 },
                 {
                     xtype: 'button',
@@ -170,6 +170,12 @@ Ext.define('Enif.view.MainPanel', {
             routeValue: 'heatMap',
             iconCls: 'x-fa fa-th',
             title: 'Heat Map'
+        },
+        {
+            xtype: 'charts.playervsplayer',
+            routeValue: 'playerScore',
+            iconCls: 'x-fa fa-area-chart',
+            title: 'Player Score'
         },
         {
             xtype: 'stats',

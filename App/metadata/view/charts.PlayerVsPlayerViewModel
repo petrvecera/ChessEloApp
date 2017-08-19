@@ -1,0 +1,443 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            " numberOfMatches: 0,",
+            " animate: false,",
+            " animateDelay: 200,",
+            " wins: '',",
+            " loses: '',",
+            " draws: '',",
+            " score: ''",
+            "}"
+        ],
+        "designer|userAlias": "charts.playervsplayer",
+        "designer|userClassName": "charts.PlayerVsPlayerViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "a4c48ded-fefb-43d8-bbf3-3705e43251c0",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {",
+                    "        \"data\": 1,",
+                    "        \"time\": \"8/14/2001\",",
+                    "        zeroData: 0",
+                    "    },",
+                    "    {",
+                    "        \"data\": -3,",
+                    "        \"time\": \"3/23/2004\",",
+                    "        zeroData: 0",
+                    "    },",
+                    "    {",
+                    "        \"data\": 5,",
+                    "        \"time\": \"11/20/2002\",",
+                    "        zeroData: 0",
+                    "    },",
+                    "    {",
+                    "        \"data\": 9,",
+                    "        \"time\": \"9/6/2005\",",
+                    "        zeroData: 0",
+                    "    },",
+                    "    {",
+                    "        \"data\": 1,",
+                    "        \"time\": \"4/21/2013\",",
+                    "        zeroData: 0",
+                    "    }",
+                    "]"
+                ],
+                "name": "playedGamesScore"
+            },
+            "configAlternates": {
+                "data": "array",
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "837d9c3f-8098-4c1f-bc7c-482073884189",
+            "cn": [
+                {
+                    "type": "Ext.data.field.Integer",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "data"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "MyInteger5",
+                    "designerId": "7a3f6380-2247-4e2c-8d90-3dbd87de8554"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "time"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field4",
+                    "designerId": "51a8c243-78ef-4472-a54d-5944fd5b7ef5"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onStoreLoad",
+                        "implHandler": [
+                            "const playerData = Ext.getStore('SortedPlayerData').getData();",
+                            "if (!playerData) return;",
+                            "",
+                            "const gameStore = Ext.getStore('GameRawData');",
+                            "gameStore.clearFilter();",
+                            "",
+                            "",
+                            "let thisStoreData = [];",
+                            "",
+                            "",
+                            "const VM = this.getViewModel(),",
+                            "      playerId = VM.get('firstPlayerId'),",
+                            "      playerId2 = VM.get('secondPlayerId'),",
+                            "      animate = VM.get('animate'),",
+                            "      animateDelay = VM.get('animateDelay');",
+                            "",
+                            "//init filtering of the grid store",
+                            "this.filterMatchesStore();",
+                            "",
+                            "let score = 0,",
+                            "    wins = 0,",
+                            "    loses = 0,",
+                            "    draws = 0;",
+                            "",
+                            "// create first record to start at 0",
+                            "thisStoreData.push({",
+                            "    data: 0,",
+                            "    time: 0,",
+                            "    zeroData: 0",
+                            "});",
+                            "",
+                            "if (animate) {",
+                            "    store.setData(thisStoreData);",
+                            "}",
+                            "",
+                            "const matches = gameStore.getData().items;",
+                            "let pushCounter = 0;",
+                            "",
+                            "for(let i = 0; i < matches.length; i++){",
+                            "    const rec = matches[i];",
+                            "",
+                            "    const saveData = () => { //jshint ignore:line",
+                            "        pushCounter++;",
+                            "",
+                            "        thisStoreData.push({",
+                            "            data: score,",
+                            "            time: rec.get('timestamp'),",
+                            "            zeroData: 0,",
+                            "            match: rec",
+                            "        });",
+                            "",
+                            "",
+                            "        if(animate){",
+                            "            const dataToPush = thisStoreData;",
+                            "            //<debug>",
+                            "            //console.log('Gonna push the recrods, but first lets wait', animateDelay * pushCounter);",
+                            "            //console.log('Records:', dataToPush);",
+                            "            //</debug>",
+                            "",
+                            "            setTimeout((recordsToShow, wins, loses, draws, score) => {",
+                            "",
+                            "                VM.set('numberOfMatches', wins + loses + draws);                ",
+                            "                VM.set('wins', wins);",
+                            "                VM.set('loses', loses);",
+                            "                VM.set('draws', draws);",
+                            "                VM.set('score', score);",
+                            "",
+                            "                store.setData(recordsToShow);",
+                            "            }, animateDelay * pushCounter, dataToPush.slice(), wins, loses, draws, score);",
+                            "            // don't forget that arrays are passed as reference in JS",
+                            "        }",
+                            "",
+                            "    };",
+                            "",
+                            "",
+                            "    if ((rec.get('playerWhite') === playerId &&",
+                            "         rec.get('playerBlack') === playerId2 &&",
+                            "         rec.get('result') === 'white') ||",
+                            "        (rec.get('playerBlack') === playerId &&",
+                            "         rec.get('playerWhite') === playerId2 &&",
+                            "         rec.get('result') === 'black')) {",
+                            "        wins ++;",
+                            "        score++;",
+                            "",
+                            "        saveData();",
+                            "",
+                            "",
+                            "    } else if((rec.get('playerWhite') === playerId &&",
+                            "               rec.get('playerBlack') === playerId2 &&",
+                            "               rec.get('result') === 'black') ||",
+                            "              (rec.get('playerBlack') === playerId &&",
+                            "               rec.get('playerWhite') === playerId2 &&",
+                            "               rec.get('result') === 'white')) {",
+                            "        score--;",
+                            "        loses++;",
+                            "",
+                            "        saveData();",
+                            "",
+                            "    } else if((rec.get('playerWhite') === playerId &&",
+                            "               rec.get('playerBlack') === playerId2 &&",
+                            "               rec.get('result') === 'draw') ||",
+                            "              (rec.get('playerBlack') === playerId &&",
+                            "               rec.get('playerWhite') === playerId2 &&",
+                            "               rec.get('result') === 'draw')) {",
+                            "",
+                            "        draws++;",
+                            "        saveData();",
+                            "    }",
+                            "",
+                            "}",
+                            "",
+                            "if(!animate){",
+                            "    store.setData(thisStoreData);",
+                            "",
+                            "    VM.set('numberOfMatches', wins + loses + draws);",
+                            "    VM.set('wins', wins);",
+                            "    VM.set('loses', loses);",
+                            "    VM.set('draws', draws);",
+                            "    VM.set('score', score);",
+                            "}",
+                            ""
+                        ],
+                        "name": "load",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onStoreLoad",
+                    "designerId": "9d975ffd-58ab-4db1-9fc9-a086c3c1f98a"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "zeroData"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field5",
+                    "designerId": "a406e28d-39eb-4ccb-9d2d-ff7ad393f664"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "match"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field6",
+                    "designerId": "4823f9e3-114a-4ab5-a695-1469ea34d150"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.ChainedStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "playedGames",
+                "source": "GameRawData"
+            },
+            "configAlternates": {
+                "name": "string",
+                "source": "store"
+            },
+            "name": "MyChainedStore",
+            "designerId": "7be7d6fb-8502-451b-9ead-6b7d758cea1b",
+            "cn": [
+                {
+                    "type": "Ext.util.Filter",
+                    "reference": {
+                        "name": "filters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": "",
+                        "designer|displayName": "ClearAllData"
+                    },
+                    "configAlternates": {
+                        "designer|createAlias": "string",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyFilter",
+                    "designerId": "e40ad40f-b42e-4387-b576-3b6840c35946",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "item"
+                                ],
+                                "fn": "filterFn",
+                                "implHandler": [
+                                    "// we want to remove all data from the store on load",
+                                    "return false;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "filterFn",
+                            "designerId": "df0f5697-2864-4f91-99d0-711b9a8de6d8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "getNumberOfMatches"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyFormula",
+            "designerId": "b81d1a7b-7854-4a10-9203-aa9e26d091dc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "return 'Played matches: ' + get('numberOfMatches');"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "get",
+                    "designerId": "12f87a2d-da44-40fd-b4fe-5b564776a9f1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "getScoreLabel"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyFormula1",
+            "designerId": "06eafe1a-222a-426b-a3ca-f8b46d1e5105",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "const fisrtPlayerName = Enif.app.getController('storeLoadController').getPlayerName(get('firstPlayerId')),",
+                            "      secondPlaerName = Enif.app.getController('storeLoadController').getPlayerName(get('secondPlayerId')),",
+                            "      info = `<h2>${fisrtPlayerName} vs ${secondPlaerName} has score: ${get('score')} </h2>`+",
+                            "              `Wins: ${get('wins')} Loses: ${get('loses')} Draws: ${get('draws')}`;",
+                            "",
+                            "const html = `<div align=\"center\"><b>${info}</b></div>`;",
+                            "",
+                            "return html;"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "get",
+                    "designerId": "cf7dc6cd-f9ae-47dd-9b30-c024ffb9fe9d"
+                }
+            ]
+        }
+    ]
+}

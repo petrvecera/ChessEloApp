@@ -1,0 +1,677 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "charts.playervsplayer",
+        "designer|userClassName": "charts.PlayerVsPlayer",
+        "requires": [
+            "Ext.panel.Collapser"
+        ],
+        "title": "Player vs Player score"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "requires": "typedarray",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "f36f3e38-2a2b-42eb-a3f0-2c724bc8875f",
+    "viewControllerInstanceId": "6b1d9847-d110-4929-9c32-eff45946bc4a",
+    "viewModelInstanceId": "a4c48ded-fefb-43d8-bbf3-3705e43251c0",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|displayName": "Top Toolbar",
+                "layout": "hbox",
+                "padding": 10
+            },
+            "configAlternates": {
+                "docked": "string",
+                "container|pack": "string",
+                "designer|displayName": "string",
+                "layout": "string",
+                "padding": "auto"
+            },
+            "name": "MyContainer5",
+            "designerId": "c0aaf09c-9aba-4647-b781-3edefd045af6",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Top Player",
+                        "displayField": "name",
+                        "editable": false,
+                        "itemId": "mycombobox",
+                        "label": "Player ",
+                        "labelWidth": 80,
+                        "layout|flex": 8,
+                        "maxWidth": 385,
+                        "modelValidation": true,
+                        "name": "topPlayer",
+                        "placeholder": "<Select Player>",
+                        "reference": "firstPlayerCombo",
+                        "store": "PlayerData",
+                        "valueField": "uid",
+                        "width": ""
+                    },
+                    "configAlternates": {
+                        "store": "string",
+                        "valueField": "auto",
+                        "designer|displayName": "string",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "itemId": "string",
+                        "label": "string",
+                        "layout|flex": "number",
+                        "modelValidation": "boolean",
+                        "name": "string",
+                        "queryMode": "string",
+                        "labelWidth": "auto",
+                        "maxWidth": "auto",
+                        "placeholder": "string",
+                        "reference": "string",
+                        "width": "auto"
+                    },
+                    "name": "MySelectField1",
+                    "designerId": "7a39da89-464b-47a5-b442-234e88b9e4e7"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Bottom Player",
+                        "displayField": "name",
+                        "editable": false,
+                        "itemId": "mycombobox1",
+                        "label": "vs Player",
+                        "labelWidth": 80,
+                        "layout|flex": 8,
+                        "margin": "0 10 0 20",
+                        "maxWidth": 385,
+                        "modelValidation": true,
+                        "name": "bottomPlayer",
+                        "placeholder": "<Select Player>",
+                        "queryMode": "local",
+                        "reference": "secondPlayerCombo",
+                        "store": "PlayerData",
+                        "valueField": "uid"
+                    },
+                    "configAlternates": {
+                        "store": "string",
+                        "valueField": "auto",
+                        "designer|displayName": "string",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "itemId": "string",
+                        "label": "string",
+                        "layout|flex": "number",
+                        "modelValidation": "boolean",
+                        "name": "string",
+                        "queryMode": "string",
+                        "labelWidth": "auto",
+                        "margin": "auto",
+                        "maxWidth": "auto",
+                        "placeholder": "string",
+                        "reference": "string"
+                    },
+                    "name": "MySelectField2",
+                    "designerId": "0d6c0a92-55e1-495e-b9a2-9a79aa1f4361",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "queryMode",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "margin": "0 5 0 5",
+                        "text": "LOAD"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "margin": "auto"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "12a73714-71fd-4cc4-8bde-fc28274e4ab9",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLoadButtonTap",
+                                "implHandler": [
+                                    "const topPlayerSelection = this.lookupReference('firstPlayerCombo').getSelection(),",
+                                    "      bottomPlayerSelection = this.lookupReference('secondPlayerCombo').getSelection(),",
+                                    "      animate = this.lookupReference('animateCheckbox').getChecked(),",
+                                    "      animateDelay = this.lookupReference('delayMs').getValue();",
+                                    "",
+                                    "const topPlayer = topPlayerSelection ? topPlayerSelection.get('name') : \"\";",
+                                    "const bottomPlayer = bottomPlayerSelection ? bottomPlayerSelection.get('name') : \"\";",
+                                    "",
+                                    "",
+                                    "if (topPlayer == bottomPlayer && (topPlayer !== \"\" && topPlayer !== null)){",
+                                    "    Ext.toast('Player can\\'t play againts himself', 3000);",
+                                    "    // <debug>",
+                                    "    console.log(`Players playing against each other:${topPlayer} vs ${bottomPlayer}`);",
+                                    "    // </debug>",
+                                    "",
+                                    "    return; // end the execution",
+                                    "}",
+                                    "",
+                                    "const VM = this.getViewModel();",
+                                    "",
+                                    "VM.set('firstPlayerId', topPlayerSelection.get('uid'));",
+                                    "VM.set('secondPlayerId', bottomPlayerSelection.get('uid'));",
+                                    "",
+                                    "VM.set('animate', animate);",
+                                    "VM.set('animateDelay', animateDelay);",
+                                    "",
+                                    "",
+                                    "VM.getStore('playedGamesScore').load();",
+                                    ""
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onLoadButtonTap",
+                            "designerId": "b71ba716-f959-44e8-9755-11b4442fe1e3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Animate",
+                        "labelWidth": 70,
+                        "margin": "0 5 0 10",
+                        "reference": "animateCheckbox",
+                        "width": 100
+                    },
+                    "configAlternates": {
+                        "label": "string",
+                        "labelWidth": "auto",
+                        "reference": "string",
+                        "width": "auto",
+                        "margin": "auto"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "bb0372b3-fa99-49e7-be71-3b05e869bab4"
+                },
+                {
+                    "type": "Ext.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "delay (ms)",
+                        "labelWidth": 80,
+                        "maxValue": 10000,
+                        "minValue": 10,
+                        "reference": "delayMs",
+                        "stepValue": 250,
+                        "value": [
+                            "500"
+                        ],
+                        "width": 210
+                    },
+                    "configAlternates": {
+                        "label": "string",
+                        "maxValue": "number",
+                        "minValue": "number",
+                        "reference": "string",
+                        "stepValue": "number",
+                        "value": "object",
+                        "width": "auto",
+                        "labelWidth": "auto"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "71576bbb-4c92-4fa6-83df-dd5b15d6ebd8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Score Label ",
+                "height": 70,
+                "html": [
+                    "{getScoreLabel}"
+                ]
+            },
+            "configAlternates": {
+                "html": "binding",
+                "designer|displayName": "string",
+                "height": "auto"
+            },
+            "name": "MyLabel1",
+            "designerId": "1ce17a4a-918e-4f1a-aa28-f3d485846141"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Chart Contianer",
+                "height": "100%",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "height": "auto",
+                "layout": "string"
+            },
+            "name": "MyContainer4",
+            "designerId": "36593f2b-8dbc-4c2c-9145-14e3bfbde692",
+            "cn": [
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": [
+                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                        ],
+                        "docked": "left",
+                        "height": "85%",
+                        "innerPadding": [
+                            "{",
+                            "                top: 15,",
+                            "                left: 15,",
+                            "                right: 15,",
+                            "                bottom: 15",
+                            "            }"
+                        ],
+                        "layout|flex": 3,
+                        "store": [
+                            "{playedGamesScore}"
+                        ],
+                        "width": "100%"
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "colors": "array",
+                        "docked": "string",
+                        "height": "auto",
+                        "innerPadding": "object",
+                        "layout|flex": "number",
+                        "width": "auto"
+                    },
+                    "name": "MyLineChart",
+                    "designerId": "0bb6fe07-ea7f-4e2e-b663-933e7956d070",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-line-chart",
+                    "autoName": "MyLineChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Time axis X",
+                                "fields": [
+                                    "time"
+                                ],
+                                "title": null
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fields": "typedarray",
+                                "title": "string"
+                            },
+                            "name": "MyCategoryAxis",
+                            "designerId": "5ac18e2d-00c1-451a-8d71-7d083f52f860",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "axis",
+                                            "label",
+                                            "layoutContext",
+                                            "lastLabel"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "                        return Ext.Date.format(new Date(label), 'd.m.y');"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|params": "typedarray",
+                                        "fn": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "9a5eb2b1-7e7e-4666-a40e-7966c44fcdd7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Numeric Axis Right",
+                                "fields": [
+                                    "data",
+                                    "zeroData"
+                                ],
+                                "grid": [
+                                    "{",
+                                    "    odd: {",
+                                    "        fill: '#e8e8e8'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "id": "numeric-axis",
+                                "position": "right",
+                                "title": null
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fields": "typedarray",
+                                "grid": "object",
+                                "position": "string",
+                                "title": "string",
+                                "id": "string"
+                            },
+                            "name": "MyNumericAxis",
+                            "designerId": "f69a7b4a-1a92-471a-8209-ad80e3f9186e"
+                        },
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Numeric Axis Left",
+                                "grid": [
+                                    "{",
+                                    "    odd: {",
+                                    "        fill: '#e8e8e8'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "linkedTo": "numeric-axis",
+                                "position": "left",
+                                "title": null
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "fields": "typedarray",
+                                "grid": "object",
+                                "position": "string",
+                                "title": "string",
+                                "linkedTo": "string"
+                            },
+                            "name": "MyNumericAxis2",
+                            "designerId": "79743d5f-0eed-42dd-b83c-0d908d67d467"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "colors": [
+                                    "[\"rgb(57, 114, 176)\"]"
+                                ],
+                                "designer|displayName": "Score Line Series",
+                                "marker": [
+                                    "{",
+                                    "            type: 'circle',",
+                                    "            radius: 3",
+                                    "}"
+                                ],
+                                "style": [
+                                    "{",
+                                    "    smooth: true,",
+                                    "    stroke: 'rgb(57, 114, 176)',",
+                                    "    lineWidth: 3",
+                                    "",
+                                    "}"
+                                ],
+                                "tooltip": [
+                                    "{",
+                                    "          trackMouse: true,",
+                                    "          showDelay: 2,",
+                                    "          hideDelay: 0,",
+                                    "          width: 220,",
+                                    "          height: 90,",
+                                    "          renderer: 'tooltipRenderer'          ",
+                                    "}"
+                                ],
+                                "xField": "time",
+                                "yField": "data"
+                            },
+                            "configAlternates": {
+                                "colors": "array",
+                                "designer|displayName": "string",
+                                "marker": "object",
+                                "style": "object",
+                                "tooltip": "object",
+                                "xField": "datafield",
+                                "yField": "datafield"
+                            },
+                            "name": "MyLineSeries",
+                            "designerId": "06a73edf-c243-4868-8d07-ae1f95dd5d15"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "colors": [
+                                    "[\"rgba(0,0,0)\"]"
+                                ],
+                                "designer|displayName": "Zero Line Series",
+                                "style": [
+                                    "{",
+                                    "    smooth: false,",
+                                    "    stroke: '#000'",
+                                    "}"
+                                ],
+                                "xField": "time",
+                                "yField": "zeroData"
+                            },
+                            "configAlternates": {
+                                "colors": "array",
+                                "designer|displayName": "string",
+                                "style": "object",
+                                "xField": "datafield",
+                                "yField": "datafield"
+                            },
+                            "name": "MyLineSeries2",
+                            "designerId": "19c6eae3-cf58-4635-94cf-d5c3884f1f21"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": true,
+                "collapsible": "right",
+                "docked": "right",
+                "title": [
+                    "{getNumberOfMatches}"
+                ],
+                "width": 800
+            },
+            "configAlternates": {
+                "title": "binding",
+                "collapsed": "boolean",
+                "collapsible": "string",
+                "docked": "string",
+                "width": "auto"
+            },
+            "name": "MyPanel1",
+            "designerId": "66868fb7-3ce1-47d0-87f9-a8c0fdbcccf0",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "items": "`null`",
+                        "reference": "gridWithMatches",
+                        "store": [
+                            "{playedGames}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "items": "string",
+                        "reference": "string",
+                        "store": "binding"
+                    },
+                    "name": "grids.gamegrid2",
+                    "designerId": "90724df5-1511-46ad-99b2-23c84feb8d99",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "items",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "92ca6fb9-0c7d-4713-92b4-ccc435ee8ede"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridPanelExpand",
+                        "implHandler": [
+                            "// <debug>",
+                            "console.log('Grid Panel has been shown');",
+                            "// </debug>",
+                            "// we need to refresh the grid",
+                            "this.lookupReference('gridWithMatches').refresh();"
+                        ],
+                        "name": "expand",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridPanelExpand",
+                    "designerId": "cdf6367e-86f2-4132-ac2c-1324f67efd00"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridPanelDrawershow",
+                        "implHandler": [
+                            "// this event is triggered when you just show drawer",
+                            "this.onGridPanelExpand();"
+                        ],
+                        "name": "drawershow",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridPanelDrawershow",
+                    "designerId": "4ed25b23-9be2-4807-8cc5-725b68b7da7e"
+                }
+            ]
+        }
+    ]
+}

@@ -124,6 +124,28 @@
             },
             "name": "showHeatMap",
             "designerId": "35f7d734-65a7-4eca-baef-4202474c4ba8"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showPlayerScoreChart",
+                "implHandler": [
+                    "this.getViewModel().set('activeTab', 5);"
+                ],
+                "url": "playerScore"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showPlayerScoreChart",
+            "designerId": "fe2191c3-d1e5-4451-a920-ab27c914cb89"
         }
     ]
 }

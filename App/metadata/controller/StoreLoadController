@@ -74,6 +74,39 @@
             },
             "name": "getServiceUrl",
             "designerId": "4d5c8b05-5f44-4ec8-804c-22f643ffca9e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "getPlayerName",
+                "implHandler": [
+                    "const store = Ext.getStore('PlayerData'),",
+                    "    recordPos = store.find('uid', id),",
+                    "    rc = store.getAt(recordPos);",
+                    "",
+                    "if(rc){",
+                    "    return rc.get('name');",
+                    "} else {",
+                    "    console.error(\"Did not found \", id);",
+                    "    return \"Error\";",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getPlayerName",
+            "designerId": "99f7f4b4-18e5-4c58-995b-cec2f7fc37ca"
         }
     ]
 }

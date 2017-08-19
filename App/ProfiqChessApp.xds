@@ -7,7 +7,7 @@
             "frameworkOverride": "C:\\Users\\Petr\\Documents\\Architect\\frameworks\\6.5.1.341\\commercial"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:64151/",
+        "urlPrefix": "http://localhost:53852/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -86,7 +86,10 @@
             "5412396c-d53c-4a5e-9f67-a2de40a7fc9b",
             "f2086249-c5b6-402e-8734-63fe40732375",
             "c2fe7158-0d0a-4bdc-b390-1d9669f1ab97",
-            "23132ed2-745b-4d37-b150-08f6e205a88f"
+            "23132ed2-745b-4d37-b150-08f6e205a88f",
+            "f36f3e38-2a2b-42eb-a3f0-2c724bc8875f",
+            "a4c48ded-fefb-43d8-bbf3-3705e43251c0",
+            "6b1d9847-d110-4929-9c32-eff45946bc4a"
         ],
         "store": [
             "5e1dbe0c-ad95-44ba-802c-267575d98dc0",

@@ -40,6 +40,19 @@ Ext.define('Enif.controller.StoreLoadController', {
             serviceUrl = isTesting ? '' : '192.168.88.176:8181';
 
         return serviceUrl;
+    },
+
+    getPlayerName: function(id) {
+        const store = Ext.getStore('PlayerData'),
+            recordPos = store.find('uid', id),
+            rc = store.getAt(recordPos);
+
+        if(rc){
+            return rc.get('name');
+        } else {
+            console.error("Did not found ", id);
+            return "Error";
+        }
     }
 
 });

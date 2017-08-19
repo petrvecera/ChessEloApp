@@ -48,7 +48,8 @@ Ext.application({
         'mobile.MainPanel',
         'charts.Ladder',
         'stats',
-        'pivot.HeatMap'
+        'pivot.HeatMap',
+        'charts.PlayerVsPlayer'
     ],
     controllers: [
         'StoreLoadController'
