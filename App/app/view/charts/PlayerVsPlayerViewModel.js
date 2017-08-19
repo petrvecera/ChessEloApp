@@ -37,33 +37,6 @@ Ext.define('Enif.view.charts.PlayerVsPlayerViewModel', {
 
     stores: {
         playedGamesScore: {
-            data: [
-                {
-                    data: 1,
-                    time: '8/14/2001',
-                    zeroData: 0
-                },
-                {
-                    data: -3,
-                    time: '3/23/2004',
-                    zeroData: 0
-                },
-                {
-                    data: 5,
-                    time: '11/20/2002',
-                    zeroData: 0
-                },
-                {
-                    data: 9,
-                    time: '9/6/2005',
-                    zeroData: 0
-                },
-                {
-                    data: 1,
-                    time: '4/21/2013',
-                    zeroData: 0
-                }
-            ],
             fields: [
                 {
                     type: 'int',
