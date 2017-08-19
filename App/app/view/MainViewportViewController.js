@@ -26,7 +26,8 @@ Ext.define('Enif.view.MainViewportViewController', {
         'games': 'showGames',
         'eloChart': 'showEloChart',
         'roundRobin': 'showRoundRobin',
-        'heatMap': 'showHeatMap'
+        'heatMap': 'showHeatMap',
+        'playerScore': 'showPlayerScoreChart'
     },
 
     showPlayers: function() {
@@ -47,6 +48,10 @@ Ext.define('Enif.view.MainViewportViewController', {
 
     showHeatMap: function() {
         this.getViewModel().set('activeTab', 4);
+    },
+
+    showPlayerScoreChart: function() {
+        this.getViewModel().set('activeTab', 5);
     },
 
     onMainContainerInitialize: function(component, eOpts) {

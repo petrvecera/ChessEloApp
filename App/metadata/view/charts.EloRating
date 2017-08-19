@@ -331,6 +331,7 @@
                             "                        }",
                             "                    }"
                         ],
+                        "id": "elo-axis",
                         "position": "right",
                         "title": "Elo rating"
                     },
@@ -338,10 +339,42 @@
                         "fields": "typedarray",
                         "grid": "object",
                         "position": "string",
-                        "title": "string"
+                        "title": "string",
+                        "id": "string"
                     },
                     "name": "MyNumericAxis1",
                     "designerId": "1d5985ae-7ef9-4ae7-8081-d51242924473"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Elo Rating Left",
+                        "grid": [
+                            "{",
+                            "                        odd: {",
+                            "                            line: '#e8e8e8'",
+                            "                        }",
+                            "                    }"
+                        ],
+                        "linkedTo": "elo-axis",
+                        "position": "left",
+                        "title": "Elo rating"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "grid": "object",
+                        "position": "string",
+                        "title": "string",
+                        "linkedTo": "string",
+                        "designer|displayName": "string"
+                    },
+                    "name": "MyNumericAxis3",
+                    "designerId": "70a22d1a-ceb9-4443-9e28-9f851e9e2b2e"
                 }
             ]
         }

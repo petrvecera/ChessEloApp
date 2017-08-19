@@ -54,29 +54,6 @@
             "designerId": "5417fd3d-0e17-46c5-bcd7-3838233f0711",
             "cn": [
                 {
-                    "type": "Ext.Label",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "cls": [
-                            "main_text"
-                        ],
-                        "html": "Chess ELO App by",
-                        "margin": "0 0 0 80"
-                    },
-                    "configAlternates": {
-                        "html": "string",
-                        "cls": "typedarray",
-                        "style": "string",
-                        "margin": "auto"
-                    },
-                    "name": "MyLabel",
-                    "designerId": "eabb163b-b46a-4698-a67c-7c33b2147eb2"
-                },
-                {
                     "type": "Ext.Img",
                     "reference": {
                         "name": "items",
@@ -98,6 +75,28 @@
                     },
                     "name": "MyImg",
                     "designerId": "102bbbd3-b26e-4b66-ab55-0a10ff1702ea"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "main_text"
+                        ],
+                        "html": "Chess ELO App"
+                    },
+                    "configAlternates": {
+                        "html": "string",
+                        "cls": "typedarray",
+                        "style": "string",
+                        "margin": "auto"
+                    },
+                    "name": "MyLabel",
+                    "designerId": "eabb163b-b46a-4698-a67c-7c33b2147eb2"
                 },
                 {
                     "type": "Ext.Button",
@@ -559,6 +558,34 @@
                 }
             ],
             "masterInstanceId": "f2086249-c5b6-402e-8734-63fe40732375"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "x-fa fa-area-chart",
+                "routeValue": "playerScore",
+                "title": "Player Score"
+            },
+            "configAlternates": {
+                "iconCls": "string",
+                "title": "string",
+                "routeValue": "string"
+            },
+            "name": "charts.playervsplayer",
+            "designerId": "76091189-01ba-4fc2-af68-55db17f22a84",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "routeValue",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "f36f3e38-2a2b-42eb-a3f0-2c724bc8875f"
         },
         {
             "type": "linkedinstance",

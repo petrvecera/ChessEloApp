@@ -32,7 +32,7 @@ Ext.define('Enif.view.pivot.HeatMap', {
     viewModel: {
         type: 'pivot.heatmap'
     },
-    title: 'My Panel',
+    title: 'HeatMap',
 
     items: [
         {
