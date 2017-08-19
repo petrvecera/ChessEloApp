@@ -1,0 +1,118 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "charts.playervsplayer",
+        "designer|userClassName": "charts.PlayerVsPlayerViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "6b1d9847-d110-4929-9c32-eff45946bc4a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "player1id",
+                    "player2id"
+                ],
+                "fn": "filterMatchesStore",
+                "implHandler": [
+                    "const VM = this.getViewModel();",
+                    "",
+                    "",
+                    "const playerId = player1id ? player1id :  VM.get('firstPlayerId');",
+                    "const playerId2 = player2id ? player2id : VM.get('secondPlayerId');",
+                    "",
+                    "",
+                    "let gridStore = VM.getStore('playedGames');",
+                    "",
+                    "// clear any filtering on the Store",
+                    "gridStore.clearFilter();",
+                    "",
+                    "gridStore.filterBy(function(rec) {",
+                    "",
+                    "    let playerWhite = rec.get('playerWhite'),",
+                    "        playerBlack = rec.get('playerBlack');",
+                    "",
+                    "    if(playerWhite === playerId && playerBlack === playerId2 || playerBlack === playerId && playerWhite ===  playerId2) {",
+                    "        return true;",
+                    "    } else {",
+                    "        return false;",
+                    "    }",
+                    "});",
+                    "//<debug>",
+                    "console.log('The filter has been applied on the store');",
+                    "//</debug>"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "filterMatchesStore",
+            "designerId": "d1c161e7-f2e1-489a-bf31-84f112a93f64"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "toolTip",
+                    "record",
+                    "ctx"
+                ],
+                "fn": "tooltipRenderer",
+                "implHandler": [
+                    "",
+                    "const score = Math.round(record.get(ctx.field)),",
+                    "      match = record.get('match'),",
+                    "      pbId = match.get('playerBlack'),",
+                    "      pWId = match.get('playerWhite'),",
+                    "      pb = Enif.app.getController('storeLoadController').getPlayerName(pbId),",
+                    "      pw = Enif.app.getController('storeLoadController').getPlayerName(pWId),",
+                    "      result = match.get('result'),",
+                    "      time = Ext.Date.format(new Date(match.get('timestamp')), 'd.M.y');",
+                    "",
+                    "let resultName = '';",
+                    "if (result == 'black') {",
+                    "    resultName = pb;",
+                    "} else if(result == 'white'){",
+                    "    resultName = pw;",
+                    "} else {",
+                    "   resultName = result;",
+                    "}",
+                    "",
+                    "",
+                    "const html = `<b>Black: ${pb}</b> vs <b>White: ${pw}</b><br><b>Winner: ${resultName}</b><br>Played: ${time}`;",
+                    "toolTip.setTitle(`<b>Score: ${score}</b>`);",
+                    "toolTip.setHtml(html);",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "tooltipRenderer",
+            "designerId": "5fe68ae8-991f-47d5-9bfd-f687726e153a"
+        }
+    ]
+}
