@@ -122,12 +122,7 @@ Ext.define('Enif.view.charts.PlayerVsPlayerViewController', {
         const playerData = Ext.getStore('SortedPlayerData').getData();
         if (!playerData) return;
 
-        const gameStore = Ext.getStore('GameRawData');
-        gameStore.clearFilter();
-
-
         let thisStoreData = [];
-
 
         const VM = this.getViewModel(),
         playerId = VM.get('firstPlayerId'),
@@ -137,6 +132,8 @@ Ext.define('Enif.view.charts.PlayerVsPlayerViewController', {
 
         //init filtering of the grid store
         this.filterMatchesStore();
+
+        const gameStore = VM.getStore('playedGames');
 
         let score = 0,
         wins = 0,
