@@ -154,7 +154,8 @@ Ext.define('Enif.view.charts.PlayerVsPlayerViewController', {
             store.setData(thisStoreData);
         }
 
-        const matches = gameStore.getData().items;
+        // reverse the items so the first match is calculated first
+        const matches = gameStore.getData().items.reverse();
         let pushCounter = 0;
 
         for(let i = 0; i < matches.length; i++){
