@@ -11,7 +11,8 @@ the independent ExtJS dev without SA.
 
 #### Gettings started:
 Frontend:
-- Copy the ext 6.5 framework into App/ext/
+- Copy the ext 6.5.2 framework into App/ext/
+- Copy the premium addons (pivot grid, D3 HeatMap)
 - Open the .xds project file in SA
 
 Backend:
@@ -40,7 +41,8 @@ We wanted to play chess not to create an app.**
 ### Examples:
 
 ![Example main app page](https://raw.githubusercontent.com/petrvecera/ChessEloApp/master/examples/main.png)
-![Elo chart example](https://github.com/petrvecera/ChessEloApp/blob/master/examples/elo_chart.png?raw=trueg)
+![Elo chart example](https://raw.githubusercontent.com/petrvecera/ChessEloApp/master/examples/elo_chart.png)
+![Add new match example](https://raw.githubusercontent.com/petrvecera/ChessEloApp/master/examples/addNewMatch.png)
+![Heat map example](https://raw.githubusercontent.com/petrvecera/ChessEloApp/master/examples/heatMap.png)
+![Score system page](https://raw.githubusercontent.com/petrvecera/ChessEloApp/master/examples/scoreSystem.png)
 ![Example dev env in SA](https://raw.githubusercontent.com/petrvecera/ChessEloApp/master/examples/SAExample.png)
-
-
