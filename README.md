@@ -2,6 +2,17 @@
 This is simple Chess Elo tracking app written in ExtJS 6.5 Modern using Sencha Architect
 and has backend written in NodeJS
 
+## Run the project:
+
+**Front-end**
+You can download build front-end from https://github.com/petrvecera/ChessEloApp/releases as App.zip  
+This can be deployed on the webserver. There is url for the backend `http://chess.pagep.net:8181` you can change this url in the source to the url you will need.
+
+**Backend**
+Just run in the backend folder:  
+`npm install`  
+`npm start`   
+
 #### Dev:
 - The front end is written in ExtJS 6.5 Modern using Sencha Architect 4.2  
 Thus you will need SA if you want to commit any changes. Or just pick up the app and continue
