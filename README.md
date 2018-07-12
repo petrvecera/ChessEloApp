@@ -13,7 +13,7 @@ Just run in the backend folder:
 `npm install`  
 `npm start`   
 
-#### Dev:
+## Dev:
 - The front end is written in ExtJS 6.5 Modern using Sencha Architect 4.2  
 Thus you will need SA if you want to commit any changes. Or just pick up the app and continue
 the independent ExtJS dev without SA.
